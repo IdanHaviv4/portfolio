@@ -8,10 +8,10 @@ const CSharp = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <rect width="81.125" height="81.125" fill="#9179E4" />
-    <g clip-path="url(#clip0_323_538)">
+    <g clipPath="url(#clip0_323_538)">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M63.0622 27.4224C63.6903 28.0103 63.6781 28.8964 63.6781 29.5938C63.6781 34.213 63.6392 47.3514 63.6891 51.9706C63.694 52.4526 63.5345 52.9602 63.2959 53.3424L40.0671 40.5619L63.0622 27.4224Z"
         fill="#9179E4"
       />

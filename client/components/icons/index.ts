@@ -21,3 +21,6 @@ export { default as SQLIcon } from "./sql";
 export { default as TailwindCSSIcon } from "./tailwindcss";
 export { default as TanstackIcon } from "./tanstack";
 export { default as TypescriptIcon } from "./typescript";
+
+export { default as ArrowTopRightIcon } from "./arrow-tr";
+export { default as ChevronIcon } from "./chevron";

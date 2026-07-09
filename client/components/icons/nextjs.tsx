@@ -8,7 +8,7 @@ const NextJS = (props: SVGProps<SVGSVGElement>) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     {...props}
   >
-    <g clip-path="url(#clip0_317_384)">
+    <g clipPath="url(#clip0_317_384)">
       <rect width="81.125" height="81.125" fill="black" />
       <rect width="81.125" height="81.125" fill="url(#pattern0_317_384)" />
     </g>
