@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Decider",
+    "description": "Deciding can be hard, whether you're on your own and especially with a group of people.",
+    "skills": [
+      "tanstack",
+      "typescript",
+      "tailwind",
+      "nodejs",
+      "nestjs",
+      "prisma",
+      "figma"
+    ]
+  },
+  {
+    "title": "Commitment (מחוייבות)",
+    "description": "The process of uploading and tracking community service hours is frustrating, both for students and for school staff. Thats why i created \"Commitment\"",
+    "skills": ["android", "java", "firebase", "figma"]
+  },
+  {
+    "title": "Portfolio",
+    "description": "A fully responsive portfolio built to showcase my projects, technical skills, and approach to software engineering. Designed from the ground up with a strong emphasis on UI/UX, performance, accessibility, and smooth interactions, the website reflects both my design philosophy and full-stack development capabilities.",
+    "skills": ["nextjs", "typescript", "tailwind", "nodejs", "figma"]
+  }
+]
