@@ -2,7 +2,7 @@ import { skills as skills_data } from "@/constants";
 
 const Skills = ({ skills }: { skills: (keyof typeof skills_data)[] }) => {
   return (
-    <div className="flex">
+    <div className="shrink-0 flex pr-3">
       {skills.map((skill, idx) => {
         const Icon = skills_data[skill];
 
