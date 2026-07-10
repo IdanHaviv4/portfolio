@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/components/footer";
 
 const poppins = Poppins({
   weight: ["400", "500", "600"],
@@ -18,7 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.className} h-full antialiased`}>
-      <body>{children}</body>
+      <body>
+        <div className="w-full flex flex-col gap-20">
+          {children}
+
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

@@ -5,13 +5,15 @@
   --color-secondary: #303538;
   --color-accent: #8266ff;
   --color-section: #f1f1f1;
+  --color-section-dark: #363e41;
 
   --color-text-primary: #000;
   --color-text-secondary: #727272;
+  --color-text-secondary-dark: #cfcfcf;
 }
 
 * {
-  @apply text-text-primary text-[1.1rem] select-none box-border;
+  @apply text-text-primary text-[1.1rem] select-none box-border scroll-smooth!;
 }
 
 body {

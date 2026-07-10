@@ -1,13 +1,15 @@
+"use client";
+
 import { useRef } from "react";
 import { ArrowTopRightIcon } from "../icons";
 
-const Resume = () => {
+const Resume = ({ className }: { className?: string }) => {
   const btn_ref = useRef<HTMLDivElement>(null);
   const content_ref = useRef<HTMLDivElement>(null);
 
   return (
     <div
-      className="group row-span-2 h-fit bg-secondary px-16 py-12 rounded-lg flex justify-center items-center cursor-pointer transition duration-100 ease-out hover:scale-95"
+      className={`group row-span-2 h-fit bg-secondary px-16 py-12 rounded-lg flex justify-center items-center cursor-pointer transition duration-100 ease-out hover:scale-95 ${className ?? ""}`}
       ref={btn_ref}
       onMouseMove={(e) => {
         if (!content_ref.current || !btn_ref.current) return;

@@ -23,4 +23,5 @@ export { default as TanstackIcon } from "./tanstack";
 export { default as TypescriptIcon } from "./typescript";
 
 export { default as ArrowTopRightIcon } from "./arrow-tr";
+export { default as ArrowTopIcon } from "./arrow-t";
 export { default as ChevronIcon } from "./chevron";
