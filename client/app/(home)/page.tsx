@@ -1,4 +1,9 @@
-import { EducationSection, HeroSection, ProjectsSection } from "./_sections";
+import {
+  CertificatesSection,
+  EducationSection,
+  HeroSection,
+  ProjectsSection,
+} from "./_sections";
 
 export default function Home() {
   return (
@@ -8,6 +13,8 @@ export default function Home() {
       <ProjectsSection />
 
       <EducationSection />
+
+      <CertificatesSection />
     </div>
   );
 }
