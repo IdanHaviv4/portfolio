@@ -11,7 +11,9 @@ const Institute = ({
   bulletpoints,
 }: (typeof education)[0] & { idx: number }) => {
   return (
-    <div className="relative w-full pb-6">
+    <div
+      className={`relative w-full ${idx < education.length - 1 ? "pb-6" : ""}`}
+    >
       <div className="absolute top-0 left-0 shrink-0 w-12 h-full flex justify-center items-center -z-10">
         <div
           className="w-[2px] h-full rounded-full"
