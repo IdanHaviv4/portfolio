@@ -1,0 +1,25 @@
+import { skills as skills_data } from "@/constants";
+
+const Skills = ({ skills }: { skills: (keyof typeof skills_data)[] }) => {
+  return (
+    <div className="flex">
+      {skills.map((skill, idx) => {
+        const Icon = skills_data[skill];
+
+        return (
+          <div
+            className="w-6 h-9"
+            key={skill}
+            style={{
+              zIndex: skills.length - idx,
+            }}
+          >
+            <Icon className="h-full aspect-square rounded-full" />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Skills;

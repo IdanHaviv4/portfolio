@@ -1,14 +1,15 @@
 "use client";
 
 import { ArrowTopRightIcon } from "@/components/icons";
-import { projects, skills } from "@/constants";
+import Skills from "@/components/skills";
+import { projects } from "@/constants";
 import { useCallback, useEffect, useRef } from "react";
 
 const Project = ({
   idx,
   title,
   description,
-  ...project
+  skills,
 }: (typeof projects)[0] & { idx: number }) => {
   const btn_ref = useRef<HTMLButtonElement>(null);
   const img_ref = useRef<HTMLImageElement>(null);
@@ -18,10 +19,10 @@ const Project = ({
 
     img_ref.current.style.scale = is_hovering ? "1.05" : "1";
 
-    const btn_label = btn_ref.current.querySelector("span")!;
+    const btn_bg = btn_ref.current.querySelector("div")!;
     const btn_arrow_icon = btn_ref.current.querySelector("svg")!;
 
-    btn_label.style.transform = `translateX(${is_hovering ? "0%" : `${(btn_arrow_icon.clientWidth + 8) / 2}px`})`;
+    btn_bg.style.scale = is_hovering ? "1" : "0.86 1";
     btn_arrow_icon.style.transform = `translateY(${is_hovering ? 0 : 150}%)`;
   }, []);
 
@@ -50,30 +51,15 @@ const Project = ({
           <p className="w-full line-clamp-2">{description}</p>
         </div>
 
-        <div className="flex">
-          {project.skills.map((skill, idx) => {
-            const Icon = skills[skill];
-
-            return (
-              <div
-                className="w-6 h-9"
-                key={skill}
-                style={{
-                  zIndex: project.skills.length - idx,
-                }}
-              >
-                <Icon className="h-full aspect-square rounded-full" />
-              </div>
-            );
-          })}
-        </div>
+        <Skills skills={skills} />
 
         <button
-          className="bg-secondary rounded-lg px-5 py-1.5 cursor-pointer flex items-center gap-2 overflow-hidden transition duration-200 ease-out"
+          className="relative px-5 py-1.5 cursor-pointer flex items-center gap-2 overflow-hidden transition duration-200 ease-out"
           ref={btn_ref}
           onMouseEnter={() => updateComponents(true)}
           onMouseLeave={() => updateComponents(false)}
         >
+          <div className="absolute top-0 left-0 bg-secondary rounded-lg w-full h-full origin-left -z-10 transition duration-200 ease-out"></div>
           <span className="text-white! font-medium! transition duration-200 ease-out">
             Explore Project
           </span>

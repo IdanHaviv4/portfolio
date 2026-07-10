@@ -21,6 +21,7 @@ import {
   TypescriptIcon,
 } from "@/components/icons";
 import projects_json from "./projects.json" with { type: "json" };
+import education_json from "./education.json" with { type: "json" };
 
 export const skills = {
   android: AndroidIcon,
@@ -52,5 +53,25 @@ export const projects = projects_json satisfies {
 }[] as {
   title: string;
   description: string;
+  skills: (keyof typeof skills)[];
+}[];
+
+export const education = education_json satisfies {
+  name: string;
+  description: string;
+  timestamps: {
+    from: string;
+    to: string;
+  };
+  bulletpoints: string[];
+  skills: string[];
+}[] as {
+  name: string;
+  description: string;
+  timestamps: {
+    from: string;
+    to: string;
+  };
+  bulletpoints: string[];
   skills: (keyof typeof skills)[];
 }[];

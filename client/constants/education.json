@@ -1,0 +1,43 @@
+[
+  {
+    "name": "High School",
+    "timestamps": {
+      "from": "Sep 2023",
+      "to": "Jul 2026"
+    },
+    "description": "Graduated from Bet Eliezer High School with highest honors, finishing the Israeli 12-year educational system with excellence.",
+    "bulletpoints": [
+      "Graduated top of class in Computer Science and Physics.",
+      "Graduated with an overall academic average above 95.",
+      "Completed the 12th-grade mathematics curriculum in 11th grade, achieving a final grade of 100."
+    ],
+    "skills": ["android", "java", "firebase"]
+  },
+  {
+    "name": "Magshimim",
+    "timestamps": {
+      "from": "Oct 2023",
+      "to": "Apr 2026"
+    },
+    "description": "Completed the Israeli National Cyber Education Program (Magshimim), an advanced extracurricular program focused on cybersecurity, networking, operating systems and low-level computing.",
+    "bulletpoints": [
+      "Participated in the Magshimim+ program, an advanced track for outstanding students, which included an internship program at Rafael.",
+      "Volunteered in the Big Brother mentoring program, guiding younger students throughout their learning journey and assisting instructors during lessons.",
+      "Competed in the national Magshimim \"Much\" competition, reaching the finals as part of one of the program's top-performing teams."
+    ],
+    "skills": ["c", "cpp"]
+  },
+  {
+    "name": "Rafael",
+    "timestamps": {
+      "from": "Nov 2025",
+      "to": "Dec 2025"
+    },
+    "description": "Completed Rafael's Software Engineering & Cybersecurity Internship Program, a training experience led by Rafael engineers.",
+    "bulletpoints": [
+      "Attended professional training sessions covering Web Security, AI & LLM Security, Backdoors, and Modern Cyber Threats.",
+      "Finished as part of the winning team in the program's final cybersecurity competition."
+    ],
+    "skills": []
+  }
+]
