@@ -9,7 +9,7 @@ const Resume = ({ className }: { className?: string }) => {
 
   return (
     <div
-      className={`group row-span-2 h-fit bg-secondary px-16 py-12 rounded-lg flex justify-center items-center cursor-pointer transition duration-100 ease-out hover:scale-95 ${className ?? ""}`}
+      className={`group row-span-2 h-fit bg-secondary px-16 py-12 rounded-lg flex justify-center items-center cursor-pointer transition duration-200 ease-out hover:scale-95 ${className ?? ""}`}
       ref={btn_ref}
       onMouseMove={(e) => {
         if (!content_ref.current || !btn_ref.current) return;
@@ -31,7 +31,7 @@ const Resume = ({ className }: { className?: string }) => {
       }}
     >
       <div
-        className="flex flex-col items-center gap-2 transition duration-100 ease-out group-hover:scale-[1.05]"
+        className="flex flex-col items-center gap-2 transition duration-200 ease-out group-hover:scale-[1.05]"
         ref={content_ref}
       >
         <ArrowTopRightIcon className="w-10 aspect-square fill-white" />

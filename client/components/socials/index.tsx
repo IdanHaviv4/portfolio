@@ -6,7 +6,7 @@ const Socials = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
     <div className="w-full h-fit grid grid-cols-3 gap-0.5">
       <Tooltip label="Gmail" variant={variant} className="rounded-full">
         <div
-          className={`w-full h-full p-3 bg-section rounded-full cursor-pointer transition duration-100 ease-out group-hover:scale-90 ${variant == "light" ? "bg-section" : "bg-section-dark"}`}
+          className={`w-full h-full p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 ${variant == "light" ? "bg-section" : "bg-section-dark"}`}
         >
           <GmailIcon className="w-full h-full" />
         </div>
@@ -14,7 +14,7 @@ const Socials = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
 
       <Tooltip label="Github" variant={variant} className="rounded-full">
         <div
-          className={`w-full h-full p-3 bg-section rounded-full cursor-pointer transition duration-100 ease-out group-hover:scale-90 ${variant == "light" ? "bg-section" : "bg-section-dark"}`}
+          className={`w-full h-full p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 ${variant == "light" ? "bg-section" : "bg-section-dark"}`}
         >
           <GithubIcon
             className={`w-full h-full ${variant == "dark" && "[&_path]:fill-section!"}`}
@@ -23,7 +23,7 @@ const Socials = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
       </Tooltip>
 
       <Tooltip label="Linkedin" variant={variant} className="rounded-full">
-        <LinkedinIcon className="w-full h-full rounded-full  cursor-pointer transition duration-100 ease-out group-hover:scale-90" />
+        <LinkedinIcon className="w-full h-full rounded-full  cursor-pointer transition duration-200 ease-out group-hover:scale-90" />
       </Tooltip>
     </div>
   );

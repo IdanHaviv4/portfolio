@@ -47,7 +47,7 @@ const Skills = () => {
           style={{ zIndex: `${skills.length - idx}` }}
           className="rounded-full"
         >
-          <div className="rounded-full cursor-pointer *:w-full *:h-full *:rounded-full transition duration-100 ease-out group-hover:scale-90">
+          <div className="rounded-full cursor-pointer *:w-full *:h-full *:rounded-full transition duration-200 ease-out group-hover:scale-90">
             {icon}
           </div>
         </Tooltip>
