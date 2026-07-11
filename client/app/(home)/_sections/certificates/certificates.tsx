@@ -1,9 +1,24 @@
+"use client";
+
 import Title from "@/components/title";
-import { Fragment } from "react";
+import { Fragment, useRef } from "react";
 
 const Certificates = () => {
+  const dialog_ref = useRef<HTMLDialogElement>(null);
+
   return (
     <div className="w-full flex flex-col gap-6 items-center">
+      <dialog
+        open={false}
+        ref={dialog_ref}
+        className="m-auto border-none outline-none rounded-lg overflow-hidden backdrop:backdrop-blur-xl backdrop:bg-secondary/50"
+        onClick={(e) => {
+          if (e.target === dialog_ref?.current) dialog_ref.current?.close();
+        }}
+      >
+        <img />
+      </dialog>
+
       <Title label="Certificates" tag="certificates" orientation="center" />
 
       <div className="w-full grid grid-cols-6 gap-2">
@@ -17,7 +32,16 @@ const Certificates = () => {
 
               <div
                 className="group col-span-2 w-full h-full rounded-lg overflow-hidden cursor-pointer border-2 border-solid border-section"
-                key={idx}
+                onClick={() => {
+                  if (!dialog_ref.current) return;
+
+                  const img = dialog_ref.current.querySelector("img")!;
+
+                  img.src = `/assets/certificates/${idx + 1}.jpg`;
+                  img.alt = `certificate-${idx + 1}`;
+
+                  dialog_ref.current.showModal();
+                }}
               >
                 <img
                   src={`/assets/certificates/${idx + 1}.jpg`}
