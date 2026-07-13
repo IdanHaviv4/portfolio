@@ -12,7 +12,7 @@ const Fact = dynamic(() => import("./fact"), {
 
 const Hero = () => {
   return (
-    <div className="w-fit h-min justify-center grid grid-cols-[repeat(3,min-content)] grid-rows-[repeat(5,min-content)] gap-5">
+    <div className="w-fit h-min grid grid-cols-[repeat(3,min-content)] grid-rows-[repeat(5,min-content)] gap-5">
       <div className="w-full h-full flex flex-col gap-2">
         <h1>Idan Haviv</h1>
 

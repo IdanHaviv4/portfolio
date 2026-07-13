@@ -40,6 +40,12 @@ const Certificates = () => {
                   img.src = `/assets/certificates/${idx + 1}.jpg`;
                   img.alt = `certificate-${idx + 1}`;
 
+                  img.style.width = "auto";
+                  img.style.height = "auto";
+
+                  if (img.width > img.height) img.style.height = "512px";
+                  else img.style.width = "512px";
+
                   dialog_ref.current.showModal();
                 }}
               >
