@@ -3,6 +3,7 @@
 import { ArrowTopRightIcon } from "@/components/icons";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 
 const Project = ({
@@ -11,8 +12,11 @@ const Project = ({
   description,
   skills,
 }: (typeof projects)[0] & { idx: number }) => {
+  const router = useRouter();
+
   const btn_ref = useRef<HTMLButtonElement>(null);
   const img_ref = useRef<HTMLImageElement>(null);
+  const interactive_components_ref = useRef<HTMLElement[]>([]);
 
   const updateComponents = useCallback((is_hovering: boolean) => {
     if (!btn_ref.current || !img_ref.current) return;
@@ -28,14 +32,31 @@ const Project = ({
 
   useEffect(() => {
     updateComponents(false);
+
+    for (const component of interactive_components_ref.current) {
+      component.onmouseenter = () => updateComponents(true);
+      component.onmouseleave = () => updateComponents(false);
+      component.onclick = () => {
+        router.push(`/project/${idx + 1}`);
+      };
+    }
+
+    return () => {
+      for (const component of interactive_components_ref.current) {
+        component.onmouseenter = null;
+        component.onmouseleave = null;
+        component.onclick = null;
+      }
+    };
   }, []);
 
   return (
     <div className="grid grid-cols-2 items-end gap-5">
       <div
         className="w-full h-fit rounded-lg overflow-hidden cursor-pointer"
-        onMouseEnter={() => updateComponents(true)}
-        onMouseLeave={() => updateComponents(false)}
+        ref={(ref) => {
+          interactive_components_ref.current.push(ref!);
+        }}
       >
         <img
           ref={img_ref}
@@ -54,10 +75,11 @@ const Project = ({
         <Skills skills={skills} />
 
         <button
-          className="relative px-5 py-1.5 cursor-pointer flex items-center gap-2 overflow-hidden transition duration-200 ease-out"
-          ref={btn_ref}
-          onMouseEnter={() => updateComponents(true)}
-          onMouseLeave={() => updateComponents(false)}
+          className="relative px-5 py-1.5 rounded-lg cursor-pointer flex items-center gap-2 overflow-hidden transition duration-200 ease-out"
+          ref={(ref) => {
+            btn_ref.current = ref;
+            interactive_components_ref.current.push(ref!);
+          }}
         >
           <div className="absolute top-0 left-0 bg-secondary rounded-lg w-full h-full origin-left -z-10 transition duration-200 ease-out"></div>
           <span className="text-white! font-medium! transition duration-200 ease-out">

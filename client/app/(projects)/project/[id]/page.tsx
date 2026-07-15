@@ -1,0 +1,48 @@
+"use client";
+
+import { GithubIcon } from "@/components/icons";
+import Skills from "@/components/skills";
+import { projects } from "@/constants";
+import { notFound, useParams } from "next/navigation";
+
+const Project = () => {
+  const { id: id_as_param } = useParams();
+
+  if (!id_as_param) return notFound();
+
+  const id = parseInt(id_as_param as string);
+
+  if (isNaN(id)) return notFound();
+
+  const project = projects[id - 1];
+
+  if (!project) return notFound();
+
+  return (
+    <div className="w-full max-w-212 mx-auto flex flex-col gap-4">
+      <div className="relative w-full aspect-video">
+        <img
+          src={`/assets/projects/${id}.jpg`}
+          className="absolute top-0 left-0 w-full h-auto rounded-lg"
+        />
+      </div>
+
+      <div className="relative w-full flex flex-col gap-[inherit] bg-primary before:absolute before:bottom-full before:left-0 before:w-full before:h-40 before:bg-linear-to-b before:from-transparent before:to-primary">
+        <div className="relative w-full flex justify-between items-center">
+          <div className="flex flex-col gap-4">
+            <h1>{project.title}</h1>
+            <Skills skills={project.skills} />
+          </div>
+
+          <div className="h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90">
+            <GithubIcon className="w-full h-full" />
+          </div>
+        </div>
+
+        <p className="text-[1.2rem]!">{project.description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Project;

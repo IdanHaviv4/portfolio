@@ -14,14 +14,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.className} h-full antialiased`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${poppins.className} h-full antialiased`}
+    >
       <body>
-        <div className="w-full flex flex-col gap-20">
+        <div className="w-full flex flex-col gap-20 pt-20">
           {children}
+          {modal}
 
           <Footer />
         </div>

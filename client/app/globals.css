@@ -20,6 +20,10 @@ body {
   @apply bg-primary;
 }
 
+body:has(dialog[open]) {
+  @apply overflow-hidden!;
+}
+
 h1 {
   @apply text-[2.5rem] font-normal leading-8;
 }
@@ -30,4 +34,8 @@ h2 {
 
 p {
   @apply text-text-secondary;
+}
+
+dialog {
+  @apply m-auto border-none outline-none rounded-lg backdrop:backdrop-blur-xl backdrop:bg-secondary/50;
 }

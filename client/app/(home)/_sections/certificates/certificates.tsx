@@ -11,7 +11,6 @@ const Certificates = () => {
       <dialog
         open={false}
         ref={dialog_ref}
-        className="m-auto border-none outline-none rounded-lg overflow-hidden backdrop:backdrop-blur-xl backdrop:bg-secondary/50"
         onClick={(e) => {
           if (e.target === dialog_ref?.current) dialog_ref.current?.close();
         }}
