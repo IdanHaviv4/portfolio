@@ -6,7 +6,7 @@ import { projects } from "@/constants";
 import { notFound, useParams } from "next/navigation";
 import { useEffect } from "react";
 
-const Project = () => {
+const Project = ({ is_modal = true }: { is_modal?: true }) => {
   const { id: id_as_param } = useParams();
 
   if (!id_as_param) return notFound();
@@ -20,8 +20,10 @@ const Project = () => {
   if (!project) return notFound();
 
   useEffect(() => {
+    if (is_modal) return;
+
     window.scrollTo(0, 0);
-  }, []);
+  }, [is_modal]);
 
   return (
     <section className="w-full max-w-max-width mx-auto flex flex-col gap-4">

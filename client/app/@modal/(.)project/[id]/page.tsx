@@ -31,9 +31,9 @@ const Project = () => {
       onClick={(e) => {
         if (e.target === dialog_ref?.current) dialog_ref.current?.close();
       }}
-      className="p-10 overflow-scroll"
+      className="p-10 overflow-y-auto"
     >
-      <Proj />
+      <Proj is_modal />
     </dialog>
   );
 };

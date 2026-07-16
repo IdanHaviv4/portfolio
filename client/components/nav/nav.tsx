@@ -25,7 +25,7 @@ const Nav = () => {
     return () => {
       window.onscroll = null;
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <nav className="fixed top-0 left-0 w-full py-4 z-40 bg-primary/50 backdrop-blur-2xl">
