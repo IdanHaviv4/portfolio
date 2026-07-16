@@ -4,6 +4,7 @@ import { GithubIcon } from "@/components/icons";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
 import { notFound, useParams } from "next/navigation";
+import { useEffect } from "react";
 
 const Project = () => {
   const { id: id_as_param } = useParams();
@@ -18,8 +19,12 @@ const Project = () => {
 
   if (!project) return notFound();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="w-full max-w-212 mx-auto flex flex-col gap-4">
+    <section className="w-full max-w-max-width mx-auto flex flex-col gap-4">
       <div className="relative w-full aspect-video">
         <img
           src={`/assets/projects/${id}.jpg`}
@@ -41,7 +46,7 @@ const Project = () => {
 
         <p className="text-[1.2rem]!">{project.description}</p>
       </div>
-    </div>
+    </section>
   );
 };
 

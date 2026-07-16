@@ -16,7 +16,7 @@ const Project = ({
 
   const btn_ref = useRef<HTMLButtonElement>(null);
   const img_ref = useRef<HTMLImageElement>(null);
-  const interactive_components_ref = useRef<HTMLElement[]>([]);
+  const interactive_components_ref = useRef<(HTMLElement | null)[]>([]);
 
   const updateComponents = useCallback((is_hovering: boolean) => {
     if (!btn_ref.current || !img_ref.current) return;
@@ -34,6 +34,8 @@ const Project = ({
     updateComponents(false);
 
     for (const component of interactive_components_ref.current) {
+      if (!component) continue;
+
       component.onmouseenter = () => updateComponents(true);
       component.onmouseleave = () => updateComponents(false);
       component.onclick = () => {
@@ -43,6 +45,8 @@ const Project = ({
 
     return () => {
       for (const component of interactive_components_ref.current) {
+        if (!component) continue;
+
         component.onmouseenter = null;
         component.onmouseleave = null;
         component.onclick = null;

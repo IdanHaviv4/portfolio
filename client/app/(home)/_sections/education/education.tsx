@@ -4,7 +4,7 @@ import Institute from "./institute";
 
 const Education = () => {
   return (
-    <div className="w-full flex flex-col gap-6 items-center">
+    <section id="education" className="w-full flex flex-col gap-6 items-center">
       <Title label={"Education"} tag={"education"} orientation="center" />
 
       <div className="w-full flex flex-col items-start">
@@ -12,7 +12,7 @@ const Education = () => {
           <Institute key={idx} {...institute} idx={idx} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

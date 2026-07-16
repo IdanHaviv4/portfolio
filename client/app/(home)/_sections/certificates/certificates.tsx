@@ -7,7 +7,10 @@ const Certificates = () => {
   const dialog_ref = useRef<HTMLDialogElement>(null);
 
   return (
-    <div className="w-full flex flex-col gap-6 items-center">
+    <section
+      id="certificates"
+      className="w-full flex flex-col gap-6 items-center"
+    >
       <dialog
         open={false}
         ref={dialog_ref}
@@ -58,7 +61,7 @@ const Certificates = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

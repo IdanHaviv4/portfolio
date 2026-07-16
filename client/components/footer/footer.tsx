@@ -8,14 +8,14 @@ import Signature from "./signature";
 
 const Footer = () => {
   return (
-    <div className="w-full flex flex-col">
+    <section className="w-full flex flex-col">
       <Wave className="fill-secondary w-full" />
 
       <div className="w-full bg-secondary">
         <div className="relative before:absolute before:top-0 before:left-0 before:-translate-y-1 before:w-full before:h-2 before:bg-secondary"></div>
 
         <div className="w-full px-5 pt-4 pb-20">
-          <div className="w-full max-w-212 mx-auto flex justify-between">
+          <div className="w-full max-w-max-width mx-auto flex justify-between">
             <div className="flex flex-col justify-between gap-10 items-start">
               <div className="relative">
                 <h1 className="text-[6rem]! text-white! leading-16!">
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

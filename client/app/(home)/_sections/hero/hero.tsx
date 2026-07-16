@@ -12,7 +12,10 @@ const Fact = dynamic(() => import("./fact"), {
 
 const Hero = () => {
   return (
-    <div className="w-fit h-min grid grid-cols-[repeat(3,min-content)] grid-rows-[repeat(5,min-content)] gap-5">
+    <section
+      id="home"
+      className="w-fit h-min grid grid-cols-[repeat(3,min-content)] grid-rows-[repeat(5,min-content)] gap-5"
+    >
       <div className="group relative w-full h-full flex flex-col gap-2 rounded-lg overflow-hidden cursor-pointer">
         <h1>Idan Haviv</h1>
 
@@ -43,7 +46,7 @@ const Hero = () => {
       <Fact />
 
       <Socials />
-    </div>
+    </section>
   );
 };
 

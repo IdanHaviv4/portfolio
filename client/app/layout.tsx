@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
+import { Nav } from "@/components/nav";
 
 const poppins = Poppins({
   weight: ["400", "500", "600"],
@@ -26,12 +27,17 @@ export default function RootLayout({
       className={`${poppins.className} h-full antialiased`}
     >
       <body>
-        <div className="w-full flex flex-col gap-20 pt-20">
-          {children}
-          {modal}
+        <Nav />
+
+        <div className="w-full flex flex-col gap-20">
+          <div className="w-full max-w-max-width mx-auto flex flex-col gap-4 [&>section]:pt-20">
+            {children}
+          </div>
 
           <Footer />
         </div>
+
+        {modal}
       </body>
     </html>
   );
