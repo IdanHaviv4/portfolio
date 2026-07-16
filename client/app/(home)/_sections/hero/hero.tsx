@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="flex items-center gap-2">
           <div className="w-2 aspect-square rounded-full bg-[#00D218]"></div>
 
-          <p className="text-[1rem]">Available to work</p>
+          <p className="text-[1rem]!">Available to work</p>
         </div>
 
         <img
