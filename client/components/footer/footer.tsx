@@ -1,7 +1,7 @@
 "use client";
 
 import { Wave } from ".";
-import { ArrowTopIcon } from "../icons";
+import { Icons } from "../";
 import Resume from "../resume";
 import Socials from "../socials";
 import Signature from "./signature";
@@ -47,7 +47,7 @@ const Footer = () => {
                   Back to Top
                 </span>
 
-                <ArrowTopIcon className="w-5 aspect-square fill-white translate-y-[150%] transition duration-200 ease-out group-hover:translate-y-0" />
+                <Icons.ArrowTopIcon className="w-5 aspect-square fill-white translate-y-[150%] transition duration-200 ease-out group-hover:translate-y-0" />
               </button>
             </div>
           </div>

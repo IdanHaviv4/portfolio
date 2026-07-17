@@ -1,41 +1,24 @@
-import {
-  AndroidIcon,
-  CSSIcon,
-  FigmaIcon,
-  FirebaseIcon,
-  GitIcon,
-  HTMLIcon,
-  JavascriptIcon,
-  NestJSIcon,
-  NextJSIcon,
-  NodeJSIcon,
-  PrismaIcon,
-  ReactIcon,
-  SQLIcon,
-  TailwindCSSIcon,
-  TanstackIcon,
-  TypescriptIcon,
-} from "@/components/icons";
+import { Icons } from "@/components";
 import Tooltip from "@/components/tooltip";
 
 const Skills = () => {
   const skills = [
-    { icon: <HTMLIcon />, label: "HTML" },
-    { icon: <CSSIcon />, label: "CSS" },
-    { icon: <JavascriptIcon />, label: "JavaScript" },
-    { icon: <TypescriptIcon />, label: "TypeScript" },
-    { icon: <ReactIcon />, label: "React" },
-    { icon: <NextJSIcon />, label: "NextJS" },
-    { icon: <TanstackIcon />, label: "TanStack" },
-    { icon: <NodeJSIcon />, label: "NodeJS" },
-    { icon: <TailwindCSSIcon />, label: "Tailwind" },
-    { icon: <NestJSIcon />, label: "NestJS" },
-    { icon: <PrismaIcon />, label: "Prisma" },
-    { icon: <SQLIcon />, label: "SQL" },
-    { icon: <FirebaseIcon />, label: "Firebase" },
-    { icon: <AndroidIcon />, label: "Android" },
-    { icon: <GitIcon />, label: "Git" },
-    { icon: <FigmaIcon />, label: "Figma" },
+    { icon: <Icons.HTMLIcon />, label: "HTML" },
+    { icon: <Icons.CSSIcon />, label: "CSS" },
+    { icon: <Icons.JavascriptIcon />, label: "JavaScript" },
+    { icon: <Icons.TypescriptIcon />, label: "TypeScript" },
+    { icon: <Icons.ReactIcon />, label: "React" },
+    { icon: <Icons.NextJSIcon />, label: "NextJS" },
+    { icon: <Icons.TanstackIcon />, label: "TanStack" },
+    { icon: <Icons.NodeJSIcon />, label: "NodeJS" },
+    { icon: <Icons.TailwindCSSIcon />, label: "Tailwind" },
+    { icon: <Icons.NestJSIcon />, label: "NestJS" },
+    { icon: <Icons.PrismaIcon />, label: "Prisma" },
+    { icon: <Icons.SQLIcon />, label: "SQL" },
+    { icon: <Icons.FirebaseIcon />, label: "Firebase" },
+    { icon: <Icons.AndroidIcon />, label: "Android" },
+    { icon: <Icons.GitIcon />, label: "Git" },
+    { icon: <Icons.FigmaIcon />, label: "Figma" },
   ];
 
   return (

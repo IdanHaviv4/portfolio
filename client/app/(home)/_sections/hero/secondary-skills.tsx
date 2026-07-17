@@ -1,12 +1,12 @@
-import { CIcon, CPPIcon, CSharpIcon, JavaIcon } from "@/components/icons";
+import { Icons } from "@/components";
 import Tooltip from "@/components/tooltip";
 
 const SecondarySkills = () => {
   const skills = [
-    { icon: <CIcon />, label: "C" },
-    { icon: <CPPIcon />, label: "C++" },
-    { icon: <CSharpIcon />, label: "C#" },
-    { icon: <JavaIcon />, label: "Java" },
+    { icon: <Icons.CIcon />, label: "C" },
+    { icon: <Icons.CPPIcon />, label: "C++" },
+    { icon: <Icons.CSharpIcon />, label: "C#" },
+    { icon: <Icons.JavaIcon />, label: "Java" },
   ];
 
   return (

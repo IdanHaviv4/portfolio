@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowTopRightIcon } from "@/components/icons";
+import { Icons } from "@/components";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
 import { useRouter } from "next/navigation";
@@ -90,7 +90,7 @@ const Project = ({
             Explore Project
           </span>
 
-          <ArrowTopRightIcon className="w-5 aspect-square fill-white transition duration-200 ease-out" />
+          <Icons.ArrowTopRightIcon className="w-5 aspect-square fill-white transition duration-200 ease-out" />
         </button>
       </div>
     </div>

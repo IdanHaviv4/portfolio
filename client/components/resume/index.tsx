@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { ArrowTopRightIcon } from "../icons";
+import { Icons } from "../";
 
 const Resume = ({ className }: { className?: string }) => {
   const btn_ref = useRef<HTMLDivElement>(null);
@@ -34,7 +34,7 @@ const Resume = ({ className }: { className?: string }) => {
         className="flex flex-col items-center gap-2 transition duration-200 ease-out group-hover:scale-[1.05]"
         ref={content_ref}
       >
-        <ArrowTopRightIcon className="w-10 aspect-square fill-white" />
+        <Icons.ArrowTopRightIcon className="w-10 aspect-square fill-white" />
 
         <h2 className="text-white!">Resume</h2>
       </div>

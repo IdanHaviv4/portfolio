@@ -1,6 +1,6 @@
 "use client";
 
-import { GithubIcon } from "@/components/icons";
+import { Icons } from "@/components";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
 import { notFound, useParams } from "next/navigation";
@@ -42,7 +42,7 @@ const Project = ({ is_modal }: { is_modal?: true }) => {
           </div>
 
           <div className="h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90">
-            <GithubIcon className="w-full h-full" />
+            <Icons.GithubIcon className="w-full h-full" />
           </div>
         </div>
 

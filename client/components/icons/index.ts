@@ -1,27 +1,55 @@
-export { default as AndroidIcon } from "./android";
-export { default as CIcon } from "./c";
-export { default as CPPIcon } from "./cpp";
-export { default as CSharpIcon } from "./csharp";
-export { default as CSSIcon } from "./css";
-export { default as FigmaIcon } from "./figma";
-export { default as FirebaseIcon } from "./firebase";
-export { default as GitIcon } from "./git";
-export { default as GithubIcon } from "./github";
-export { default as GmailIcon } from "./gmail";
-export { default as HTMLIcon } from "./html";
-export { default as JavaIcon } from "./java";
-export { default as JavascriptIcon } from "./javascript";
-export { default as LinkedinIcon } from "./linkedin";
-export { default as NestJSIcon } from "./nestjs";
-export { default as NextJSIcon } from "./nextjs";
-export { default as NodeJSIcon } from "./nodejs";
-export { default as PrismaIcon } from "./prisma";
-export { default as ReactIcon } from "./react";
-export { default as SQLIcon } from "./sql";
-export { default as TailwindCSSIcon } from "./tailwindcss";
-export { default as TanstackIcon } from "./tanstack";
-export { default as TypescriptIcon } from "./typescript";
+import AndroidIcon from "./android";
+import CIcon from "./c";
+import CPPIcon from "./cpp";
+import CSharpIcon from "./csharp";
+import CSSIcon from "./css";
+import FigmaIcon from "./figma";
+import FirebaseIcon from "./firebase";
+import GitIcon from "./git";
+import GithubIcon from "./github";
+import GmailIcon from "./gmail";
+import HTMLIcon from "./html";
+import JavaIcon from "./java";
+import JavascriptIcon from "./javascript";
+import LinkedinIcon from "./linkedin";
+import NestJSIcon from "./nestjs";
+import NextJSIcon from "./nextjs";
+import NodeJSIcon from "./nodejs";
+import PrismaIcon from "./prisma";
+import ReactIcon from "./react";
+import SQLIcon from "./sql";
+import TailwindCSSIcon from "./tailwindcss";
+import TanstackIcon from "./tanstack";
+import TypescriptIcon from "./typescript";
+import ArrowTopRightIcon from "./arrow-tr";
+import ArrowTopIcon from "./arrow-t";
+import ChevronIcon from "./chevron";
 
-export { default as ArrowTopRightIcon } from "./arrow-tr";
-export { default as ArrowTopIcon } from "./arrow-t";
-export { default as ChevronIcon } from "./chevron";
+export default {
+  AndroidIcon,
+  CIcon,
+  CPPIcon,
+  CSharpIcon,
+  CSSIcon,
+  FigmaIcon,
+  FirebaseIcon,
+  GitIcon,
+  GithubIcon,
+  GmailIcon,
+  HTMLIcon,
+  JavaIcon,
+  JavascriptIcon,
+  LinkedinIcon,
+  NestJSIcon,
+  NextJSIcon,
+  NodeJSIcon,
+  PrismaIcon,
+  ReactIcon,
+  SQLIcon,
+  TailwindCSSIcon,
+  TanstackIcon,
+  TypescriptIcon,
+  ArrowTopRightIcon,
+  ArrowTopIcon,
+  ChevronIcon,
+};
