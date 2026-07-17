@@ -46,7 +46,7 @@ const Nav = () => {
         <ul className="list-none flex items-center gap-9">
           {["home", "projects", "education", "certificates"].map((section) => (
             <li key={section}>
-              <Link href={`/#${section}`} className="capitalize">
+              <Link href={`/#${section}`} className="capitalize text-[1rem]!">
                 {section}
               </Link>
             </li>

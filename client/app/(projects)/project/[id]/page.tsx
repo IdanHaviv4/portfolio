@@ -6,7 +6,7 @@ import { projects } from "@/constants";
 import { notFound, useParams } from "next/navigation";
 import { useEffect } from "react";
 
-const Project = ({ is_modal = true }: { is_modal?: true }) => {
+const Project = ({ is_modal }: { is_modal?: true }) => {
   const { id: id_as_param } = useParams();
 
   if (!id_as_param) return notFound();
@@ -46,7 +46,9 @@ const Project = ({ is_modal = true }: { is_modal?: true }) => {
           </div>
         </div>
 
-        <p className="text-[1.2rem]!">{project.description}</p>
+        <p className="text-[1.2rem]! whitespace-pre-wrap">
+          {project.description}
+        </p>
       </div>
     </section>
   );

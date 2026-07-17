@@ -1,7 +1,7 @@
 [
   {
     "title": "Decider",
-    "description": "Deciding can be hard, whether you're on your own and especially with a group of people.",
+    "description": "Ever spent 20 minutes with friends just arguing about where to eat? \"Decider\" turns that everyday friction into a fast, playful decision-making experience - solo or in a group, in real time.\n\nThis is a full-stack project and my crash course in two frameworks I taught myself from scratch: NestJS on the backend and TanStack Start on the frontend. Rather than sticking to familiar tools, I deliberately picked this stack to push myself into new territory.\n\nUnder the hood, Decider supports user authentication, live multiplayer sessions powered by WebSockets via PartyKit, built with clean code using modern technologies in a professional codebase, great typesafety and more.",
     "skills": [
       "tanstack",
       "typescript",
@@ -14,12 +14,12 @@
   },
   {
     "title": "Commitment (מחוייבות)",
-    "description": "The process of uploading and tracking community service hours is frustrating, both for students and for school staff. Thats why i created \"Commitment\"",
+    "description": "As a student, I experienced firsthand how frustrating the process of logging and tracking community service hours could be, for students and administrative staff alike. At the request of my teacher, I set out to build \"Commitment\", a more intuitive Android application that simplifies and streamlines the entire tracking process.\n\nThe app was designed to offer a significantly improved user experience compared to existing solutions on the market. After presenting it to the school's staff and principal, it left a strong impression and is now under consideration to become the school's official platform for service-hour tracking, with discussions underway about expanding its reach beyond a single institution.\n\nUnder the hood, Commitment implements secure authentication and role-based access control, distinguishing between student and staff permissions, along with realtime data synchronization to keep records accurate and up to date across users. The codebase was built with an emphasis on solid software engineering fundamentals, including advanced object-oriented design principles and a clean, maintainable project structure, reflecting an intentional effort to write production-quality code rather than a one-off school project.\n\nThe interface was designed in Figma before development, with a focus on clarity and ease of use for a non-technical audience of students and staff alike.",
     "skills": ["android", "java", "firebase", "figma"]
   },
   {
     "title": "Portfolio",
-    "description": "A fully responsive portfolio built to showcase my projects, technical skills, and approach to software engineering. Designed from the ground up with a strong emphasis on UI/UX, performance, accessibility, and smooth interactions, the website reflects both my design philosophy and full-stack development capabilities.",
+    "description": "You're looking at it right now. This site is a fully responsive portfolio built to showcase my projects, technical skills, and approach to software engineering - but more than that, it's a playground where I got to obsess over every tiny detail until it felt right.\n\nThe layout is built around an interactive bento-grid system, with cards that respond to hover with subtle 3D effects, animated gradients, and playful micro-interactions rather than sitting there static. Under the hood, I leaned into some of Next.js's more advanced App Router features, including parallel and intercepting routes to power modal views that feel native and fluid.\n\nThe entire codebase is written in strictly-typed TypeScript, with an emphasis on clean, scalable file structure and component architecture that could hold up in a real production environment, not just a portfolio.\n\nLike everything else I build, it started life as a Figma design before a single line of code was written, because good UI/UX doesn't happen by accident, it's designed.",
     "skills": ["nextjs", "typescript", "tailwind", "nodejs", "figma"]
   }
 ]

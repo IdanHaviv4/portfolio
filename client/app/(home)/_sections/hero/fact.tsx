@@ -39,15 +39,13 @@ const Fact = () => {
 
   return (
     <div className="group row-span-2 w-full h-full rounded-lg flex flex-col justify-center items-center cursor-pointer perspective-midrange">
-      <div className="w-full h-full relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center">
-        <div className="bg-section card-front">
+      <div className="w-full h-full relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center *:bg-section">
+        <div>
           <p className="text-[1rem]!">Fun Fact (hover to reveal)</p>
           <h2>{fact.label}</h2>
         </div>
 
-        <div className="bg-section rotate-y-180 overflow-hidden">
-          {fact.answer}
-        </div>
+        <div className="rotate-y-180 overflow-hidden">{fact.answer}</div>
       </div>
     </div>
   );

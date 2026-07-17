@@ -8,7 +8,12 @@ const Projects = () => {
       <Title label={"My Work"} tag={"projects"} />
 
       {projects.map((project, idx) => (
-        <Project {...project} idx={idx} key={idx} />
+        <Project
+          {...project}
+          description={project.description.slice(0, 100)}
+          idx={idx}
+          key={idx}
+        />
       ))}
     </section>
   );
