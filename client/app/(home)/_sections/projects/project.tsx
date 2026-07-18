@@ -3,6 +3,7 @@
 import { Icons } from "@/components";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 
@@ -62,9 +63,11 @@ const Project = ({
           interactive_components_ref.current.push(ref!);
         }}
       >
-        <img
+        <Image
           ref={img_ref}
           src={`/assets/projects/${idx + 1}.jpg`}
+          width={1440}
+          height={1024}
           alt={`project-${idx + 1}`}
           className="w-full h-auto transition duration-200 ease-out"
         />

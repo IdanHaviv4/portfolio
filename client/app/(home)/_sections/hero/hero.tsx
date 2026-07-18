@@ -4,6 +4,7 @@ import { About, Age, Location, Skills, SecondarySkills } from "./";
 import Socials from "@/components/socials";
 import Resume from "@/components/resume";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const Fact = dynamic(() => import("./fact"), {
   ssr: false,
@@ -25,9 +26,12 @@ const Hero = () => {
           <p className="text-[1rem]!">Available to work</p>
         </div>
 
-        <img
+        <Image
           src="/assets/hero/hi.png"
-          className="absolute right-0 bottom-0 h-full aspect-square origin-bottom-right translate-full scale-135 transition duration-700 ease-out group-hover:translate-x-1/5 group-hover:translate-y-0 group-hover:-rotate-15"
+          width={150}
+          height={150}
+          className="absolute right-0 bottom-0 origin-bottom-right translate-full scale-105 transition duration-700 ease-out group-hover:translate-x-1/5 group-hover:translate-y-0 group-hover:-rotate-15"
+          alt="hi-img"
         />
       </div>
 

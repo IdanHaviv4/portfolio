@@ -1,6 +1,7 @@
 "use client";
 
 import Title from "@/components/title";
+import Image from "next/image";
 import { Fragment, useRef } from "react";
 
 const Certificates = () => {
@@ -18,7 +19,7 @@ const Certificates = () => {
           if (e.target === dialog_ref?.current) dialog_ref.current?.close();
         }}
       >
-        <img />
+        <img alt="certificate-upscale" />
       </dialog>
 
       <Title label="Certificates" tag="certificates" orientation="center" />
@@ -42,17 +43,22 @@ const Certificates = () => {
                   img.src = `/assets/certificates/${idx + 1}.jpg`;
                   img.alt = `certificate-${idx + 1}`;
 
-                  img.style.width = "auto";
-                  img.style.height = "auto";
+                  img.onload = () => {
+                    img.style.width = "auto";
+                    img.style.height = "auto";
 
-                  if (img.width > img.height) img.style.height = "512px";
-                  else img.style.width = "512px";
+                    if (img.width > img.height) img.style.height = "512px";
+                    else img.style.width = "512px";
 
-                  dialog_ref.current.showModal();
+                    dialog_ref.current?.showModal();
+                    img.onload = null;
+                  };
                 }}
               >
-                <img
+                <Image
                   src={`/assets/certificates/${idx + 1}.jpg`}
+                  width={512}
+                  height={512}
                   className="w-full h-full object-cover transition duration-200 ease-out group-hover:scale-105"
                   alt={`certificate-${idx + 1}`}
                 />

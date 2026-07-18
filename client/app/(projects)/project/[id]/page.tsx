@@ -3,6 +3,7 @@
 import { Icons } from "@/components";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
+import Image from "next/image";
 import { notFound, useParams } from "next/navigation";
 import { useEffect } from "react";
 
@@ -28,9 +29,12 @@ const Project = ({ is_modal }: { is_modal?: true }) => {
   return (
     <section className="w-full max-w-max-width mx-auto flex flex-col gap-4">
       <div className="relative w-full aspect-video">
-        <img
+        <Image
           src={`/assets/projects/${id}.jpg`}
+          width={1440}
+          height={1024}
           className="absolute top-0 left-0 w-full h-auto rounded-lg"
+          alt={`project-${id}-img`}
         />
       </div>
 
