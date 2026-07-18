@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="w-fit h-min grid grid-cols-[repeat(3,min-content)] grid-rows-[repeat(5,min-content)] gap-5"
+      className="w-full max-w-max-width h-min grid grid-cols-[repeat(3,min-content)] grid-rows-[repeat(5,min-content)] gap-5"
     >
       <div className="group relative w-full h-full flex flex-col gap-2 rounded-lg overflow-hidden cursor-pointer">
         <h1>Idan Haviv</h1>
