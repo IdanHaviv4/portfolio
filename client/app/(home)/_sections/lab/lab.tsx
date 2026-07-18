@@ -1,6 +1,8 @@
+"use client";
+
 import { Icons, Title } from "@/components";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { Components } from "./";
 
 const Lab = () => {
@@ -9,6 +11,7 @@ const Lab = () => {
     component: React.ReactNode;
     inspiration?: string;
     colSpan?: 1 | 2;
+    rowSpan?: 1 | 2;
   }[] = useMemo(
     () => [
       {
@@ -34,44 +37,156 @@ const Lab = () => {
     [],
   );
 
+  const components_ref = useRef<{
+    slider: HTMLDivElement | null;
+    buttons: { prev: HTMLButtonElement | null; next: HTMLButtonElement | null };
+  }>({
+    slider: null,
+    buttons: {
+      prev: null,
+      next: null,
+    },
+  });
+
+  const handleChangePage = useCallback((dir: 1 | -1) => {
+    if (!components_ref.current.slider) return;
+
+    components_ref.current.slider.scrollBy(
+      components_ref.current.slider.clientWidth * dir,
+      0,
+    );
+  }, []);
+
+  useEffect(() => {
+    if (!components_ref.current.slider) return;
+
+    const handleButtons = () => {
+      const slider = components_ref.current.slider;
+      const { prev, next } = components_ref.current.buttons;
+
+      if (!slider || !prev || !next) return;
+
+      const can_go_left = slider.scrollLeft > 0;
+      const can_go_right =
+        slider.scrollLeft + slider.clientWidth < slider.scrollWidth;
+
+      const changeButtonStyle = (btn: HTMLButtonElement, can_go: boolean) => {
+        btn.classList.toggle("bg-[#363E41]", can_go);
+        btn.classList.toggle("cursor-pointer", can_go);
+        btn.querySelector("svg")!.style.fill = can_go
+          ? "white"
+          : "var(--color-text-secondary-dark)";
+      };
+
+      changeButtonStyle(prev, can_go_left);
+      changeButtonStyle(next, can_go_right);
+    };
+
+    components_ref.current.slider.onscrollend = handleButtons;
+
+    handleButtons();
+
+    return () => {
+      if (!components_ref.current.slider) return;
+
+      components_ref.current.slider.onscrollend = null;
+    };
+  }, []);
+
   return (
     <section id="lab" className="w-screen pt-20">
-      <div className="w-full bg-secondary py-20">
-        <div className="w-full max-w-max-width mx-auto flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <Title label="Lab" tag="lab" variant="light" />
+      <div className="w-full bg-secondary p-20">
+        <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
+          <div className="w-full flex justify-between items-center gap-[inherit]">
+            <div className="w-full flex flex-col gap-2">
+              <Title label="Lab" tag="lab" variant="light" />
 
-            <p className="text-text-secondary-dark!">
-              This is my lab. Here i create components to prove that{" "}
-              <span className="text-white! font-medium!">EVERY</span> design can
-              turn into reality.
-            </p>
+              <p className="text-text-secondary-dark!">
+                This is my lab. Here i create components to prove that{" "}
+                <span className="text-white! font-medium!">EVERY</span> design
+                can turn into reality.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-1">
+              {components_ref.current.slider &&
+                components_ref.current.slider.scrollWidth >
+                  components_ref.current.slider.clientWidth && (
+                  <>
+                    <button
+                      className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
+                      onClick={() => handleChangePage(-1)}
+                      ref={(ref) => {
+                        components_ref.current.buttons.prev = ref;
+                      }}
+                    >
+                      <Icons.ChevronIcon className="w-10 aspect-square fill-white -rotate-90" />
+                    </button>
+                    <button
+                      className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
+                      onClick={() => handleChangePage(1)}
+                      ref={(ref) => {
+                        components_ref.current.buttons.next = ref;
+                      }}
+                    >
+                      <Icons.ChevronIcon className="w-10 aspect-square fill-white rotate-90" />
+                    </button>
+                  </>
+                )}
+            </div>
           </div>
 
-          <div className="w-full grid grid-cols-2 gap-[inherit]">
-            {components.map(({ bg, component, inspiration, colSpan }) => (
-              <div
-                key={bg}
-                className="relative h-full flex justify-center items-center p-6 rounded-lg overflow-hidden"
-                style={{
-                  background: bg,
-                  gridColumn: `span ${colSpan ?? 1}`,
-                }}
-              >
-                {inspiration && (
-                  <div className="absolute top-0 right-0">
-                    <Link href={inspiration} target="_blank">
-                      <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
-                        Inspiration
-                        <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
-                      </button>
-                    </Link>
-                  </div>
-                )}
+          <div
+            className="w-full flex gap-[inherit] overflow-hidden snap-x snap-mandatory transition duration-500 ease-out"
+            ref={(ref) => {
+              components_ref.current.slider = ref;
+            }}
+          >
+            {components
+              .reduce(
+                (prev: (typeof components)[number][][], cur) => {
+                  const last = prev.at(-1)!;
 
-                {component}
-              </div>
-            ))}
+                  if (last?.length >= 3) prev.push([cur]);
+                  else last?.push(cur);
+
+                  return prev;
+                },
+                [[]],
+              )
+              .map((components, idx) => (
+                <div
+                  key={idx}
+                  className="snap-start shrink-0 w-full max-w-max-width grid grid-cols-2 grid-rows-2 gap-[inherit]"
+                >
+                  {components.map(
+                    ({ bg, component, inspiration, colSpan, rowSpan }) => (
+                      <div
+                        key={bg}
+                        className="relative h-full flex justify-center items-center p-6 rounded-lg overflow-hidden"
+                        style={{
+                          background: bg,
+                          gridColumn: `span ${colSpan ?? 1}`,
+                          gridRow: `span ${rowSpan ?? 1}`,
+                        }}
+                      >
+                        {inspiration && (
+                          <div className="absolute top-0 right-0">
+                            <Link href={inspiration} target="_blank">
+                              <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
+                                Inspiration
+                                <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
+                              </button>
+                            </Link>
+                          </div>
+                        )}
+
+                        {component}
+                      </div>
+                    ),
+                  )}
+                </div>
+              ))}
           </div>
         </div>
       </div>

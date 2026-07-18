@@ -21,6 +21,7 @@ const Component1 = () => (
       <div className="flex flex-col gap-1">
         <input
           className="text-[1rem]! px-6 py-3 rounded-lg border-2! border-solid! border-[#f0d9d4]"
+          type="email"
           placeholder="Your email address"
         />
         <button className="text-[1rem]! w-full h-full flex justify-center items-center py-3 rounded-lg bg-[#f55951] text-white! font-medium shadow-[0_0_30px_hsl(338_83%_34%_/0.2)] cursor-pointer">
