@@ -1,13 +1,13 @@
-import React from "react";
-
 const Title = ({
   label,
   tag,
   orientation = "left",
+  variant = "dark",
 }: {
   label: string;
   tag: string;
   orientation?: "left" | "center";
+  variant?: "light" | "dark";
 }) => {
   return (
     <div
@@ -16,8 +16,14 @@ const Title = ({
         alignItems: orientation == "left" ? "start" : "center",
       }}
     >
-      <span className="text-accent! font-mono tracking-tighter">{`<${tag}/>`}</span>
-      <h1>{label}</h1>
+      <span className="text-accent! font-mono tracking-tighter">{`<${tag} />`}</span>
+      <h1
+        style={{
+          color: variant == "light" ? "white" : "",
+        }}
+      >
+        {label}
+      </h1>
     </div>
   );
 };
