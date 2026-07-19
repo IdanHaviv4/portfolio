@@ -24,6 +24,8 @@ import TypescriptIcon from "./typescript";
 import ArrowTopRightIcon from "./arrow-tr";
 import ArrowTopIcon from "./arrow-t";
 import ChevronIcon from "./chevron";
+import CouchIcon from "./couch";
+import CookieIcon from "./cookie";
 
 export default {
   AndroidIcon,
@@ -49,7 +51,10 @@ export default {
   TailwindCSSIcon,
   TanstackIcon,
   TypescriptIcon,
+
   ArrowTopRightIcon,
   ArrowTopIcon,
   ChevronIcon,
+  CouchIcon,
+  CookieIcon,
 };

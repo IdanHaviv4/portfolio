@@ -1,7 +1,11 @@
+import Image from "next/image";
+
 const Component3 = () => (
   <div className="relative bg-white/40 px-8 py-6 rounded-[2rem] flex items-start gap-6 border-2! border-solid! border-white/60 my-10 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:scale-x-95 before:translate-y-[5%] before:bg-white/40 before:rounded-[inherit]">
-    <img
-      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    <Image
+      src="/assets/lab/components/3/pfp.webp"
+      width={100}
+      height={100}
       className="relative shrink-0 w-24 aspect-square rounded-full object-cover border-4! border-solid! border-white!"
       alt="pfp"
     />

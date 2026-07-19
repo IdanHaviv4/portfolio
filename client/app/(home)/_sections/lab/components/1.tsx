@@ -1,8 +1,12 @@
+import Image from "next/image";
+
 const Component1 = () => (
   <div className="bg-white grid grid-cols-[min-content] grid-rows-[repeat(2,min-content)] rounded-2xl overflow-hidden shadow-[0_0_30px_hsl(338_83%_34%_/0.2)]">
     <div className="w-full aspect-video">
-      <img
-        src="https://img.magnific.com/free-photo/ingredients-making-greek-vegetable-casserole-with-rice-tomatoes-feta-cheese_127032-3209.jpg?semt=ais_hybrid&w=740&q=80"
+      <Image
+        src="/assets/lab/components/1/food-banner.webp"
+        width={300}
+        height={300}
         className="w-full h-full object-cover"
         alt="food-newsletter"
       />

@@ -4,35 +4,53 @@ import { Icons, Title } from "@/components";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { Components } from "./";
+import Seperator from "./seperator";
 
 const Lab = () => {
   const components: {
     bg: string;
     component: React.ReactNode;
     inspiration?: string;
-    colSpan?: 1 | 2;
-    rowSpan?: 1 | 2;
-  }[] = useMemo(
+    col_span?: 1 | 2;
+  }[][] = useMemo(
     () => [
-      {
-        bg: "#f1e8e6",
-        component: <Components.Component1 />,
-        inspiration:
-          "https://www.uidesigndaily.com/posts/sketch-recipe-components-subscribe-tags-card-rating-day-1145",
-      },
-      {
-        bg: "#eeeff9",
-        component: <Components.Component2 />,
-        inspiration:
-          "https://www.uidesigndaily.com/posts/sketch-upgrade-plan-pricing-payment-day-1421",
-      },
-      {
-        bg: "linear-gradient(135deg,#c3fef4,#a2c7fd)",
-        component: <Components.Component3 />,
-        inspiration:
-          "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
-        colSpan: 2,
-      },
+      [
+        {
+          bg: "#e9f2ef",
+          component: <Components.Component4 />,
+          inspiration:
+            "https://www.uidesigndaily.com/posts/photoshop-movie-ticket-app-mobile-day-350",
+        },
+        {
+          bg: "#eeeff9",
+          component: <Components.Component2 />,
+          inspiration:
+            "https://www.uidesigndaily.com/posts/sketch-upgrade-plan-pricing-payment-day-1421",
+        },
+      ],
+      [
+        {
+          bg: "linear-gradient(135deg,#fbecf9,#f3ddf8)",
+          component: <Components.Component5 />,
+          inspiration:
+            "https://www.uidesigndaily.com/posts/sketch-cookie-banner-cookies-message-notification-day-1015",
+        },
+        {
+          bg: "#f1e8e6",
+          component: <Components.Component1 />,
+          inspiration:
+            "https://www.uidesigndaily.com/posts/sketch-recipe-components-subscribe-tags-card-rating-day-1145",
+        },
+      ],
+      [
+        {
+          bg: "linear-gradient(135deg,#c3fef4,#a2c7fd)",
+          component: <Components.Component3 />,
+          inspiration:
+            "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
+          col_span: 2,
+        },
+      ],
     ],
     [],
   );
@@ -94,8 +112,10 @@ const Lab = () => {
   }, []);
 
   return (
-    <section id="lab" className="w-screen pt-20">
-      <div className="w-full bg-secondary p-20">
+    <section id="lab" className="w-screen pt-20 flex flex-col">
+      <Seperator className="w-full fill-secondary translate-y-1" />
+
+      <div className="w-full bg-secondary p-10">
         <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
           <div className="w-full flex justify-between items-center gap-[inherit]">
             <div className="w-full flex flex-col gap-2">
@@ -109,30 +129,28 @@ const Lab = () => {
             </div>
 
             <div className="flex items-center gap-1">
-              {components_ref.current.slider &&
-                components_ref.current.slider.scrollWidth >
-                  components_ref.current.slider.clientWidth && (
-                  <>
-                    <button
-                      className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
-                      onClick={() => handleChangePage(-1)}
-                      ref={(ref) => {
-                        components_ref.current.buttons.prev = ref;
-                      }}
-                    >
-                      <Icons.ChevronIcon className="w-10 aspect-square fill-white -rotate-90" />
-                    </button>
-                    <button
-                      className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
-                      onClick={() => handleChangePage(1)}
-                      ref={(ref) => {
-                        components_ref.current.buttons.next = ref;
-                      }}
-                    >
-                      <Icons.ChevronIcon className="w-10 aspect-square fill-white rotate-90" />
-                    </button>
-                  </>
-                )}
+              {components.length > 1 && (
+                <>
+                  <button
+                    className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
+                    onClick={() => handleChangePage(-1)}
+                    ref={(ref) => {
+                      components_ref.current.buttons.prev = ref;
+                    }}
+                  >
+                    <Icons.ChevronIcon className="w-10 aspect-square fill-white -rotate-90" />
+                  </button>
+                  <button
+                    className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
+                    onClick={() => handleChangePage(1)}
+                    ref={(ref) => {
+                      components_ref.current.buttons.next = ref;
+                    }}
+                  >
+                    <Icons.ChevronIcon className="w-10 aspect-square fill-white rotate-90" />
+                  </button>
+                </>
+              )}
             </div>
           </div>
 
@@ -142,54 +160,41 @@ const Lab = () => {
               components_ref.current.slider = ref;
             }}
           >
-            {components
-              .reduce(
-                (prev: (typeof components)[number][][], cur) => {
-                  const last = prev.at(-1)!;
-
-                  if (last?.length >= 3) prev.push([cur]);
-                  else last?.push(cur);
-
-                  return prev;
-                },
-                [[]],
-              )
-              .map((components, idx) => (
-                <div
-                  key={idx}
-                  className="snap-start shrink-0 w-full max-w-max-width grid grid-cols-2 grid-rows-2 gap-[inherit]"
-                >
-                  {components.map(
-                    ({ bg, component, inspiration, colSpan, rowSpan }) => (
-                      <div
-                        key={bg}
-                        className="relative h-full flex justify-center items-center p-6 rounded-lg overflow-hidden"
-                        style={{
-                          background: bg,
-                          gridColumn: `span ${colSpan ?? 1}`,
-                          gridRow: `span ${rowSpan ?? 1}`,
-                        }}
-                      >
-                        {inspiration && (
-                          <div className="absolute top-0 right-0">
-                            <Link href={inspiration} target="_blank">
-                              <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
-                                Inspiration
-                                <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
-                              </button>
-                            </Link>
-                          </div>
-                        )}
-
-                        {component}
+            {components.map((components, idx) => (
+              <div
+                key={idx}
+                className="snap-start shrink-0 w-full max-w-max-width grid grid-cols-2 gap-[inherit]"
+              >
+                {components.map(({ bg, component, inspiration, col_span }) => (
+                  <div
+                    key={bg}
+                    className="relative h-full flex justify-center items-center p-6 rounded-lg overflow-hidden"
+                    style={{
+                      background: bg,
+                      gridColumn: `span ${col_span ?? 1}`,
+                    }}
+                  >
+                    {inspiration && (
+                      <div className="absolute top-0 right-0 z-20">
+                        <Link href={inspiration} target="_blank">
+                          <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
+                            Inspiration
+                            <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
+                          </button>
+                        </Link>
                       </div>
-                    ),
-                  )}
-                </div>
-              ))}
+                    )}
+
+                    {component}
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
+      <Seperator className="w-full fill-secondary rotate-180 -translate-y-1" />
     </section>
   );
 };
