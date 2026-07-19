@@ -34,7 +34,10 @@ const Component4 = () => {
             <span className="text-[1rem]! text-white! font-medium! leading-4">
               Minions and Monsters
             </span>
-            <span className="text-[0.8rem]! text-[#ebebeb]!">
+            <span
+              className="text-[0.8rem]! text-[#ebebeb]!"
+              suppressHydrationWarning
+            >
               {moment().utc().format("MMM DD, HH:mm")} · Grand Rex, Paris
             </span>
           </div>
@@ -126,6 +129,7 @@ const Component4 = () => {
         </div>
 
         <button
+          suppressHydrationWarning
           disabled={selected.length <= 0}
           className={`w-fit h-full px-6 text-[1rem]! bg-[#ffffff] rounded-lg cursor-pointer transition duration-200 ease-in-out disabled:cursor-auto disabled:bg-[#f2f2f2] disabled:text-[#63747a]!`}
         >

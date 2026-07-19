@@ -112,10 +112,12 @@ const Lab = () => {
   }, []);
 
   return (
-    <section id="lab" className="w-screen pt-20 flex flex-col">
-      <Seperator className="w-full fill-secondary translate-y-1" />
+    <section id="lab" className="w-screen flex flex-col pt-0!">
+      <div className="relative w-full z-10 before:w-full before:h-px before:bg-secondary before:absolute before:bottom-0 before:z-5 before:left-0">
+        <Seperator className="w-full fill-secondary z-10" />
+      </div>
 
-      <div className="w-full bg-secondary p-10">
+      <div className="w-full bg-secondary p-6">
         <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
           <div className="w-full flex justify-between items-center gap-[inherit]">
             <div className="w-full flex flex-col gap-2">
@@ -194,7 +196,9 @@ const Lab = () => {
         </div>
       </div>
 
-      <Seperator className="w-full fill-secondary rotate-180 -translate-y-1" />
+      <div className="relative w-full z-10 before:w-full before:h-px before:bg-secondary before:absolute before:top-0 before:z-5 before:left-0">
+        <Seperator className="w-full fill-secondary z-10 rotate-180" />
+      </div>
     </section>
   );
 };
