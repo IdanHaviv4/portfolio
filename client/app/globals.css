@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply bg-primary;
+  @apply bg-primary overflow-x-hidden;
 }
 
 body:has(dialog[open]) {

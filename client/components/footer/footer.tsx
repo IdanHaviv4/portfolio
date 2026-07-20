@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="w-full bg-secondary">
         <div className="relative before:absolute before:top-0 before:left-0 before:-translate-y-1 before:w-full before:h-2 before:bg-secondary"></div>
 
-        <div className="w-full px-5 pt-4 pb-20">
+        <div className="w-full px-6 pt-4 pb-20">
           <div className="w-full max-w-max-width mx-auto flex justify-between">
             <div className="flex flex-col justify-between gap-10 items-start">
               <div className="relative">

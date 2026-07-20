@@ -56,7 +56,7 @@ const Project = ({
   }, []);
 
   return (
-    <div className="grid grid-cols-2 items-end gap-5">
+    <div className="grid grid-cols-1 items-end gap-5 md:grid-cols-2">
       <div
         className="w-full h-fit rounded-lg overflow-hidden cursor-pointer"
         ref={(ref) => {

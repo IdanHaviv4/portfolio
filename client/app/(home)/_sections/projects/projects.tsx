@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full flex flex-col items-start gap-6 pb-20"
+      className="w-full flex flex-col items-start gap-10 pb-20 md:gap-6"
     >
       <Title label={"My Work"} tag={"projects"} />
 
