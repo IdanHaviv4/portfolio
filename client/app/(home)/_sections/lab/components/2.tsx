@@ -1,7 +1,7 @@
 const Component2 = () => (
-  <div className="bg-[#ffffff] rounded-2xl p-6 flex flex-col gap-6 overflow-hidden shadow-[0_0_30px_hsl(204_29%_66%_/0.2)]">
-    <div className="mx-auto px-4 rounded-full bg-[#fbfbff] border-2! border-solid! border-[#f2f3fb]!">
-      <span className="text-[0.8rem]! leading-8">
+  <div className="bg-[#ffffff] rounded-2xl p-2 flex flex-col gap-6 overflow-hidden shadow-[0_0_30px_hsl(204_29%_66%_/0.2)] xs:p-6">
+    <div className="mx-auto px-2 rounded-full bg-[#fbfbff] border-2! border-solid! border-[#f2f3fb]! xs:px-4">
+      <span className="text-[0.75rem]! leading-8 xs:text-[0.8rem]!">
         Offer includes{" "}
         <span className="text-[0.8rem]! font-medium">first month free</span> of
         charge
@@ -10,14 +10,14 @@ const Component2 = () => (
 
     <div className="flex flex-col rounded-lg overflow-hidden">
       <div className="flex justify-between items-start gap-6 bg-linear-to-r from-[#987ef7] to-[#7074e0] p-6 rounded-t-lg">
-        <div className="flex flex-col">
-          <span className="text-[1rem]! text-white! font-medium">
+        <div className="flex flex-col gap-1">
+          <span className="text-[1rem]! text-white! font-medium leading-4">
             Premium Individual
           </span>
           <span className="text-[0.8rem]! text-[#e6e6e6]!">1 account</span>
         </div>
 
-        <span className="text-[1rem]! text-white! font-medium!">
+        <span className="text-[1rem]! text-white! font-medium! leading-4">
           $12
           <span className="text-[0.8rem]! text-[#e6e6e6]!">/month</span>
         </span>

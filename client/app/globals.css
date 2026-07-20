@@ -12,6 +12,8 @@
   --color-text-secondary-dark: #cfcfcf;
 
   --spacing-max-width: 52.75rem;
+
+  --breakpoint-xs: 28.75rem;
 }
 
 * {

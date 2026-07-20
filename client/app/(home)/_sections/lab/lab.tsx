@@ -12,45 +12,39 @@ const Lab = () => {
     component: React.ReactNode;
     inspiration?: string;
     col_span?: 1 | 2;
-  }[][] = useMemo(
+  }[] = useMemo(
     () => [
-      [
-        {
-          bg: "#e9f2ef",
-          component: <Components.Component4 />,
-          inspiration:
-            "https://www.uidesigndaily.com/posts/photoshop-movie-ticket-app-mobile-day-350",
-        },
-        {
-          bg: "#eeeff9",
-          component: <Components.Component2 />,
-          inspiration:
-            "https://www.uidesigndaily.com/posts/sketch-upgrade-plan-pricing-payment-day-1421",
-        },
-      ],
-      [
-        {
-          bg: "linear-gradient(135deg,#fbecf9,#f3ddf8)",
-          component: <Components.Component5 />,
-          inspiration:
-            "https://www.uidesigndaily.com/posts/sketch-cookie-banner-cookies-message-notification-day-1015",
-        },
-        {
-          bg: "#f1e8e6",
-          component: <Components.Component1 />,
-          inspiration:
-            "https://www.uidesigndaily.com/posts/sketch-recipe-components-subscribe-tags-card-rating-day-1145",
-        },
-      ],
-      [
-        {
-          bg: "linear-gradient(135deg,#c3fef4,#a2c7fd)",
-          component: <Components.Component3 />,
-          inspiration:
-            "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
-          col_span: 2,
-        },
-      ],
+      {
+        bg: "#e9f2ef",
+        component: <Components.Component4 />,
+        inspiration:
+          "https://www.uidesigndaily.com/posts/photoshop-movie-ticket-app-mobile-day-350",
+      },
+      {
+        bg: "#eeeff9",
+        component: <Components.Component2 />,
+        inspiration:
+          "https://www.uidesigndaily.com/posts/sketch-upgrade-plan-pricing-payment-day-1421",
+      },
+      {
+        bg: "linear-gradient(135deg,#fbecf9,#f3ddf8)",
+        component: <Components.Component5 />,
+        inspiration:
+          "https://www.uidesigndaily.com/posts/sketch-cookie-banner-cookies-message-notification-day-1015",
+      },
+      {
+        bg: "#f1e8e6",
+        component: <Components.Component1 />,
+        inspiration:
+          "https://www.uidesigndaily.com/posts/sketch-recipe-components-subscribe-tags-card-rating-day-1145",
+      },
+      {
+        bg: "linear-gradient(135deg,#c3fef4,#a2c7fd)",
+        component: <Components.Component3 />,
+        inspiration:
+          "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
+        col_span: 2,
+      },
     ],
     [],
   );
@@ -117,9 +111,9 @@ const Lab = () => {
         <Seperator className="w-full fill-secondary z-10" />
       </div>
 
-      <div className="w-full bg-secondary p-6">
+      <div className="w-full bg-secondary px-3 xs:px-6">
         <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
-          <div className="w-full flex justify-between items-center gap-[inherit]">
+          <div className="w-full flex flex-col items-end gap-[inherit] md:justify-between md:flex-row md:items-center">
             <div className="w-full flex flex-col gap-2">
               <Title label="Lab" tag="lab" variant="light" />
 
@@ -157,39 +151,40 @@ const Lab = () => {
           </div>
 
           <div
-            className="w-full flex gap-[inherit] overflow-hidden snap-x snap-mandatory transition duration-500 ease-out"
+            className="w-full grid gap-[inherit] overflow-scroll snap-x snap-mandatory transition duration-500 ease-out [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--adder:0]"
             ref={(ref) => {
               components_ref.current.slider = ref;
             }}
+            style={
+              {
+                gridTemplateColumns: `repeat(calc(${components.length} + var(--adder, ${components.reduce(
+                  (prev, cur) => prev + ((cur.col_span ?? 1) - 1),
+                  0,
+                )})), var(--col-w))`,
+              } as React.CSSProperties
+            }
           >
-            {components.map((components, idx) => (
+            {components.map(({ bg, component, inspiration, col_span }) => (
               <div
-                key={idx}
-                className="snap-start shrink-0 w-full max-w-max-width grid grid-cols-2 gap-[inherit]"
+                key={bg}
+                className="shrink-0 snap-start relative w-full h-full flex justify-center items-center p-2 rounded-lg overflow-hidden not-lg:col-span-1! sm:p-6"
+                style={{
+                  background: bg,
+                  gridColumn: `span ${col_span}`,
+                }}
               >
-                {components.map(({ bg, component, inspiration, col_span }) => (
-                  <div
-                    key={bg}
-                    className="relative h-full flex justify-center items-center p-6 rounded-lg overflow-hidden"
-                    style={{
-                      background: bg,
-                      gridColumn: `span ${col_span ?? 1}`,
-                    }}
-                  >
-                    {inspiration && (
-                      <div className="absolute top-0 right-0 z-20">
-                        <Link href={inspiration} target="_blank">
-                          <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
-                            Inspiration
-                            <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
-                          </button>
-                        </Link>
-                      </div>
-                    )}
-
-                    {component}
+                {inspiration && (
+                  <div className="absolute top-0 right-0 z-20">
+                    <Link href={inspiration} target="_blank">
+                      <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
+                        Inspiration
+                        <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
+                      </button>
+                    </Link>
                   </div>
-                ))}
+                )}
+
+                {component}
               </div>
             ))}
           </div>

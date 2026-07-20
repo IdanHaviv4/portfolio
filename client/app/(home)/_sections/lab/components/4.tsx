@@ -52,7 +52,7 @@ const Component4 = () => {
         }}
       >
         <div
-          className="w-full flex justify-center items-center gap-3 mb-4"
+          className="w-full flex justify-center items-center gap-3 mb-4 not-sm:hidden"
           style={{
             gridColumn: `span ${cinema.cols + 2}`,
           }}
