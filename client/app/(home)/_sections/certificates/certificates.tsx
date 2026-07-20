@@ -24,17 +24,19 @@ const Certificates = () => {
 
       <Title label="Certificates" tag="certificates" orientation="center" />
 
-      <div className="w-full grid grid-cols-6 gap-2">
+      <div className="w-fit grid grid-cols-1 gap-2 md:grid-cols-6">
         {new Array(5).fill(0).map((_, idx, arr) => {
           const in_row = Math.floor(idx / 3);
           const last_row = Math.floor(arr.length / 3);
 
           return (
             <Fragment key={idx}>
-              {in_row == last_row && idx % 3 == 0 && <div></div>}
+              {in_row == last_row && idx % 3 == 0 && (
+                <div className="not-md:hidden"></div>
+              )}
 
               <div
-                className="group col-span-2 w-full h-full rounded-lg overflow-hidden cursor-pointer border-2 border-solid border-section"
+                className="group w-fit max-w-100 h-full rounded-lg overflow-hidden cursor-pointer border-2 border-solid border-section md:col-span-2"
                 onClick={() => {
                   if (!dialog_ref.current) return;
 
@@ -44,11 +46,9 @@ const Certificates = () => {
                   img.alt = `certificate-${idx + 1}`;
 
                   img.onload = () => {
-                    img.style.width = "auto";
-                    img.style.height = "auto";
-
-                    if (img.width > img.height) img.style.height = "512px";
-                    else img.style.width = "512px";
+                    if (img.width > img.height)
+                      img.style.width = "min(720px,100vw)";
+                    else img.style.width = "min(512px,100vw)";
 
                     dialog_ref.current?.showModal();
                     img.onload = null;
@@ -59,7 +59,7 @@ const Certificates = () => {
                   src={`/assets/certificates/${idx + 1}.jpg`}
                   width={512}
                   height={512}
-                  className="w-full h-full object-cover transition duration-200 ease-out group-hover:scale-105"
+                  className="w-auto h-auto object-cover transition duration-200 ease-out group-hover:scale-105"
                   alt={`certificate-${idx + 1}`}
                 />
               </div>
