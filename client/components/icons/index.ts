@@ -21,11 +21,13 @@ import SQLIcon from "./sql";
 import TailwindCSSIcon from "./tailwindcss";
 import TanstackIcon from "./tanstack";
 import TypescriptIcon from "./typescript";
+
 import ArrowTopRightIcon from "./arrow-tr";
 import ArrowTopIcon from "./arrow-t";
 import ChevronIcon from "./chevron";
 import CouchIcon from "./couch";
 import CookieIcon from "./cookie";
+import MenuIcon from "./menu";
 
 export default {
   AndroidIcon,
@@ -57,4 +59,5 @@ export default {
   ChevronIcon,
   CouchIcon,
   CookieIcon,
+  MenuIcon,
 };

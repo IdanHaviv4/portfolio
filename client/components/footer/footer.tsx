@@ -14,17 +14,17 @@ const Footer = () => {
       <div className="w-full bg-secondary">
         <div className="relative before:absolute before:top-0 before:left-0 before:-translate-y-1 before:w-full before:h-2 before:bg-secondary"></div>
 
-        <div className="w-full px-6 pt-4 pb-20">
+        <div className="w-full px-6 pt-4 pb-20 not-xs:pb-10">
           <div className="w-full max-w-max-width mx-auto flex justify-between">
             <div className="flex flex-col justify-between gap-10 items-start">
               <div className="relative">
-                <h1 className="text-[6rem]! text-white! leading-16!">
+                <h1 className="text-[6rem]! text-white! leading-16! not-xs:text-[4.5rem]! not-xs:leading-12!">
                   Idan
                   <br />
                   Haviv
                 </h1>
 
-                <Signature className="w-28 absolute top-[85%] left-[85%]" />
+                <Signature className="w-28 absolute top-[85%] left-[85%] not-xs:w-24" />
               </div>
 
               <p className="text-text-secondary-dark!">
@@ -32,7 +32,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="flex flex-col justify-between gap-10">
+            <div className="flex flex-col justify-between gap-10 not-md:hidden">
               <div className="grid grid-cols-[repeat(1,min-content)] gap-2">
                 <Resume className="w-fit bg-[#363E41]!" />
 

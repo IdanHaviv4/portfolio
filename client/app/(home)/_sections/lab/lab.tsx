@@ -111,7 +111,7 @@ const Lab = () => {
         <Seperator className="w-full fill-secondary z-10" />
       </div>
 
-      <div className="w-full bg-secondary px-3 xs:px-6">
+      <div className="w-full bg-secondary px-3 xs:px-6 not-lg:py-6">
         <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
           <div className="w-full flex flex-col items-end gap-[inherit] md:justify-between md:flex-row md:items-center">
             <div className="w-full flex flex-col gap-2">
