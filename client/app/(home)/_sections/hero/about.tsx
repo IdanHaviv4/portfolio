@@ -1,9 +1,9 @@
 import moment from "moment";
 
-const About = () => {
+const About = ({ className }: { className: string }) => {
   return (
-    <div className="w-full col-span-2 bg-section rounded-lg px-5 py-4">
-      <p className="w-full">
+    <div className={`w-full bg-section rounded-lg px-5 py-4 ${className}`}>
+      <p className="w-full not-xs:text-[1rem]!">
         A (mostly) self-taught, curious and fast learner who has been devoted to
         computer science for{" "}
         {moment()

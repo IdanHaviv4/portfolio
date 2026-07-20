@@ -1,14 +1,16 @@
 import Image from "next/image";
 
-const Location = () => {
+const Location = ({ className }: { className: string }) => {
   return (
-    <div className="row-span-3 h-full flex flex-col justify-between gap-4 items-start bg-section rounded-lg overflow-hidden group cursor-pointer relative isolate">
+    <div
+      className={`h-full flex flex-col justify-between gap-4 items-start bg-section rounded-lg overflow-hidden group cursor-pointer relative ${className} not-md:w-full not-md:items-end`}
+    >
       <div className="relative z-10 w-full flex flex-col px-5 py-4 transition duration-700 ease-out group-hover:-translate-y-1">
-        <p>Located in</p>
+        <p className="not-sm:text-[1rem]!">Located in</p>
         <h2>Hadera, Israel 🇮🇱</h2>
       </div>
 
-      <div className="relative w-72 aspect-1.75/1">
+      <div className="relative w-72 aspect-1.75/1 not-sm:w-56">
         <Image
           src="/assets/hero/globe.png"
           width={512}

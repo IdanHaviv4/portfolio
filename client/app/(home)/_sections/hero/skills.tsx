@@ -1,7 +1,7 @@
 import { Icons } from "@/components";
 import Tooltip from "@/components/tooltip";
 
-const Skills = () => {
+const Skills = ({ className }: { className: string }) => {
   const skills = [
     { icon: <Icons.HTMLIcon />, label: "HTML" },
     { icon: <Icons.CSSIcon />, label: "CSS" },
@@ -22,7 +22,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="row-span-2 w-fit h-full grid grid-cols-[repeat(4,min-content)] grid-rows-4 gap-0.5">
+    <div className={`w-fit h-full grid grid-cols-4 gap-0.5 ${className}`}>
       {skills.map(({ icon, label }, idx) => (
         <Tooltip
           label={label}

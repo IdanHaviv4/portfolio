@@ -1,3 +1,4 @@
+export { default as Name } from "./name";
 export { default as Location } from "./location";
 export { default as Skills } from "./skills";
 export { default as About } from "./about";

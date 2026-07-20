@@ -5,7 +5,13 @@ import Icons from "../icons";
 import { Tooltip } from "@/components";
 import { useCallback, useRef } from "react";
 
-const Socials = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
+const Socials = ({
+  variant = "light",
+  className = "",
+}: {
+  variant?: "light" | "dark";
+  className?: string;
+}) => {
   const gmail_copied_ref = useRef<{
     el: HTMLDivElement | null;
     interval: NodeJS.Timeout | null;
@@ -28,7 +34,7 @@ const Socials = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
   }, []);
 
   return (
-    <div className="w-full h-fit grid grid-cols-3 gap-0.5">
+    <div className={`w-full h-fit grid grid-cols-3 gap-0.5 ${className}`}>
       <Tooltip label="Gmail" variant={variant} className="rounded-full">
         <div
           className="absolute top-0 right-0 z-20 text-[0.8rem]! font-medium! text-[#17c237]! bg-[#d3f4d9] px-2 rounded-full pointer-events-none translate-x-1/4 opacity-0 translate-y-1/4 transition duration-200 ease-out"

@@ -1,6 +1,6 @@
 "use client";
 
-import { About, Age, Location, Skills, SecondarySkills } from "./";
+import { About, Age, Location, Skills, SecondarySkills, Name } from "./";
 import Socials from "@/components/socials";
 import Resume from "@/components/resume";
 import dynamic from "next/dynamic";
@@ -13,44 +13,82 @@ const Fact = dynamic(() => import("./fact"), {
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="w-full max-w-max-width h-min grid grid-cols-[repeat(3,min-content)] grid-rows-[repeat(5,min-content)] gap-5"
-    >
-      <div className="group relative w-full h-full flex flex-col gap-2 rounded-lg overflow-hidden cursor-pointer">
-        <h1>Idan Haviv</h1>
+    <>
+      <section
+        id="home"
+        className="w-full max-w-max-width h-min grid grid-cols-[1fr_min-content_1fr] gap-5 not-lg:hidden"
+      >
+        <Name />
 
-        <div className="flex items-center gap-2">
-          <div className="w-2 aspect-square rounded-full bg-[#00D218]"></div>
+        <Age />
 
-          <p className="text-[1rem]!">Available to work</p>
+        <Skills className="row-span-2 grid-cols-4" />
+
+        <About className="col-span-2" />
+
+        <Location className="row-span-3" />
+
+        <Resume />
+
+        <div className="w-full h-fit flex flex-col gap-1 z-20">
+          <p>Also experienced with</p>
+
+          <SecondarySkills />
         </div>
 
-        <Image
-          src="/assets/hero/hi.png"
-          width={150}
-          height={150}
-          className="absolute right-0 bottom-0 origin-bottom-right translate-full scale-105 transition duration-700 ease-out group-hover:translate-x-1/5 group-hover:translate-y-0 group-hover:-rotate-15"
-          alt="hi-img"
-        />
-      </div>
+        <Fact className="row-span-2" />
 
-      <Age />
+        <Socials />
+      </section>
 
-      <Skills />
+      <section
+        id="home"
+        className="w-fit max-w-max-width h-min grid gap-5 grid-cols-[repeat(2,min-content)] not-md:hidden lg:hidden"
+      >
+        <Name />
 
-      <About />
+        <Fact />
 
-      <Location />
+        <About className="col-span-2" />
 
-      <Resume />
+        <Location className="row-span-3" />
 
-      <SecondarySkills />
+        <Age />
 
-      <Fact />
+        <Socials />
 
-      <Socials />
-    </section>
+        <Resume className="col-span-1! row-span-2!" />
+
+        <SecondarySkills className="z-20" />
+
+        <Skills className="w-full col-span-2 grid-cols-8" />
+      </section>
+
+      <section
+        id="home"
+        className="w-fit max-w-90 h-min grid grid-cols-[1fr_min-content] gap-5 md:hidden"
+      >
+        <Name className="col-span-2" />
+
+        <About className="col-span-2" />
+
+        <Location className="col-span-2" />
+
+        <Fact />
+
+        <SecondarySkills className="w-20 row-span-2 grid-cols-1!" />
+
+        <Resume className="row-span-1! h-full px-8! py-6!" />
+
+        <Socials />
+
+        <Age />
+
+        <div></div>
+
+        <Skills className="col-span-2 w-full" />
+      </section>
+    </>
   );
 };
 

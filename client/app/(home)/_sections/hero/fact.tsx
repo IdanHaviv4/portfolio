@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 
-const Fact = () => {
+const Fact = ({ className = "" }: { className?: string }) => {
   const facts = useMemo(
     () => [
       {
@@ -46,11 +46,13 @@ const Fact = () => {
   );
 
   return (
-    <div className="group row-span-2 w-full h-full rounded-lg flex flex-col justify-center items-center cursor-pointer perspective-midrange">
-      <div className="w-full h-full relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center *:bg-section">
+    <div
+      className={`group w-full h-full rounded-lg flex flex-col justify-center items-center cursor-pointer perspective-midrange ${className}`}
+    >
+      <div className="w-full min-w-48 h-full min-h-10 relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center *:bg-section xs:min-w-68 xs:min-h-30">
         <div>
-          <p className="text-[1rem]!">Fun Fact (hover to reveal)</p>
-          <h2>{fact.label}</h2>
+          <p className="text-[1rem]!">Fun Fact</p>
+          <h2 className="not-xs:text-[1.1rem]!">{fact.label}</h2>
         </div>
 
         <div className="rotate-y-180 overflow-hidden">{fact.answer}</div>
