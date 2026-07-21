@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="w-full max-w-max-width mx-auto flex justify-between">
             <div className="flex flex-col justify-between gap-10 items-start">
               <div className="relative">
-                <h1 className="text-[6rem]! text-white! leading-16! not-xs:text-[4.5rem]! not-xs:leading-12!">
+                <h1 className="text-[6rem]! text-white! leading-20! not-xs:text-[4.5rem]! not-xs:leading-16!">
                   Idan
                   <br />
                   Haviv

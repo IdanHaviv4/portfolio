@@ -151,7 +151,7 @@ const Lab = () => {
           </div>
 
           <div
-            className="w-full grid gap-[inherit] overflow-scroll snap-x snap-mandatory transition duration-500 ease-out [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--adder:0]"
+            className="w-full grid gap-[inherit] overflow-hidden snap-x snap-mandatory transition duration-500 ease-out [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--adder:0]"
             ref={(ref) => {
               components_ref.current.slider = ref;
             }}

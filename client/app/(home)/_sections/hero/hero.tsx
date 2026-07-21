@@ -74,7 +74,7 @@ const Hero = () => {
 
         <Location className="col-span-2" />
 
-        <Fact />
+        <Fact className="min-w-48 min-h-10" />
 
         <SecondarySkills className="w-20 row-span-2 grid-cols-1!" />
 

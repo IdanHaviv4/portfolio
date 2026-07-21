@@ -10,7 +10,7 @@ const Location = ({ className }: { className: string }) => {
         <h2>Hadera, Israel 🇮🇱</h2>
       </div>
 
-      <div className="relative w-72 aspect-1.75/1 not-sm:w-56">
+      <div className="relative w-72 h-36 not-sm:w-56 not-sm:h-28">
         <Image
           src="/assets/hero/globe.png"
           width={512}
