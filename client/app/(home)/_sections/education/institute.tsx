@@ -33,6 +33,7 @@ const Institute = ({
             <div className="w-8 aspect-square rounded-full bg-section sm:p-1 sm:w-12">
               <img
                 src={`/assets/education/${idx + 1}.png`}
+                loading="lazy"
                 className="w-full h-full object-contain"
                 alt={`institution-${idx + 1}`}
               />

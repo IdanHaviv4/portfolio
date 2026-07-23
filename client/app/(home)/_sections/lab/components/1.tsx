@@ -7,6 +7,7 @@ const Component1 = () => (
         src="/assets/lab/components/1/food-banner.jpg"
         width={300}
         height={300}
+        loading="lazy"
         className="w-full h-full object-cover"
         alt="food-newsletter"
       />

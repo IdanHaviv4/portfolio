@@ -68,6 +68,7 @@ const Project = ({
           src={`/assets/projects/${idx + 1}.jpg`}
           width={1440}
           height={1024}
+          loading="lazy"
           alt={`project-${idx + 1}`}
           className="w-full h-auto transition duration-200 ease-out"
         />

@@ -23,26 +23,28 @@ const Nav = () => {
       for (const classname of ["opacity-0", "translate-y-1/4"])
         name_ref.current?.classList.toggle(
           classname,
-          hide ?? (window.scrollY <= 73 && pathname == "/"),
+          hide ?? (window.scrollY <= 73 && pathname.split("#").at(0) == "/"),
         );
     },
     [pathname],
   );
 
-  const toggleMobileNav = useCallback((open?: boolean) => {
-    if (!nav_ref.current) return;
+  const toggleMobileNav = useCallback(
+    (open?: boolean) => {
+      if (!nav_ref.current) return;
 
-    const should_open = open ?? !nav_ref.current.classList.contains("h-full");
+      const should_open = open ?? !nav_ref.current.classList.contains("h-full");
 
-    if (should_open) toggleName(false);
-    else toggleName();
+      if (should_open) toggleName(false);
+      else toggleName();
 
-    for (const classname of ["h-full", "opened"])
-      nav_ref.current?.classList.toggle(classname, should_open);
-  }, []);
+      for (const classname of ["h-full", "opened"])
+        nav_ref.current?.classList.toggle(classname, should_open);
+    },
+    [pathname],
+  );
 
   useEffect(() => {
-    toggleName();
     toggleMobileNav(false);
 
     window.onscroll = () => toggleName();

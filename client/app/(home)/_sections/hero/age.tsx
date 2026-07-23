@@ -2,7 +2,7 @@ import moment from "moment";
 
 const Age = () => {
   return (
-    <div className="w-full h-fit bg-section rounded-lg flex flex-col gap-2 justify-center items-center md:py-8 not-md:h-full">
+    <div className="w-full h-full bg-section rounded-lg flex flex-col gap-2 justify-center items-center md:py-8">
       <h2>
         {moment()
           .utc()

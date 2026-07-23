@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { Components } from "./";
 import Seperator from "./seperator";
+import Image from "next/image";
 
 const Lab = () => {
   const components: {
@@ -39,7 +40,7 @@ const Lab = () => {
           "https://www.uidesigndaily.com/posts/sketch-recipe-components-subscribe-tags-card-rating-day-1145",
       },
       {
-        bg: "linear-gradient(135deg,#c3fef4,#a2c7fd)",
+        bg: "/assets/lab/components/3/bg.jpg",
         component: <Components.Component3 />,
         inspiration:
           "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
@@ -80,7 +81,7 @@ const Lab = () => {
 
       const can_go_left = slider.scrollLeft > 0;
       const can_go_right =
-        slider.scrollLeft + slider.clientWidth < slider.scrollWidth;
+        slider.scrollLeft + slider.clientWidth + 10 < slider.scrollWidth;
 
       const changeButtonStyle = (btn: HTMLButtonElement, can_go: boolean) => {
         btn.classList.toggle("bg-[#363E41]", can_go);
@@ -118,9 +119,9 @@ const Lab = () => {
               <Title label="Lab" tag="lab" variant="light" />
 
               <p className="text-text-secondary-dark!">
-                This is my lab. Here i create components to prove that{" "}
-                <span className="text-white! font-medium!">EVERY</span> design
-                can turn into reality.
+                This is my lab. Here i create interactive components to prove
+                that <span className="text-white! font-medium!">EVERY</span>{" "}
+                design can turn into reality.
               </p>
             </div>
 
@@ -164,15 +165,25 @@ const Lab = () => {
               } as React.CSSProperties
             }
           >
-            {components.map(({ bg, component, inspiration, col_span }) => (
+            {components.map(({ bg, component, inspiration, col_span }, idx) => (
               <div
                 key={bg}
-                className="shrink-0 snap-start relative w-full h-full flex justify-center items-center p-2 rounded-lg overflow-hidden not-lg:col-span-1! sm:p-6"
+                className="relative shrink-0 snap-start relative w-full h-full bg-cover bg-center flex justify-center items-center p-2 rounded-lg overflow-hidden not-lg:col-span-1! sm:p-6"
                 style={{
                   background: bg,
                   gridColumn: `span ${col_span}`,
                 }}
               >
+                {bg.startsWith("/") && (
+                  <Image
+                    src={bg}
+                    fill
+                    loading="lazy"
+                    className="object-cover object-center"
+                    alt={`component-${idx + 1}-bg`}
+                  />
+                )}
+
                 {inspiration && (
                   <div className="absolute top-0 right-0 z-20">
                     <Link href={inspiration} target="_blank">

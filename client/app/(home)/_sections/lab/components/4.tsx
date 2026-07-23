@@ -25,6 +25,7 @@ const Component4 = () => {
           src="/assets/lab/components/4/movie-banner.jpg"
           width={400}
           height={400}
+          loading="lazy"
           className="w-full h-full object-cover"
           alt="movie-banner"
         />

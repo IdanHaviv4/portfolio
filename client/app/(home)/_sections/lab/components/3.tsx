@@ -7,6 +7,7 @@ const Component3 = () => (
         src="/assets/lab/components/3/pfp.webp"
         width={100}
         height={100}
+        loading="lazy"
         className="shrink-0 w-16 aspect-square rounded-full object-cover border-4! border-solid! border-white! sm:w-24"
         alt="pfp"
       />
@@ -58,7 +59,7 @@ const Component3 = () => (
         <button className="px-4 py-2 rounded-lg bg-[#0a0a14] text-[0.8rem]! text-white! border-2! border-solid border-[#0a0a14] cursor-pointer sm:text-[1rem]! sm:px-6">
           Follow
         </button>
-        <button className="px-4 py-2 rounded-lg text-[0.8rem]! text-[#0a0a14]! border-2! border-solid border-[#0a0a14] cursor-pointer sm:text-[1rem]! sm:px-6">
+        <button className="px-4 py-2 rounded-lg text-[0.8rem]! text-[#0a0a14]! border! border-solid border-[#4e5461] cursor-pointer sm:text-[1rem]! sm:px-6">
           View profile
         </button>
       </div>

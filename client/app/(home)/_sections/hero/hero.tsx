@@ -30,7 +30,7 @@ const Hero = () => {
 
         <Resume />
 
-        <div className="w-full h-fit flex flex-col gap-1 z-20">
+        <div className="w-full h-fit flex flex-col gap-1">
           <p>Also experienced with</p>
 
           <SecondarySkills />

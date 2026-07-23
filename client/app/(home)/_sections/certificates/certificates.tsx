@@ -59,6 +59,7 @@ const Certificates = () => {
                   src={`/assets/certificates/${idx + 1}.jpg`}
                   width={512}
                   height={512}
+                  loading="lazy"
                   className="w-auto h-auto object-cover transition duration-200 ease-out group-hover:scale-105"
                   alt={`certificate-${idx + 1}`}
                 />
