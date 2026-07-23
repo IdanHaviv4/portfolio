@@ -10,13 +10,13 @@ const Location = ({ className }: { className: string }) => {
         <h2>Hadera, Israel 🇮🇱</h2>
       </div>
 
-      <div className="relative w-72 h-36 not-sm:w-56 not-sm:h-28">
+      <div className="relative w-72 h-40 not-sm:w-56 not-sm:h-28">
         <Image
           src="/assets/hero/globe.png"
           width={512}
           height={512}
           loading="lazy"
-          className="w-full h-full object-cover object-top scale-110 origin-top transition duration-700 ease-out group-hover:scale-[1.3] group-hover:-rotate-15 group-hover:translate-x-[-10%]"
+          className="w-full h-full object-cover object-top scale-110 origin-top transition duration-700 ease-out group-hover:scale-[1.5] group-hover:-rotate-15 group-hover:translate-[-10%]"
           alt="globe"
         />
       </div>
