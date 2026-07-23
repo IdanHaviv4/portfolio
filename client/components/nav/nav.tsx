@@ -61,16 +61,19 @@ const Nav = () => {
         className="fixed top-0 left-0 w-screen h-[64px] flex flex-col gap-10 z-40 bg-primary/50 backdrop-blur-2xl px-3 py-3 overflow-hidden xs:px-6 md:h-[64px]! transition-[height] duration-700 ease-out pointer-events-auto"
       >
         <div className="w-full h-fit max-w-max-width mx-auto flex justify-between items-center">
-          <div
-            className="flex flex-col opacity-0 translate-y-1/4 transition duration-200 ease-out"
-            ref={name_ref}
-          >
-            <span className="leading-4">Idan Haviv</span>
+          <div className="flex items-center gap-3">
+            <Icons.LogoIcon className="w-8 aspect-square" />
+            <div
+              className="flex flex-col gap-1 opacity-0 translate-y-1/4 transition duration-200 ease-out"
+              ref={name_ref}
+            >
+              <span className="leading-4">Idan Haviv</span>
 
-            <div className="flex items-center gap-2">
-              <div className="w-2 aspect-square rounded-full bg-[#00D218]"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 aspect-square rounded-full bg-[#00D218]"></div>
 
-              <p className="text-[0.8rem]!">Available to work</p>
+                <p className="text-[0.8rem]! leading-3!">Available to work</p>
+              </div>
             </div>
           </div>
 

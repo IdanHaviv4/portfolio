@@ -1,3 +1,5 @@
+import LogoIcon from "./logo";
+
 import AndroidIcon from "./android";
 import CIcon from "./c";
 import CPPIcon from "./cpp";
@@ -30,6 +32,8 @@ import CookieIcon from "./cookie";
 import MenuIcon from "./menu";
 
 export default {
+  LogoIcon,
+
   AndroidIcon,
   CIcon,
   CPPIcon,
