@@ -1,5 +1,5 @@
 export { Footer as Footer } from "./footer";
-export { default as Icons } from "./icons";
+export { default as Icons } from "./svg";
 export { Nav as Nav } from "./nav";
 export { default as Resume } from "./resume";
 export { default as Skills } from "./skills";

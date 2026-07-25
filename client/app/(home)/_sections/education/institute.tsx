@@ -1,4 +1,4 @@
-import Chevron from "@/components/icons/chevron";
+import Chevron from "@/components/svg/icons/chevron";
 import Skills from "@/components/skills";
 import { education } from "@/constants";
 
@@ -63,10 +63,11 @@ const Institute = ({
             <div className="w-full flex flex-col gap-6 transition duration-200 ease-out">
               <p className="not-sm:text-[1rem]!">{description}</p>
 
-              <ul className="ml-5 list-disc *:text-text-secondary! flex flex-col gap-[inherit]">
+              <ul className="list-none **:text-text-secondary! flex flex-col gap-[inherit]">
                 {bulletpoints.map((point, idx) => (
-                  <li key={idx} className="not-sm:text-[1rem]!">
-                    {point}
+                  <li key={idx} className="flex items-start gap-2">
+                    <div></div>
+                    <span className="not-sm:text-[1rem]!">{point}</span>
                   </li>
                 ))}
               </ul>

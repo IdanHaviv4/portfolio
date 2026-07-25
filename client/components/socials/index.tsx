@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Icons from "../icons";
+import Icons from "../svg";
 import { Tooltip } from "@/components";
 import { useCallback, useRef } from "react";
 
@@ -37,7 +37,7 @@ const Socials = ({
     <div className={`w-full h-fit grid grid-cols-3 gap-0.5 ${className}`}>
       <Tooltip label="Gmail" variant={variant} className="rounded-full">
         <div
-          className="absolute top-0 right-0 z-20 text-[0.8rem]! font-medium! text-[#17c237]! bg-[#d3f4d9] px-2 rounded-full pointer-events-none translate-x-1/4 opacity-0 translate-y-1/4 transition duration-200 ease-out"
+          className={`absolute top-0 right-0 z-20 text-[0.8rem]! font-medium! text-[#17c237]! px-2 rounded-full pointer-events-none translate-x-1/4 opacity-0 translate-y-1/4 transition duration-200 ease-out ${variant == "light" ? "bg-[#d3f4d9]" : "bg-[#2a5238]"}`}
           ref={(ref) => {
             gmail_copied_ref.current.el = ref;
           }}

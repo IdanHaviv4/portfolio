@@ -46,7 +46,7 @@ const Component4 = () => {
       </div>
 
       <div
-        className="w-fit grid gap-2 p-4"
+        className="w-fit grid gap-2 p-4 place-items-center"
         style={{
           gridTemplateRows: `repeat(${cinema.rows + 2},min-content)`,
           gridTemplateColumns: `repeat(${cinema.cols + 2},min-content)`,
