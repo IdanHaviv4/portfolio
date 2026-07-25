@@ -34,8 +34,8 @@ body {
   @apply bg-primary overflow-x-hidden;
 }
 
-body:has(dialog[open]),
-body:has(nav.opened) {
+:where(html, body):has(dialog[open]),
+:where(html, body):has(nav.opened) {
   @apply overflow-hidden!;
 }
 

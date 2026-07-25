@@ -34,7 +34,6 @@ const Project = ({ is_modal }: { is_modal?: true }) => {
           src={`/assets/projects/${id}.jpg`}
           width={1440}
           height={1024}
-          loading="lazy"
           className="absolute top-0 left-0 w-full h-auto rounded-lg"
           alt={`project-${id}-img`}
         />
