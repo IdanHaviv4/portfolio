@@ -4,6 +4,7 @@ import { Icons } from "@/components";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
 import { useEffect } from "react";
 
@@ -49,8 +50,16 @@ const Project = ({ is_modal }: { is_modal?: true }) => {
             />
           </div>
 
-          <div className="h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 not-xs:h-16 not-xs:p-1.5">
-            <Icons.GithubIcon className="w-full h-full" />
+          <div className="flex items-center gap-2">
+            {project.github && (
+              <Link
+                href={project.github}
+                target="_blank"
+                className="h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 not-xs:h-16 not-xs:p-1.5"
+              >
+                <Icons.GithubIcon className="w-full h-full" />
+              </Link>
+            )}
           </div>
         </div>
 

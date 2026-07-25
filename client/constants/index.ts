@@ -25,17 +25,18 @@ export const skills = {
   typescript: Icons.TypescriptIcon,
 };
 
-export const projects = projects_json satisfies {
+type ProjectT<SkillsT extends string = string> = {
   title: string;
   description: string;
-  skills: string[];
-}[] as {
-  title: string;
-  description: string;
-  skills: (keyof typeof skills)[];
-}[];
+  skills: SkillsT[];
+  github?: string;
+};
 
-export const education = education_json satisfies {
+export const projects = projects_json satisfies ProjectT[] as ProjectT<
+  keyof typeof skills
+>[];
+
+type EducationT<SkillsT extends string = string> = {
   name: string;
   description: string;
   timestamps: {
@@ -43,14 +44,9 @@ export const education = education_json satisfies {
     to: string;
   };
   bulletpoints: string[];
-  skills: string[];
-}[] as {
-  name: string;
-  description: string;
-  timestamps: {
-    from: string;
-    to: string;
-  };
-  bulletpoints: string[];
-  skills: (keyof typeof skills)[];
-}[];
+  skills: SkillsT[];
+};
+
+export const education = education_json satisfies EducationT[] as EducationT<
+  keyof typeof skills
+>[];
