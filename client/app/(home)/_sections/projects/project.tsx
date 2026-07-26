@@ -3,6 +3,8 @@
 import { Icons } from "@/components";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
+import { getInitialTransition } from "@/lib/helpers";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
@@ -56,8 +58,9 @@ const Project = ({
   }, []);
 
   return (
-    <div className="grid grid-cols-1 items-end gap-5 md:grid-cols-2">
-      <div
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <motion.div
+        {...getInitialTransition(idx)}
         className="w-full h-fit rounded-lg overflow-hidden cursor-pointer"
         ref={(ref) => {
           interactive_components_ref.current.push(ref!);
@@ -72,9 +75,12 @@ const Project = ({
           alt={`project-${idx + 1}`}
           className="w-full h-auto transition duration-200 ease-out"
         />
-      </div>
+      </motion.div>
 
-      <div className="w-full flex flex-col items-start gap-4">
+      <motion.div
+        {...getInitialTransition(idx)}
+        className="w-full h-full flex flex-col justify-end items-start gap-4"
+      >
         <div className="flex flex-col items-start gap-2">
           <h2>{title}</h2>
           <p className="w-full line-clamp-2">{description}</p>
@@ -96,7 +102,7 @@ const Project = ({
 
           <Icons.ArrowTopRightIcon className="w-5 aspect-square fill-white transition duration-200 ease-out" />
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 };

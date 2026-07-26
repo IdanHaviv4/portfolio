@@ -16,7 +16,7 @@ export const getInitialTransition: (
       pointerEvents: "none",
     },
     whileInView: { opacity: 1, [key]: 0, pointerEvents: "auto" },
-    viewport: { once: true },
+    viewport: { once: true, margin: "0px 0px -20% 0px" },
     transition: { duration: 0.2, delay: (transition_order ?? 0) * 0.1 },
   };
 };
