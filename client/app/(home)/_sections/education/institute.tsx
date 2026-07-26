@@ -1,6 +1,8 @@
 import Chevron from "@/components/svg/icons/chevron";
 import Skills from "@/components/skills";
 import { education } from "@/constants";
+import { motion } from "framer-motion";
+import { getInitialTransition } from "@/lib/helpers";
 
 const Institute = ({
   idx,
@@ -11,7 +13,8 @@ const Institute = ({
   bulletpoints,
 }: (typeof education)[0] & { idx: number }) => {
   return (
-    <div
+    <motion.div
+      {...getInitialTransition(idx + 1)}
       className={`relative w-full ${idx < education.length - 1 ? "pb-6" : ""}`}
     >
       <div className="absolute top-0 left-0 shrink-0 w-12 h-full flex justify-center items-center -z-10 not-sm:w-8">
@@ -77,7 +80,7 @@ const Institute = ({
           </div>
         </div>
       </details>
-    </div>
+    </motion.div>
   );
 };
 
