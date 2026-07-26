@@ -6,6 +6,8 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 import { Components } from "./";
 import Seperator from "./seperator";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { getInitialTransition } from "@/lib/helpers";
 
 const Lab = () => {
   const components: {
@@ -116,19 +118,25 @@ const Lab = () => {
         <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
           <div className="w-full flex flex-col items-end gap-[inherit] md:justify-between md:flex-row md:items-center">
             <div className="w-full flex flex-col gap-4">
-              <Title label="Experiments" tag="lab" variant="light" />
+              <motion.div {...getInitialTransition()}>
+                <Title label="Experiments" tag="lab" variant="light" />
+              </motion.div>
 
-              <p className="text-text-secondary-dark!">
+              <motion.p
+                {...getInitialTransition(1)}
+                className="text-text-secondary-dark!"
+              >
                 This is my lab. Here i create interactive components to prove
                 that <span className="text-white! font-medium!">EVERY</span>{" "}
                 design can turn into reality.
-              </p>
+              </motion.p>
             </div>
 
             <div className="flex items-center gap-1">
               {components.length > 1 && (
                 <>
-                  <button
+                  <motion.button
+                    {...getInitialTransition(2)}
                     className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
                     onClick={() => handleChangePage(-1)}
                     ref={(ref) => {
@@ -136,8 +144,9 @@ const Lab = () => {
                     }}
                   >
                     <Icons.ChevronIcon className="w-10 aspect-square fill-white -rotate-90" />
-                  </button>
-                  <button
+                  </motion.button>
+                  <motion.button
+                    {...getInitialTransition(3)}
                     className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
                     onClick={() => handleChangePage(1)}
                     ref={(ref) => {
@@ -145,14 +154,15 @@ const Lab = () => {
                     }}
                   >
                     <Icons.ChevronIcon className="w-10 aspect-square fill-white rotate-90" />
-                  </button>
+                  </motion.button>
                 </>
               )}
             </div>
           </div>
 
-          <div
-            className="w-full grid gap-[inherit] overflow-hidden snap-x snap-mandatory transition duration-500 ease-out [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--adder:0]"
+          <motion.div
+            {...getInitialTransition(4)}
+            className="w-full grid gap-[inherit] overflow-hidden snap-x snap-mandatory [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--adder:0]"
             ref={(ref) => {
               components_ref.current.slider = ref;
             }}
@@ -198,7 +208,7 @@ const Lab = () => {
                 {component}
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
