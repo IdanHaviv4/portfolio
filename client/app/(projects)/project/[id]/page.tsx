@@ -3,6 +3,8 @@
 import { Icons } from "@/components";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
+import { getInitialTransition } from "@/lib/helpers";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
@@ -42,29 +44,42 @@ const Project = ({ is_modal }: { is_modal?: true }) => {
       <div className="relative w-full flex flex-col gap-[inherit] bg-primary before:absolute before:bottom-full before:left-0 before:w-full before:h-40 before:bg-linear-to-b before:from-transparent before:to-primary">
         <div className="relative w-full flex justify-between items-center">
           <div className="flex flex-col gap-2 xs:gap-4">
-            <h1 className="not-xs:text-[1.5rem]!">{project.title}</h1>
-            <Skills
-              skills={project.skills}
-              className="not-sm:h-7 not-sm:w-4.5"
-            />
+            <motion.h1
+              {...getInitialTransition()}
+              className="not-xs:text-[1.5rem]!"
+            >
+              {project.title}
+            </motion.h1>
+
+            <motion.div {...getInitialTransition(1)}>
+              <Skills
+                skills={project.skills}
+                className="not-sm:h-7 not-sm:w-4.5"
+              />
+            </motion.div>
           </div>
 
           <div className="flex items-center gap-2">
             {project.github && (
-              <Link
-                href={project.github}
-                target="_blank"
-                className="h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 not-xs:h-16 not-xs:p-1.5"
-              >
-                <Icons.GithubIcon className="w-full h-full" />
-              </Link>
+              <motion.div {...getInitialTransition(2)}>
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  className="h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 not-xs:h-16 not-xs:p-1.5"
+                >
+                  <Icons.GithubIcon className="w-full h-full" />
+                </Link>
+              </motion.div>
             )}
           </div>
         </div>
 
-        <p className="text-[1rem]! whitespace-pre-wrap xs:text-[1.2rem]!">
+        <motion.p
+          {...getInitialTransition(3)}
+          className="text-[1rem]! whitespace-pre-wrap xs:text-[1.2rem]!"
+        >
           {project.description}
-        </p>
+        </motion.p>
       </div>
     </section>
   );

@@ -29,11 +29,16 @@ const Footer = () => {
                   Haviv
                 </motion.h1>
 
-                <Signature className="w-28 absolute top-[85%] left-[85%] not-xs:w-24" />
+                <motion.div
+                  {...getInitialTransition(1)}
+                  className="w-28 absolute top-[85%] left-[85%] not-xs:w-24"
+                >
+                  <Signature className="w-full h-full" />
+                </motion.div>
               </div>
 
               <motion.p
-                {...getInitialTransition(1)}
+                {...getInitialTransition(2)}
                 className="text-text-secondary-dark!"
               >
                 © 2026 Idan Haviv. Designed & developed by me.
@@ -42,13 +47,13 @@ const Footer = () => {
 
             <div className="flex flex-col justify-between gap-10 not-md:hidden">
               <div className="grid grid-cols-[repeat(1,min-content)] gap-2">
-                <Resume className="w-fit bg-[#363E41]!" transition_order={2} />
+                <Resume className="w-fit bg-[#363E41]!" transition_order={3} />
 
-                <Socials variant="dark" transition_order={3} />
+                <Socials variant="dark" transition_order={4} />
               </div>
 
               <motion.button
-                {...getInitialTransition(4)}
+                {...getInitialTransition(5)}
                 className="group relative bg-accent rounded-lg px-5 py-1.5 cursor-pointer flex justify-center items-center gap-2 overflow-hidden transition duration-200 ease-out"
                 onClick={() => window.scrollTo(0, 0)}
               >
