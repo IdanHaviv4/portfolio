@@ -12,7 +12,7 @@ const Projects = () => {
       id="projects"
       className="w-full flex flex-col items-start gap-10 pb-20 md:gap-6"
     >
-      <motion.div {...getInitialTransition()}>
+      <motion.div {...getInitialTransition(0, "bottom", "-10%")}>
         <Title label={"My Work"} tag={"projects"} />
       </motion.div>
 

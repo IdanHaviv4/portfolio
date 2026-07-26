@@ -77,19 +77,22 @@ const Project = ({
         />
       </motion.div>
 
-      <motion.div
-        {...getInitialTransition(idx)}
-        className="w-full h-full flex flex-col justify-end items-start gap-4"
-      >
-        <div className="flex flex-col items-start gap-2">
+      <div className="w-full h-full flex flex-col justify-end items-start gap-4">
+        <motion.div
+          {...getInitialTransition(idx)}
+          className="flex flex-col items-start gap-2"
+        >
           <h2>{title}</h2>
           <p className="w-full line-clamp-2">{description}</p>
-        </div>
+        </motion.div>
 
-        <Skills skills={skills} />
+        <motion.div {...getInitialTransition(idx + 1)}>
+          <Skills skills={skills} />
+        </motion.div>
 
-        <button
-          className="relative px-5 py-1.5 rounded-lg cursor-pointer flex items-center gap-2 overflow-hidden transition duration-200 ease-out"
+        <motion.button
+          {...getInitialTransition(idx + 2)}
+          className="shrink-0 relative px-5 py-1.5 rounded-lg cursor-pointer flex items-center gap-2 overflow-hidden"
           ref={(ref) => {
             btn_ref.current = ref;
             interactive_components_ref.current.push(ref!);
@@ -101,8 +104,8 @@ const Project = ({
           </span>
 
           <Icons.ArrowTopRightIcon className="w-5 aspect-square fill-white transition duration-200 ease-out" />
-        </button>
-      </motion.div>
+        </motion.button>
+      </div>
     </div>
   );
 };
