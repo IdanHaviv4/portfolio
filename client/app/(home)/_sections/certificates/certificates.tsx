@@ -1,6 +1,8 @@
 "use client";
 
 import Title from "@/components/title";
+import { getInitialTransition } from "@/lib/helpers";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Fragment, useRef } from "react";
 
@@ -22,7 +24,9 @@ const Certificates = () => {
         <img alt="certificate-upscale" />
       </dialog>
 
-      <Title label="Certificates" tag="certificates" orientation="center" />
+      <motion.div {...getInitialTransition()}>
+        <Title label="Certificates" tag="certificates" orientation="center" />
+      </motion.div>
 
       <div className="w-fit grid grid-cols-1 gap-2 md:grid-cols-6">
         {new Array(5).fill(0).map((_, idx, arr) => {
@@ -35,7 +39,8 @@ const Certificates = () => {
                 <div className="not-md:hidden"></div>
               )}
 
-              <div
+              <motion.div
+                {...getInitialTransition(idx + 1)}
                 className="group w-fit max-w-100 h-full rounded-lg overflow-hidden cursor-pointer border-2 border-solid border-section md:col-span-2"
                 onClick={() => {
                   if (!dialog_ref.current) return;
@@ -63,7 +68,7 @@ const Certificates = () => {
                   className="w-auto h-auto object-cover transition duration-200 ease-out group-hover:scale-105"
                   alt={`certificate-${idx + 1}`}
                 />
-              </div>
+              </motion.div>
             </Fragment>
           );
         })}
