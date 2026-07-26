@@ -1,8 +1,17 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { getInitialTransition } from "./hero";
 
-const Location = ({ className }: { className: string }) => {
+const Location = ({
+  className = "",
+  transition_order,
+}: {
+  className?: string;
+  transition_order: number;
+}) => {
   return (
-    <div
+    <motion.div
+      {...getInitialTransition(transition_order)}
       className={`h-full flex flex-col justify-between gap-4 items-start bg-section rounded-lg overflow-hidden group cursor-pointer relative ${className} not-md:w-full not-md:items-end`}
     >
       <div className="relative z-10 w-full flex flex-col px-5 py-4 transition duration-700 ease-out group-hover:-translate-y-1">
@@ -20,7 +29,7 @@ const Location = ({ className }: { className: string }) => {
           alt="globe"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

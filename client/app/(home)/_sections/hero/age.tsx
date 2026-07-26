@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
 import moment from "moment";
+import { getInitialTransition } from "./hero";
 
-const Age = () => {
+const Age = ({ transition_order }: { transition_order: number }) => {
   return (
-    <div className="w-full h-full bg-section rounded-lg flex flex-col gap-2 justify-center items-center md:py-8">
+    <motion.div
+      {...getInitialTransition(transition_order)}
+      className="w-full h-full bg-section rounded-lg flex flex-col gap-2 justify-center items-center md:py-8"
+    >
       <h2>
         {moment()
           .utc()
@@ -10,7 +15,7 @@ const Age = () => {
       </h2>
       <p className="leading-2 not-md:hidden">Years Old</p>
       <p className="leading-2 md:hidden">Y/O</p>
-    </div>
+    </motion.div>
   );
 };
 

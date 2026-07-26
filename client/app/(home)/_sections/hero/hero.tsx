@@ -4,11 +4,20 @@ import { About, Age, Location, Skills, SecondarySkills, Name } from "./";
 import Socials from "@/components/socials";
 import Resume from "@/components/resume";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import { HTMLMotionProps, motion } from "framer-motion";
 
 const Fact = dynamic(() => import("./fact"), {
   ssr: false,
   loading: () => <span></span>,
+});
+
+export const getInitialTransition: (
+  transition_order: number,
+) => HTMLMotionProps<"div"> = (transition_order) => ({
+  initial: { opacity: 0, translateY: 8 },
+  whileInView: { opacity: 1, translateY: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.2, delay: transition_order * 0.1 },
 });
 
 const Hero = () => {
@@ -23,69 +32,81 @@ const Hero = () => {
           }}
         >
           <div className="w-full max-w-max-width mx-auto h-min grid grid-cols-[1fr_min-content_1fr] gap-5 not-lg:hidden">
-            <Name />
+            <Name transition_order={0} />
 
-            <Age />
+            <Age transition_order={1} />
 
-            <Skills className="row-span-2 grid-cols-4" />
+            <Skills className="row-span-2 grid-cols-4" transition_order={3} />
 
-            <About className="col-span-2" />
+            <About className="col-span-2" transition_order={2} />
 
-            <Location className="row-span-3" />
+            <Location className="row-span-3" transition_order={4} />
 
-            <Resume />
+            <Resume transition_order={5} />
 
-            <div className="w-full h-fit flex flex-col gap-1">
+            <motion.div
+              {...getInitialTransition(7)}
+              className="w-full h-fit flex flex-col gap-1"
+            >
               <p>Also experienced with</p>
 
               <SecondarySkills />
-            </div>
+            </motion.div>
 
-            <Fact className="row-span-2" />
+            <Fact className="row-span-2" transition_order={8} />
 
-            <Socials />
+            <Socials transition_order={6} />
           </div>
 
           <div className="w-fit max-w-max-width mx-auto h-min grid gap-5 grid-cols-[repeat(2,min-content)] not-md:hidden lg:hidden">
-            <Name />
+            <Name transition_order={0} />
 
-            <Fact />
+            <Fact transition_order={1} />
 
-            <About className="col-span-2" />
+            <About className="col-span-2" transition_order={2} />
 
-            <Location className="row-span-3" />
+            <Location className="row-span-3" transition_order={3} />
 
-            <Age />
+            <Age transition_order={4} />
 
-            <Socials />
+            <Socials transition_order={5} />
 
-            <Resume className="col-span-1! row-span-2!" />
+            <Resume className="col-span-1! row-span-2!" transition_order={6} />
 
-            <SecondarySkills className="z-20" />
+            <SecondarySkills className="z-20" transition_order={7} />
 
-            <Skills className="w-full col-span-2 grid-cols-8" />
+            <Skills
+              className="w-full col-span-2 grid-cols-8"
+              transition_order={8}
+            />
           </div>
 
           <div className="w-fit max-w-90 mx-auto h-min grid grid-cols-[1fr_min-content] gap-5 md:hidden">
-            <Name className="col-span-2" />
+            <Name className="col-span-2" transition_order={0} />
 
-            <About className="col-span-2" />
+            <About className="col-span-2" transition_order={1} />
 
-            <Location className="col-span-2" />
+            <Location className="col-span-2" transition_order={2} />
 
-            <Fact className="min-w-48 min-h-10" />
+            <Fact className="min-w-48 min-h-10" transition_order={3} />
 
-            <SecondarySkills className="w-20 row-span-2 grid-cols-1!" />
+            <SecondarySkills
+              className="w-20 row-span-2 grid-cols-1!"
+              transition_order={5}
+            />
 
-            <Resume className="row-span-1! h-full px-8! py-6!" />
+            <Resume
+              className="row-span-1! h-full px-8! py-6!"
+              transition_order={4}
+            />
 
-            <Socials />
+            <Socials transition_order={6} />
 
-            <Age />
+            <Age transition_order={7} />
 
             <div></div>
 
-            <Skills className="col-span-2 w-full" />
+            <Skills className="col-span-2 w-full" transition_order={8} />
           </div>
         </div>
       </section>

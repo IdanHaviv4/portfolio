@@ -1,8 +1,16 @@
 "use client";
 
 import { useMemo } from "react";
+import { getInitialTransition } from "./hero";
+import { motion } from "framer-motion";
 
-const Fact = ({ className = "" }: { className?: string }) => {
+const Fact = ({
+  className = "",
+  transition_order,
+}: {
+  className?: string;
+  transition_order: number;
+}) => {
   const facts = useMemo(
     () => [
       {
@@ -46,7 +54,8 @@ const Fact = ({ className = "" }: { className?: string }) => {
   );
 
   return (
-    <div
+    <motion.div
+      {...getInitialTransition(transition_order)}
       className={`group w-full h-full rounded-lg flex flex-col justify-center items-center cursor-pointer perspective-midrange ${className}`}
     >
       <div className="w-full h-full relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center *:bg-section">
@@ -57,7 +66,7 @@ const Fact = ({ className = "" }: { className?: string }) => {
 
         <div className="rotate-y-180 overflow-hidden">{fact.answer}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,7 +1,15 @@
 import { Icons } from "@/components";
 import Tooltip from "@/components/tooltip";
+import { motion } from "framer-motion";
+import { getInitialTransition } from "./hero";
 
-const SecondarySkills = ({ className = "" }: { className?: string }) => {
+const SecondarySkills = ({
+  className = "",
+  transition_order,
+}: {
+  className?: string;
+  transition_order?: number;
+}) => {
   const skills = [
     { icon: <Icons.CIcon />, label: "C" },
     { icon: <Icons.CPPIcon />, label: "C++" },
@@ -10,7 +18,12 @@ const SecondarySkills = ({ className = "" }: { className?: string }) => {
   ];
 
   return (
-    <div className={`grid grid-cols-4 gap-0.5 ${className}`}>
+    <motion.div
+      {...(transition_order !== undefined
+        ? getInitialTransition(transition_order)
+        : {})}
+      className={`grid grid-cols-4 gap-0.5 ${className}`}
+    >
       {skills.map(({ icon, label }, idx) => (
         <Tooltip
           label={label}
@@ -23,7 +36,7 @@ const SecondarySkills = ({ className = "" }: { className?: string }) => {
           </div>
         </Tooltip>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,17 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { getInitialTransition } from "./hero";
 
-const Name = ({ className = "" }: { className?: string }) => {
+const Name = ({
+  className = "",
+  transition_order,
+}: {
+  className?: string;
+  transition_order: number;
+}) => {
   return (
-    <div
+    <motion.div
+      {...getInitialTransition(transition_order)}
       className={`group relative w-full h-full min-h-26 flex flex-col gap-2 rounded-lg overflow-hidden cursor-pointer ${className}`}
     >
       <h1>Idan Haviv</h1>
@@ -21,7 +30,7 @@ const Name = ({ className = "" }: { className?: string }) => {
         className="absolute right-0 bottom-0 origin-bottom-right translate-full scale-105 transition duration-700 ease-out group-hover:translate-x-1/5 group-hover:translate-y-0 group-hover:-rotate-15"
         alt="hi-img"
       />
-    </div>
+    </motion.div>
   );
 };
 

@@ -4,13 +4,17 @@ import Link from "next/link";
 import Icons from "../svg";
 import { Tooltip } from "@/components";
 import { useCallback, useRef } from "react";
+import { motion } from "framer-motion";
+import { getInitialTransition } from "@/app/(home)/_sections/hero/hero";
 
 const Socials = ({
   variant = "light",
   className = "",
+  transition_order,
 }: {
   variant?: "light" | "dark";
   className?: string;
+  transition_order?: number;
 }) => {
   const gmail_copied_ref = useRef<{
     el: HTMLDivElement | null;
@@ -34,7 +38,12 @@ const Socials = ({
   }, []);
 
   return (
-    <div className={`w-full h-fit grid grid-cols-3 gap-0.5 ${className}`}>
+    <motion.div
+      {...(transition_order !== undefined
+        ? getInitialTransition(transition_order)
+        : {})}
+      className={`w-full h-fit grid grid-cols-3 gap-0.5 ${className}`}
+    >
       <Tooltip label="Gmail" variant={variant} className="rounded-full">
         <div
           className={`absolute top-0 right-0 z-20 text-[0.8rem]! font-medium! text-[#17c237]! px-2 rounded-full pointer-events-none translate-x-1/4 opacity-0 translate-y-1/4 transition duration-200 ease-out ${variant == "light" ? "bg-[#d3f4d9]" : "bg-[#2a5238]"}`}
@@ -77,7 +86,7 @@ const Socials = ({
           </Link>
         </div>
       </Tooltip>
-    </div>
+    </motion.div>
   );
 };
 

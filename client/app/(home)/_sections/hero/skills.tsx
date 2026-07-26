@@ -1,7 +1,15 @@
 import { Icons } from "@/components";
 import Tooltip from "@/components/tooltip";
+import { motion } from "framer-motion";
+import { getInitialTransition } from "./hero";
 
-const Skills = ({ className }: { className: string }) => {
+const Skills = ({
+  className = "",
+  transition_order,
+}: {
+  className?: string;
+  transition_order: number;
+}) => {
   const skills = [
     { icon: <Icons.HTMLIcon />, label: "HTML" },
     { icon: <Icons.CSSIcon />, label: "CSS" },
@@ -22,7 +30,10 @@ const Skills = ({ className }: { className: string }) => {
   ];
 
   return (
-    <div className={`w-fit h-full grid grid-cols-4 gap-0.5 ${className}`}>
+    <motion.div
+      {...getInitialTransition(transition_order)}
+      className={`w-fit h-full grid grid-cols-4 gap-0.5 ${className}`}
+    >
       {skills.map(({ icon, label }, idx) => (
         <Tooltip
           label={label}
@@ -35,7 +46,7 @@ const Skills = ({ className }: { className: string }) => {
           </div>
         </Tooltip>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
