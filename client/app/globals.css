@@ -19,6 +19,10 @@
 * {
   scrollbar-width: none;
   -ms-overflow-style: none;
+
+  user-drag: none;
+  -webkit-user-drag: none;
+
   @apply text-text-primary text-[1.1rem] select-none box-border scroll-smooth! border-0 outline-0;
 }
 
