@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { getInitialTransition } from "./hero";
+import { getInitialTransition } from "@/lib/helpers";
 import { motion } from "framer-motion";
 
 const Fact = ({

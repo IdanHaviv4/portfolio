@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { Icons } from "../";
 import { motion } from "framer-motion";
-import { getInitialTransition } from "@/app/(home)/_sections/hero/hero";
+import { getInitialTransition } from "@/lib/helpers";
 
 const Resume = ({
   className,

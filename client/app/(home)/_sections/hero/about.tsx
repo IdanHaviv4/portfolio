@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import moment from "moment";
-import { getInitialTransition } from "./hero";
+import { getInitialTransition } from "@/lib/helpers";
 
 const About = ({
   className = "",

@@ -5,7 +5,7 @@ import Icons from "../svg";
 import { Tooltip } from "@/components";
 import { useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { getInitialTransition } from "@/app/(home)/_sections/hero/hero";
+import { getInitialTransition } from "@/lib/helpers";
 
 const Socials = ({
   variant = "light",

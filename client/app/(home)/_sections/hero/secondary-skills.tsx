@@ -1,7 +1,7 @@
 import { Icons } from "@/components";
 import Tooltip from "@/components/tooltip";
+import { getInitialTransition } from "@/lib/helpers";
 import { motion } from "framer-motion";
-import { getInitialTransition } from "./hero";
 
 const SecondarySkills = ({
   className = "",

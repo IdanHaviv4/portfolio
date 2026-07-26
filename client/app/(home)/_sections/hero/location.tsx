@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { getInitialTransition } from "./hero";
+import { getInitialTransition } from "@/lib/helpers";
 
 const Location = ({
   className = "",

@@ -4,20 +4,12 @@ import { About, Age, Location, Skills, SecondarySkills, Name } from "./";
 import Socials from "@/components/socials";
 import Resume from "@/components/resume";
 import dynamic from "next/dynamic";
-import { HTMLMotionProps, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { getInitialTransition } from "@/lib/helpers";
 
 const Fact = dynamic(() => import("./fact"), {
   ssr: false,
   loading: () => <span></span>,
-});
-
-export const getInitialTransition: (
-  transition_order: number,
-) => HTMLMotionProps<"div"> = (transition_order) => ({
-  initial: { opacity: 0, translateY: 8 },
-  whileInView: { opacity: 1, translateY: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.2, delay: transition_order * 0.1 },
 });
 
 const Hero = () => {

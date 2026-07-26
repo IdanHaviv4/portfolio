@@ -66,11 +66,14 @@ const Nav = () => {
             initial={{
               opacity: 0,
               translateY: 8,
+              pointerEvents: "none",
             }}
             whileInView={{
               opacity: 1,
               translateY: 0,
+              pointerEvents: "auto",
             }}
+            viewport={{ once: true }}
             transition={{ duration: 0.2 }}
           >
             <Link href="/#home" className="flex items-center gap-3">
