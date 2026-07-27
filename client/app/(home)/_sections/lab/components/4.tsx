@@ -46,10 +46,10 @@ const Component4 = () => {
       </div>
 
       <div
-        className="w-fit grid gap-2 p-4 place-items-center"
+        className="w-max grid gap-2 p-4 place-items-center"
         style={{
           gridTemplateRows: `repeat(${cinema.rows + 2},min-content)`,
-          gridTemplateColumns: `repeat(${cinema.cols + 2},min-content)`,
+          gridTemplateColumns: `repeat(${cinema.cols / 2 + 1},min-content) 1fr repeat(${cinema.cols / 2},min-content)`,
         }}
       >
         <div
