@@ -54,7 +54,7 @@ const Footer = () => {
 
               <motion.button
                 {...getInitialTransition(5)}
-                className="group relative bg-accent rounded-lg px-5 py-1.5 cursor-pointer flex justify-center items-center gap-2 overflow-hidden transition duration-200 ease-out"
+                className="group relative bg-accent rounded-lg px-5 py-1.5 cursor-pointer flex justify-center items-center gap-2 overflow-hidden"
                 onClick={() => window.scrollTo(0, 0)}
               >
                 <span className="text-white! font-medium! transition duration-200 ease-out translate-x-4 group-hover:translate-x-0">

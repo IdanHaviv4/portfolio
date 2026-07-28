@@ -20,7 +20,7 @@
   {
     "title": "Portfolio",
     "description": "You're looking at it right now. This site is a fully responsive portfolio built to showcase my projects, technical skills, and approach to software engineering - but more than that, it's a playground where I got to obsess over every tiny detail until it felt right.\n\nUnder the hood, I leaned into some of Next.js's more advanced  features, including parallel and intercepting routes.\n\nThe entire codebase is written in strictly-typed TypeScript, with an emphasis on clean, scalable file structure and component architecture that could hold up in a real production environment, not just a portfolio.\n\nLike everything else I build, it started life as a Figma design before a single line of code was written, because good UI/UX doesn't happen by accident, it's designed.",
-    "skills": ["nextjs", "typescript", "tailwind", "nodejs", "figma"],
+    "skills": ["nextjs", "typescript", "tailwind", "nodejs", "git", "figma"],
     "github": "https://github.com/IdanHaviv4/portfolio"
   }
 ]
