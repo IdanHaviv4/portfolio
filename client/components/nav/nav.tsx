@@ -7,6 +7,7 @@ import Icons from "../svg";
 import Socials from "../socials";
 import Resume from "../resume";
 import { motion } from "framer-motion";
+import { getInitialTransition } from "@/lib/helpers";
 
 const Nav = () => {
   const pathname = usePathname();
@@ -62,20 +63,7 @@ const Nav = () => {
         className="fixed top-0 left-0 w-screen h-[64px] flex flex-col gap-10 z-40 bg-primary/50 backdrop-blur-2xl px-3 py-3 overflow-hidden xs:px-6 md:h-[64px]! transition-[height] duration-700 ease-out pointer-events-auto"
       >
         <div className="w-full h-fit max-w-max-width mx-auto flex justify-between items-center">
-          <motion.div
-            initial={{
-              opacity: 0,
-              translateY: 8,
-              pointerEvents: "none",
-            }}
-            whileInView={{
-              opacity: 1,
-              translateY: 0,
-              pointerEvents: "auto",
-            }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.2 }}
-          >
+          <motion.div {...getInitialTransition()}>
             <Link href="/#home" className="flex items-center gap-3">
               <Icons.LogoIcon className="w-8 aspect-square" />
 
@@ -96,18 +84,7 @@ const Nav = () => {
 
           <ul className="list-none flex items-center gap-9 not-md:hidden">
             {links.map((section, idx) => (
-              <motion.li
-                initial={{
-                  opacity: 0,
-                  translateY: 8,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  translateY: 0,
-                }}
-                transition={{ duration: 0.2, delay: 0.1 * (idx + 1) }}
-                key={section}
-              >
+              <motion.li {...getInitialTransition(idx + 1)} key={section}>
                 <Link href={`/#${section}`} className="capitalize text-[1rem]!">
                   {section}
                 </Link>

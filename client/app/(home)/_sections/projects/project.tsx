@@ -58,7 +58,7 @@ const Project = ({
   }, []);
 
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 place-items-end">
       <motion.div
         {...getInitialTransition(idx)}
         className="w-full h-fit rounded-lg overflow-hidden cursor-pointer"
@@ -77,21 +77,20 @@ const Project = ({
         />
       </motion.div>
 
-      <div className="w-full h-full flex flex-col justify-end items-start gap-4">
-        <motion.div
-          {...getInitialTransition(idx)}
-          className="flex flex-col items-start gap-2"
-        >
+      <motion.div
+        {...getInitialTransition(idx)}
+        className="w-full h-fit flex flex-col justify-end items-start gap-4"
+      >
+        <div className="flex flex-col items-start gap-2">
           <h2>{title}</h2>
           <p className="w-full line-clamp-2">{description}</p>
-        </motion.div>
+        </div>
 
-        <motion.div {...getInitialTransition(idx + 1)}>
+        <div>
           <Skills skills={skills} />
-        </motion.div>
+        </div>
 
-        <motion.button
-          {...getInitialTransition(idx + 2)}
+        <button
           className="shrink-0 relative px-5 py-1.5 rounded-lg cursor-pointer flex items-center gap-2 overflow-hidden"
           ref={(ref) => {
             btn_ref.current = ref;
@@ -104,8 +103,8 @@ const Project = ({
           </span>
 
           <Icons.ArrowTopRightIcon className="w-5 aspect-square fill-white transition duration-200 ease-out" />
-        </motion.button>
-      </div>
+        </button>
+      </motion.div>
     </div>
   );
 };

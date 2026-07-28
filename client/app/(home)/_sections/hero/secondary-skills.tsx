@@ -13,7 +13,7 @@ const SecondarySkills = ({
   const skills = [
     { icon: <Icons.CIcon />, label: "C" },
     { icon: <Icons.CPPIcon />, label: "C++" },
-    { icon: <Icons.CSharpIcon />, label: "C#" },
+    { icon: <Icons.PythonIcon />, label: "Python" },
     { icon: <Icons.JavaIcon />, label: "Java" },
   ];
 

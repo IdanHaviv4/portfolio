@@ -3,7 +3,7 @@ import LogoIcon from "./illustrations/logo";
 import AndroidIcon from "./skills/android";
 import CIcon from "./skills/c";
 import CPPIcon from "./skills/cpp";
-import CSharpIcon from "./skills/csharp";
+import PythonIcon from "./skills/python";
 import CSSIcon from "./skills/css";
 import FigmaIcon from "./skills/figma";
 import FirebaseIcon from "./skills/firebase";
@@ -38,7 +38,7 @@ export default {
   AndroidIcon,
   CIcon,
   CPPIcon,
-  CSharpIcon,
+  PythonIcon,
   CSSIcon,
   FigmaIcon,
   FirebaseIcon,
