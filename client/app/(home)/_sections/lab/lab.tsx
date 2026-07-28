@@ -4,7 +4,6 @@ import { Icons, Title } from "@/components";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { Components } from "./";
-import Seperator from "./seperator";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { getInitialTransition } from "@/lib/helpers";
@@ -109,111 +108,107 @@ const Lab = () => {
   }, []);
 
   return (
-    <section id="lab" className="w-screen flex flex-col pt-0!">
-      <div className="relative w-full z-10 before:w-full before:h-px before:bg-secondary before:absolute before:bottom-0 before:z-5 before:left-0">
-        <Seperator className="w-full fill-secondary z-10" />
-      </div>
+    <section
+      id="lab"
+      className="w-screen flex flex-col py-[5vw]! bg-secondary px-3 xs:px-6 not-lg:py-6"
+      style={{
+        clipPath: "polygon(0 0, 100% 5vw, 100% 100%, 0 calc(100% - 5vw))",
+      }}
+    >
+      <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
+        <div className="w-full flex flex-col items-end gap-[inherit] md:justify-between md:flex-row md:items-center">
+          <div className="w-full flex flex-col gap-4">
+            <motion.div {...getInitialTransition()}>
+              <Title label="Experiments" tag="lab" variant="light" />
+            </motion.div>
 
-      <div className="w-full bg-secondary px-3 xs:px-6 not-lg:py-6">
-        <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
-          <div className="w-full flex flex-col items-end gap-[inherit] md:justify-between md:flex-row md:items-center">
-            <div className="w-full flex flex-col gap-4">
-              <motion.div {...getInitialTransition()}>
-                <Title label="Experiments" tag="lab" variant="light" />
-              </motion.div>
-
-              <motion.p
-                {...getInitialTransition(1)}
-                className="text-text-secondary-dark!"
-              >
-                This is my lab. Here i create interactive components to prove
-                that <span className="text-white! font-medium!">EVERY</span>{" "}
-                design can turn into reality.
-              </motion.p>
-            </div>
-
-            <div className="flex items-center gap-1">
-              {components.length > 1 && (
-                <>
-                  <motion.button
-                    {...getInitialTransition(2)}
-                    className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
-                    onClick={() => handleChangePage(-1)}
-                    ref={(ref) => {
-                      components_ref.current.buttons.prev = ref;
-                    }}
-                  >
-                    <Icons.ChevronIcon className="w-10 aspect-square fill-white -rotate-90" />
-                  </motion.button>
-                  <motion.button
-                    {...getInitialTransition(3)}
-                    className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
-                    onClick={() => handleChangePage(1)}
-                    ref={(ref) => {
-                      components_ref.current.buttons.next = ref;
-                    }}
-                  >
-                    <Icons.ChevronIcon className="w-10 aspect-square fill-white rotate-90" />
-                  </motion.button>
-                </>
-              )}
-            </div>
+            <motion.p
+              {...getInitialTransition(1)}
+              className="text-text-secondary-dark!"
+            >
+              This is my lab. Here i create interactive components to prove that{" "}
+              <span className="text-white! font-medium!">EVERY</span> design can
+              turn into reality.
+            </motion.p>
           </div>
 
-          <motion.div
-            {...getInitialTransition(4)}
-            className="w-full grid gap-[inherit] overflow-hidden snap-x snap-mandatory [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--adder:0]"
-            ref={(ref) => {
-              components_ref.current.slider = ref;
-            }}
-            style={
-              {
-                gridTemplateColumns: `repeat(calc(${components.length} + var(--adder, ${components.reduce(
-                  (prev, cur) => prev + ((cur.col_span ?? 1) - 1),
-                  0,
-                )})), var(--col-w))`,
-              } as React.CSSProperties
-            }
-          >
-            {components.map(({ bg, component, inspiration, col_span }, idx) => (
-              <div
-                key={bg}
-                className="relative shrink-0 snap-start relative w-full h-full bg-cover bg-center flex justify-center items-center p-2 rounded-lg overflow-hidden not-lg:col-span-1! sm:p-6"
-                style={{
-                  background: bg,
-                  gridColumn: `span ${col_span}`,
-                }}
-              >
-                {bg.startsWith("/") && (
-                  <Image
-                    src={bg}
-                    fill
-                    loading="lazy"
-                    className="object-cover object-center"
-                    alt={`component-${idx + 1}-bg`}
-                  />
-                )}
-
-                {inspiration && (
-                  <div className="absolute top-0 right-0 z-20">
-                    <Link href={inspiration} target="_blank">
-                      <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
-                        Inspiration
-                        <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
-                      </button>
-                    </Link>
-                  </div>
-                )}
-
-                {component}
-              </div>
-            ))}
-          </motion.div>
+          <div className="flex items-center gap-1">
+            {components.length > 1 && (
+              <>
+                <motion.button
+                  {...getInitialTransition(2)}
+                  className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
+                  onClick={() => handleChangePage(-1)}
+                  ref={(ref) => {
+                    components_ref.current.buttons.prev = ref;
+                  }}
+                >
+                  <Icons.ChevronIcon className="w-10 aspect-square fill-white -rotate-90" />
+                </motion.button>
+                <motion.button
+                  {...getInitialTransition(3)}
+                  className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
+                  onClick={() => handleChangePage(1)}
+                  ref={(ref) => {
+                    components_ref.current.buttons.next = ref;
+                  }}
+                >
+                  <Icons.ChevronIcon className="w-10 aspect-square fill-white rotate-90" />
+                </motion.button>
+              </>
+            )}
+          </div>
         </div>
-      </div>
 
-      <div className="relative w-full z-10 before:w-full before:h-px before:bg-secondary before:absolute before:top-0 before:z-5 before:left-0">
-        <Seperator className="w-full fill-secondary z-10 rotate-180" />
+        <motion.div
+          {...getInitialTransition(4)}
+          className="w-full grid gap-[inherit] overflow-hidden snap-x snap-mandatory [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--adder:0]"
+          ref={(ref) => {
+            components_ref.current.slider = ref;
+          }}
+          style={
+            {
+              gridTemplateColumns: `repeat(calc(${components.length} + var(--adder, ${components.reduce(
+                (prev, cur) => prev + ((cur.col_span ?? 1) - 1),
+                0,
+              )})), var(--col-w))`,
+            } as React.CSSProperties
+          }
+        >
+          {components.map(({ bg, component, inspiration, col_span }, idx) => (
+            <div
+              key={bg}
+              className="relative shrink-0 snap-start relative w-full h-full bg-cover bg-center flex justify-center items-center p-2 rounded-lg overflow-hidden not-lg:col-span-1! sm:p-6"
+              style={{
+                background: bg,
+                gridColumn: `span ${col_span}`,
+              }}
+            >
+              {bg.startsWith("/") && (
+                <Image
+                  src={bg}
+                  fill
+                  loading="lazy"
+                  className="object-cover object-center"
+                  alt={`component-${idx + 1}-bg`}
+                />
+              )}
+
+              {inspiration && (
+                <div className="absolute top-0 right-0 z-20">
+                  <Link href={inspiration} target="_blank">
+                    <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
+                      Inspiration
+                      <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
+                    </button>
+                  </Link>
+                </div>
+              )}
+
+              {component}
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
