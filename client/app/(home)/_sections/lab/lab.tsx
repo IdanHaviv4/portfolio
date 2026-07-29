@@ -110,14 +110,18 @@ const Lab = () => {
   return (
     <section
       id="lab"
-      className="w-screen flex flex-col py-[5vw]! bg-secondary px-3 xs:px-6 not-lg:py-6"
+      className="relative w-screen flex flex-col py-[5vw]! bg-secondary px-3 xs:px-6 not-lg:py-6"
       style={{
         clipPath: "polygon(0 0, 100% 5vw, 100% 100%, 0 calc(100% - 5vw))",
       }}
     >
-      <div className="w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
-        <div className="w-full flex flex-col items-end gap-[inherit] md:justify-between md:flex-row md:items-center">
-          <div className="w-full flex flex-col gap-4">
+      <Icons.FlaskIcon className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/3 w-[50vw] -rotate-12 aspect-square fill-section-dark not-md:hidden" />
+
+      <div className="relative w-full max-w-max-width mx-auto flex flex-col items-center gap-6">
+        <div className="relative w-full flex flex-col items-end gap-[inherit] md:justify-between md:flex-row md:items-center">
+          <Icons.FlaskIcon className="absolute bottom-0 left-0 translate-y-1/2 w-40 rotate-12 aspect-square fill-section-dark md:hidden" />
+
+          <div className="relative w-full flex flex-col gap-4">
             <motion.div {...getInitialTransition()}>
               <Title label="Experiments" tag="lab" variant="light" />
             </motion.div>
@@ -132,7 +136,7 @@ const Lab = () => {
             </motion.p>
           </div>
 
-          <div className="flex items-center gap-1">
+          <div className="relative flex items-center gap-1">
             {components.length > 1 && (
               <>
                 <motion.button

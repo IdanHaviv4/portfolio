@@ -62,7 +62,7 @@ const Project = ({ is_modal }: { is_modal?: true }) => {
                 <Link
                   href={project.github}
                   target="_blank"
-                  className="h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 not-xs:h-16 not-xs:p-1.5"
+                  className="flex h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 not-xs:h-16 not-xs:p-1.5"
                 >
                   <Icons.GithubIcon className="w-full h-full" />
                 </Link>

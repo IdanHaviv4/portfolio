@@ -30,6 +30,7 @@ import ArrowTopIcon from "./icons/arrow-t";
 import ChevronIcon from "./icons/chevron";
 import CouchIcon from "./icons/couch";
 import CookieIcon from "./illustrations/cookie";
+import FlaskIcon from "./icons/flask";
 import MenuIcon from "./icons/menu";
 
 export default {
@@ -65,5 +66,6 @@ export default {
   ChevronIcon,
   CouchIcon,
   CookieIcon,
+  FlaskIcon,
   MenuIcon,
 };

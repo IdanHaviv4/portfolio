@@ -6,7 +6,7 @@ export const skills = {
   android: Icons.AndroidIcon,
   c: Icons.CIcon,
   cpp: Icons.CPPIcon,
-  csharp: Icons.CSharpIcon,
+  python: Icons.PythonIcon,
   css: Icons.CSSIcon,
   figma: Icons.FigmaIcon,
   firebase: Icons.FirebaseIcon,
