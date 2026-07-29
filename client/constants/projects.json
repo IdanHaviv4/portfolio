@@ -10,12 +10,14 @@
       "nestjs",
       "prisma",
       "figma"
-    ]
+    ],
+    "github": "https://github.com/IdanHaviv4/decider"
   },
   {
     "title": "Commitment (מחוייבות)",
     "description": "As a student, I experienced firsthand how frustrating the process of logging and tracking community service hours could be, for students and administrative staff alike. At the request of my teacher, I set out to build \"Commitment\", a more intuitive Android application that simplifies and streamlines the entire tracking process. This project mainly shows what a few months of self-teaching in an entirely new environment can create.\n\nThe app was designed to offer a significantly improved user experience compared to existing solutions on the market. After presenting it to the school's staff and principal, it left a strong impression and is now under consideration to become the school's official platform for service-hour tracking, with discussions underway about expanding its reach beyond a single institution.\n\nUnder the hood, Commitment implements secure authentication and role-based access control, distinguishing between student and staff permissions, along with realtime data synchronization to keep records accurate and up to date across users. The codebase was built with an emphasis on solid software engineering fundamentals, including advanced object-oriented design principles and a clean, maintainable project structure, reflecting an intentional effort to write production-quality code rather than a one-off school project.",
-    "skills": ["android", "java", "firebase", "figma"]
+    "skills": ["android", "java", "firebase", "figma"],
+    "github": "https://github.com/IdanHaviv4/commitment"
   },
   {
     "title": "Portfolio",
