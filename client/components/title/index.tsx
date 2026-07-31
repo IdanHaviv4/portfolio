@@ -16,7 +16,7 @@ const Title = ({
         alignItems: orientation == "left" ? "start" : "center",
       }}
     >
-      <span className="text-accent! font-mono tracking-tighter">{`<${tag} />`}</span>
+      <span className="text-accent! font-mono! tracking-tighter">{`<${tag} />`}</span>
       <h1
         style={{
           color: variant == "light" ? "white" : "",

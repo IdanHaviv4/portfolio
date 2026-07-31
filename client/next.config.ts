@@ -4,6 +4,13 @@ const nextConfig: NextConfig = {
   reactStrictMode: false,
   images: {
     qualities: [95],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

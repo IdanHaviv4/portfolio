@@ -9,7 +9,7 @@
 
   --color-text-primary: #000;
   --color-text-secondary: #727272;
-  --color-text-secondary-dark: #cfcfcf;
+  --color-text-secondary-dark: #999999;
 
   --spacing-max-width: 52.75rem;
 
@@ -23,7 +23,7 @@
   user-drag: none;
   -webkit-user-drag: none;
 
-  @apply text-text-primary text-[1.1rem] select-none box-border scroll-smooth! border-0 outline-0;
+  @apply font-[Poppins] text-text-primary text-[1.1rem] select-none box-border scroll-smooth! border-0 outline-0;
 }
 
 *::-webkit-scrollbar {

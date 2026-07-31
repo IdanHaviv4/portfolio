@@ -14,6 +14,8 @@ const Lab = () => {
     component: React.ReactNode;
     inspiration?: string;
     col_span?: 1 | 2;
+    padding?: boolean;
+    on_mobile?: boolean;
   }[] = useMemo(
     () => [
       {
@@ -27,6 +29,12 @@ const Lab = () => {
         component: <Components.Component2 />,
         inspiration:
           "https://www.uidesigndaily.com/posts/sketch-upgrade-plan-pricing-payment-day-1421",
+      },
+      {
+        bg: "#252526",
+        component: <Components.Component6 />,
+        col_span: 2,
+        padding: false,
       },
       {
         bg: "linear-gradient(135deg,#fbecf9,#f3ddf8)",
@@ -141,7 +149,7 @@ const Lab = () => {
               <>
                 <motion.button
                   {...getInitialTransition(2)}
-                  className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
+                  className="bg-[#363E41] p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out"
                   onClick={() => handleChangePage(-1)}
                   ref={(ref) => {
                     components_ref.current.buttons.prev = ref;
@@ -151,7 +159,7 @@ const Lab = () => {
                 </motion.button>
                 <motion.button
                   {...getInitialTransition(3)}
-                  className="bg-[#363E41] p-4 rounded-full cursor-pointer transition duration-200 ease-out"
+                  className="bg-[#363E41] p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out"
                   onClick={() => handleChangePage(1)}
                   ref={(ref) => {
                     components_ref.current.buttons.next = ref;
@@ -179,39 +187,44 @@ const Lab = () => {
             } as React.CSSProperties
           }
         >
-          {components.map(({ bg, component, inspiration, col_span }, idx) => (
-            <div
-              key={bg}
-              className="relative shrink-0 snap-start relative w-full h-full bg-cover bg-center flex justify-center items-center p-2 rounded-lg overflow-hidden not-lg:col-span-1! sm:p-6"
-              style={{
-                background: bg,
-                gridColumn: `span ${col_span}`,
-              }}
-            >
-              {bg.startsWith("/") && (
-                <Image
-                  src={bg}
-                  fill
-                  loading="lazy"
-                  className="object-cover object-center"
-                  alt={`component-${idx + 1}-bg`}
-                />
-              )}
+          {components.map(
+            (
+              { bg, component, inspiration, col_span = 1, padding = true },
+              idx,
+            ) => (
+              <div
+                key={bg}
+                className={`relative shrink-0 snap-start w-full h-full bg-cover bg-center flex justify-center items-center rounded-lg overflow-hidden not-lg:col-span-1! ${padding && "p-2 sm:p-6"}`}
+                style={{
+                  background: bg,
+                  gridColumn: `span ${col_span}`,
+                }}
+              >
+                {bg.startsWith("/") && (
+                  <Image
+                    src={bg}
+                    fill
+                    loading="lazy"
+                    className="object-cover object-center"
+                    alt={`component-${idx + 1}-bg`}
+                  />
+                )}
 
-              {inspiration && (
-                <div className="absolute top-0 right-0 z-20">
-                  <Link href={inspiration} target="_blank">
-                    <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
-                      Inspiration
-                      <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
-                    </button>
-                  </Link>
-                </div>
-              )}
+                {inspiration && (
+                  <div className="absolute top-0 right-0 z-20">
+                    <Link href={inspiration} target="_blank">
+                      <button className="bg-accent text-white! px-3 py-1 rounded-bl-lg flex items-center gap-1 cursor-pointer">
+                        Inspiration
+                        <Icons.ArrowTopRightIcon className="w-4 aspect-square fill-white" />
+                      </button>
+                    </Link>
+                  </div>
+                )}
 
-              {component}
-            </div>
-          ))}
+                {component}
+              </div>
+            ),
+          )}
         </motion.div>
       </div>
     </section>
