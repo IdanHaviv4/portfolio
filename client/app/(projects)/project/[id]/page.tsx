@@ -41,9 +41,11 @@ const Project = ({ is_modal }: { is_modal?: true }) => {
         />
       </div>
 
-      <div className="relative w-full flex flex-col gap-[inherit] bg-primary before:absolute before:bottom-full before:left-0 before:w-full before:h-40 before:bg-linear-to-b before:from-transparent before:to-primary">
+      <div
+        className={`relative w-full flex flex-col gap-[inherit] bg-primary before:absolute before:bottom-full before:left-0 before:w-full before:h-40 before:bg-linear-to-b before:from-transparent before:to-primary ${is_modal && "pt-0! p-3 xs:p-6 md:p-10"}`}
+      >
         <div className="relative w-full flex justify-between items-center">
-          <div className="flex flex-col gap-2 xs:gap-4">
+          <div className="flex flex-col xs:gap-4">
             <motion.div {...getInitialTransition()}>
               <h1 className="not-xs:text-[1.5rem]!">{project.title}</h1>
             </motion.div>
