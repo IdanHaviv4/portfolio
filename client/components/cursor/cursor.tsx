@@ -21,7 +21,7 @@ const Cursor = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 -translate-x-1/2 w-6 aspect-square z-50 transition-[top_500ms,left_500ms,scale_200ms,rotate_200ms] ease-out pointer-events-none"
+      className="fixed top-0 left-0 -translate-x-1/2 w-6 aspect-square z-50 transition-[top_500ms,left_500ms,scale_200ms,rotate_200ms] ease-out pointer-events-none pointer-coarse:hidden"
       data-cursor
       ref={cursor_ref}
     >
