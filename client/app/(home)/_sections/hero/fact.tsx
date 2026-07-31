@@ -58,7 +58,7 @@ const Fact = ({
       {...getInitialTransition(transition_order)}
       className={`group w-full h-full rounded-lg flex flex-col justify-center items-center cursor-pointer perspective-midrange ${className}`}
     >
-      <div className="w-full h-full relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center *:bg-section">
+      <div className="w-full h-full relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center *:bg-section/50 *:backdrop-blur-2xl">
         <div>
           <p className="text-[1rem]!">Fun Fact</p>
           <h2 className="not-xs:text-[1.1rem]!">{fact.label}</h2>

@@ -129,7 +129,7 @@ const Component6 = () => {
         for (let i = 0; i < visible_imgs.length; i++)
           visible_imgs.at(
             (splice_at + i + 1) % visible_imgs.length,
-          )!.style.zIndex = `${i}`;
+          )!.style.zIndex = `${i + 1}`;
       }, 150);
     };
 

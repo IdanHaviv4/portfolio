@@ -16,13 +16,15 @@ const Hero = () => {
   return (
     <>
       <section id="home" className="w-screen h-min px-3 xs:px-6">
-        <div
-          className="w-full p-4 rounded-3xl overflow-hidden xs:p-6 md:py-10 md:px-0 not-lg:[--bg-position:left]"
-          style={{
-            background:
-              "url(/assets/hero/bg.jpg) no-repeat var(--bg-position, center)/cover",
-          }}
-        >
+        <div className="relative w-full p-4 rounded-3xl overflow-hidden xs:p-6 md:py-10 md:px-0">
+          <div
+            className="absolute top-0 left-0 w-full h-full -z-10 not-lg:[--bg-position:top]"
+            style={{
+              background:
+                "url(/assets/hero/bg.jpg) no-repeat var(--bg-position, center)/cover",
+            }}
+          ></div>
+
           <div className="w-full max-w-max-width mx-auto h-min grid grid-cols-[1fr_min-content_1fr] gap-5 not-lg:hidden">
             <Name transition_order={0} />
 

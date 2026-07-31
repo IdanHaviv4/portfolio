@@ -138,9 +138,10 @@ const Lab = () => {
               {...getInitialTransition(1)}
               className="text-text-secondary-dark!"
             >
-              This is my lab. Here i create interactive components to prove that{" "}
-              <span className="text-white! font-medium!">EVERY</span> design can
-              turn into reality.
+              This is my lab. Here i create full screens & interactive
+              components to prove that{" "}
+              <span className="text-white! font-medium!">EVERY</span> idea &
+              design can turn into reality.
             </motion.p>
           </div>
 

@@ -12,7 +12,7 @@ const Location = ({
   return (
     <motion.div
       {...getInitialTransition(transition_order)}
-      className={`h-full flex flex-col justify-between gap-4 items-start bg-section rounded-lg overflow-hidden group cursor-pointer relative ${className} not-md:w-full not-md:items-end`}
+      className={`h-full flex flex-col justify-between gap-4 items-start bg-section/50 backdrop-blur-2xl rounded-lg overflow-hidden group cursor-pointer relative ${className} not-md:w-full not-md:items-end`}
     >
       <div className="relative z-10 w-full flex flex-col px-5 py-4 transition duration-700 ease-out group-hover:-translate-y-1">
         <p className="not-sm:text-[1rem]!">Located in</p>
