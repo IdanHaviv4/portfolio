@@ -3,6 +3,7 @@ import { Edu_VIC_WA_NT_Hand, Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
+import { Cursor } from "@/components/cursor";
 
 const poppins = Poppins({
   weight: ["400", "500", "600"],
@@ -32,6 +33,8 @@ export default function RootLayout({
     >
       <body>
         <Nav />
+
+        <Cursor />
 
         <div className="w-full flex flex-col gap-20">
           <div className="w-full px-3 xs:px-6">

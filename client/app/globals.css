@@ -23,11 +23,15 @@
   user-drag: none;
   -webkit-user-drag: none;
 
-  @apply font-[Poppins] text-text-primary text-[1.1rem] select-none box-border scroll-smooth! border-0 outline-0;
+  @apply cursor-none! font-[Poppins] text-text-primary text-[1.1rem] select-none box-border scroll-smooth! border-0 outline-0;
 }
 
 *::-webkit-scrollbar {
   @apply w-0;
+}
+
+body:has(.cursor-pointer:hover) [data-cursor] {
+  @apply scale-150 rotate-12;
 }
 
 html {
