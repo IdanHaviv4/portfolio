@@ -7,21 +7,23 @@ const Cursor = () => {
   const cursor_ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    window.onmousemove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (!cursor_ref.current) return;
 
       cursor_ref.current.style.left = `${e.clientX}px`;
       cursor_ref.current.style.top = `${e.clientY}px`;
     };
 
+    window.addEventListener("mousemove", handleMouseMove);
+
     return () => {
-      window.onmousemove = null;
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   return (
     <div
-      className="fixed top-0 left-0 -translate-x-1/2 w-6 aspect-square z-50 transition-[top_500ms,left_500ms,scale_200ms,rotate_200ms] ease-out pointer-events-none pointer-coarse:hidden"
+      className="fixed top-0 left-0 -translate-x-1/2 w-6 aspect-square z-100 transition-[top_500ms,left_500ms,scale_200ms,rotate_200ms] ease-out pointer-events-none pointer-coarse:hidden"
       data-cursor
       ref={cursor_ref}
     >

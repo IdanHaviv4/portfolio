@@ -1,9 +1,9 @@
 "use client";
 
-import { projects } from "@/constants";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { default as Proj } from "@/app/(projects)/project/[id]/page";
+import { Cursor } from "@/components/cursor";
 
 const Project = () => {
   const router = useRouter();
@@ -34,6 +34,8 @@ const Project = () => {
       className="overflow-y-auto"
     >
       <Proj is_modal />
+
+      <Cursor />
     </dialog>
   );
 };

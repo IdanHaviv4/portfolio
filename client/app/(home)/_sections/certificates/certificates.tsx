@@ -1,5 +1,6 @@
 "use client";
 
+import { Cursor } from "@/components/cursor";
 import Title from "@/components/title";
 import { getInitialTransition } from "@/lib/helpers";
 import { motion } from "framer-motion";
@@ -22,6 +23,8 @@ const Certificates = () => {
         }}
       >
         <img alt="certificate-upscale" />
+
+        <Cursor />
       </dialog>
 
       <motion.div {...getInitialTransition()}>

@@ -34,8 +34,6 @@ export default function RootLayout({
       <body>
         <Nav />
 
-        <Cursor />
-
         <div className="w-full flex flex-col gap-20">
           <div className="w-full px-3 xs:px-6">
             <div className="w-full max-w-max-width mx-auto flex flex-col items-center [&>section]:pt-16">
@@ -47,6 +45,8 @@ export default function RootLayout({
         </div>
 
         {modal}
+
+        <Cursor />
       </body>
     </html>
   );
