@@ -27,7 +27,7 @@ const Name = ({
         width={150}
         height={150}
         loading="lazy"
-        className="absolute right-0 bottom-0 origin-bottom-right translate-full scale-105 transition duration-700 ease-out group-hover:translate-x-1/5 group-hover:translate-y-0 group-hover:-rotate-15"
+        className="absolute right-0 bottom-0 origin-bottom-right not-pointer-coarse:translate-full scale-105 transition duration-700 ease-out group-hover:translate-x-1/5 group-hover:translate-y-0 group-hover:-rotate-15 pointer-coarse:translate-x-1/5 pointer-coarse:-rotate-15"
         alt="hi-img"
       />
     </motion.div>

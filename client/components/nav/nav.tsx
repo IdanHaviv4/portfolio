@@ -101,11 +101,11 @@ const Nav = () => {
         </div>
 
         <nav className="w-full h-full flex justify-between items-start pb-8 md:hidden not-sm:justify-start not-sm:gap-10 not-sm:flex-col not-sm:items-end">
-          <ul className="list-none flex flex-col items-start gap-8 not-sm:w-full">
+          <ul className="list-none flex flex-col items-start gap-6 not-sm:w-full">
             {links.map((section) => (
               <li className="group" key={section}>
                 <Link href={`/#${section}`} onClick={() => toggleMobileNav()}>
-                  <h1 className="capitalize transition duration-200 ease-out group-hover:text-accent!">
+                  <h1 className="capitalize transition duration-200 ease-out text-[2.25rem]! leading-6! group-hover:text-accent!">
                     {section}
                   </h1>
                 </Link>
