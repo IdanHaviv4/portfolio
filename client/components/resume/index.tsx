@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Icons } from "../";
 import { motion } from "framer-motion";
 import { getInitialTransition } from "@/lib/helpers";
+import Link from "next/link";
 
 const Resume = ({
   className,
@@ -14,14 +15,16 @@ const Resume = ({
   include_scroll?: boolean;
   transition_order?: number;
 }) => {
-  const btn_ref = useRef<HTMLDivElement>(null);
+  const btn_ref = useRef<HTMLAnchorElement>(null);
   const content_ref = useRef<HTMLDivElement>(null);
 
   return (
-    <motion.div
+    <motion.a
       {...(transition_order !== undefined
         ? getInitialTransition(transition_order)
         : {})}
+      href="/resume.pdf"
+      target="_blank"
       className={`group row-span-2 h-fit bg-secondary px-16 py-12 rounded-lg flex justify-center items-center cursor-pointer transition-transform duration-200 ease-out hover:scale-95 ${className ?? ""}`}
       ref={btn_ref}
       onMouseMove={(e) => {
@@ -54,7 +57,7 @@ const Resume = ({
 
         <h2 className="text-white!">Resume</h2>
       </div>
-    </motion.div>
+    </motion.a>
   );
 };
 

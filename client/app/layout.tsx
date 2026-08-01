@@ -15,7 +15,7 @@ const edu = Edu_VIC_WA_NT_Hand({
 
 export const metadata: Metadata = {
   title: "Idan Haviv",
-  description: "Fullstack developer",
+  description: "Fullstack Developer & UI/UX Designer",
 };
 
 export default function RootLayout({
