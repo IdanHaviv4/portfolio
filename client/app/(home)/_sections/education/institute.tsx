@@ -66,10 +66,9 @@ const Institute = ({
             <div className="w-full flex flex-col gap-6 transition duration-200 ease-out">
               <p className="not-sm:text-[1rem]!">{description}</p>
 
-              <ul className="list-none **:text-text-secondary! flex flex-col gap-[inherit]">
+              <ul className="ml-4 list-disc **:text-text-secondary! flex flex-col gap-[inherit]">
                 {bulletpoints.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <div></div>
+                  <li key={idx}>
                     <span className="not-sm:text-[1rem]!">{point}</span>
                   </li>
                 ))}
