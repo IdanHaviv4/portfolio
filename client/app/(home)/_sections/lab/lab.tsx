@@ -49,13 +49,13 @@ const Lab = () => {
         inspiration:
           "https://www.uidesigndaily.com/posts/sketch-recipe-components-subscribe-tags-card-rating-day-1145",
       },
-      // {
-      //   bg: "/assets/lab/components/3/bg.jpg",
-      //   component: <Components.Component3 />,
-      //   inspiration:
-      //     "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
-      //   col_span: 2,
-      // },
+      {
+        bg: "/assets/lab/components/3/bg.jpg",
+        component: <Components.Component3 />,
+        inspiration:
+          "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
+        col_span: 2,
+      },
     ],
     [],
   );

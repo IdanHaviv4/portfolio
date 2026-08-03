@@ -28,7 +28,7 @@ const Component3 = () => (
         dream come true.
       </p>
 
-      <div className="flex items-center gap-4 *:even:bg-white *:even:w-0.5 *:even:h-8 *:even:rounded-full">
+      <div className="flex items-center gap-6">
         <div className="flex flex-col">
           <span className="text-[1.1rem]! font-medium! leading-4">74.3M</span>
           <span className="text-[0.8rem]! text-[#626262]! font-medium! leading-4">
@@ -36,16 +36,12 @@ const Component3 = () => (
           </span>
         </div>
 
-        <div />
-
         <div className="flex flex-col">
           <span className="text-[1.1rem]! font-medium! leading-4">17</span>
           <span className="text-[0.8rem]! text-[#626262]! font-medium! leading-4">
             Rank
           </span>
         </div>
-
-        <div />
 
         <div className="flex flex-col">
           <span className="text-[1.1rem]! font-medium! leading-4">45M</span>
@@ -55,11 +51,11 @@ const Component3 = () => (
         </div>
       </div>
 
-      <div className="flex items-center gap-2">
-        <button className="px-4 py-2 rounded-lg bg-[#0a0a14] text-[0.8rem]! text-white! border-2! border-solid border-[#0a0a14] cursor-pointer sm:text-[1rem]! sm:px-6">
+      <div className="flex items-center gap-1">
+        <button className="px-6 py-2 rounded-full bg-[#0a0a14] text-[0.8rem]! text-white! cursor-pointer sm:text-[1rem]! sm:px-6">
           Follow
         </button>
-        <button className="px-4 py-2 rounded-lg text-[0.8rem]! text-[#0a0a14]! border! border-solid border-[#4e5461] cursor-pointer sm:text-[1rem]! sm:px-6">
+        <button className="px-6 py-2 rounded-full text-[0.8rem]! text-[#0a0a14]! bg-[#0a0a1420]! cursor-pointer sm:text-[1rem]! sm:px-6 transition duration-200 ease-out hover:bg-[#0a0a142f]!">
           View profile
         </button>
       </div>
