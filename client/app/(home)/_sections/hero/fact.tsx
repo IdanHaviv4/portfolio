@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { getInitialTransition } from "@/lib/helpers";
 import { motion } from "framer-motion";
 
@@ -53,12 +53,28 @@ const Fact = ({
     [],
   );
 
+  const card_ref = useRef<HTMLDivElement>(null);
+
   return (
     <motion.div
       {...getInitialTransition(transition_order)}
       className={`group w-full h-full rounded-lg flex flex-col justify-center items-center cursor-pointer perspective-midrange ${className}`}
     >
-      <div className="w-full h-full relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center *:bg-section/50 *:backdrop-blur-2xl">
+      <div
+        className="w-full h-full relative transition duration-700 transform-3d ease-out group-hover:rotate-y-180 *:absolute *:top-0 *:left-0 *:w-full *:h-full *:rounded-lg *:backface-hidden *:flex *:flex-col *:justify-center *:items-center *:bg-section/50 *:backdrop-blur-2xl"
+        ref={card_ref}
+        onClick={() => {
+          const is_touch_screen =
+            window.matchMedia("(pointer: coarse)").matches;
+
+          if (!is_touch_screen || !card_ref.current) return;
+
+          const is_visible =
+            card_ref.current.style.transform.includes("180deg");
+
+          card_ref.current.style.transform = `rotateY(${is_visible ? 0 : 180}deg)`;
+        }}
+      >
         <div>
           <p className="text-[1rem]!">Fun Fact</p>
           <h2 className="not-xs:text-[1.1rem]!">{fact.label}</h2>
