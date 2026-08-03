@@ -31,7 +31,7 @@ const Institute = ({
         open={idx === 0}
         className="group w-full flex flex-col items-start gap-1"
       >
-        <summary className="list-none [&::-webkit-details-marker]:hidden shrink-0 w-full flex justify-between items-center cursor-pointer">
+        <summary className="group/summary list-none [&::-webkit-details-marker]:hidden shrink-0 w-full flex justify-between items-center cursor-pointer">
           <div className="flex items-center gap-3">
             <div className="w-8 aspect-square rounded-full bg-section sm:p-1 sm:w-12">
               <img
@@ -53,7 +53,7 @@ const Institute = ({
           <div className="flex items-center gap-3">
             <Skills skills={skills} className="not-sm:h-7 not-sm:w-4.5" />
 
-            <div className="shrink-0 p-1 aspect-square bg-section rounded-full flex justify-center items-center">
+            <div className="shrink-0 p-1 aspect-square bg-section rounded-full flex justify-center items-center transition duration-200 ease-out group-hover/summary:bg-section-hover!">
               <Chevron className="w-7 aspect-square fill-text-secondary transition duration-200 ease-out rotate-180 group-open:rotate-0 not-sm:w-5" />
             </div>
           </div>

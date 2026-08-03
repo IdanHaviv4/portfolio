@@ -13,9 +13,9 @@ const Lab = () => {
     bg: string;
     component: React.ReactNode;
     inspiration?: string;
-    col_span?: 1 | 2;
-    padding?: boolean;
-    on_mobile?: boolean;
+    col_span?: 2;
+    padding?: false;
+    on_mobile?: false;
   }[] = useMemo(
     () => [
       {
@@ -35,6 +35,7 @@ const Lab = () => {
         component: <Components.Component6 />,
         col_span: 2,
         padding: false,
+        on_mobile: false,
       },
       {
         bg: "linear-gradient(135deg,#fbecf9,#f3ddf8)",
@@ -48,13 +49,13 @@ const Lab = () => {
         inspiration:
           "https://www.uidesigndaily.com/posts/sketch-recipe-components-subscribe-tags-card-rating-day-1145",
       },
-      {
-        bg: "/assets/lab/components/3/bg.jpg",
-        component: <Components.Component3 />,
-        inspiration:
-          "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
-        col_span: 2,
-      },
+      // {
+      //   bg: "/assets/lab/components/3/bg.jpg",
+      //   component: <Components.Component3 />,
+      //   inspiration:
+      //     "https://www.uidesigndaily.com/posts/sketch-profile-card-gradient-day-1377",
+      //   col_span: 2,
+      // },
     ],
     [],
   );
@@ -93,7 +94,9 @@ const Lab = () => {
         slider.scrollLeft + slider.clientWidth + 10 < slider.scrollWidth;
 
       const changeButtonStyle = (btn: HTMLButtonElement, can_go: boolean) => {
-        btn.classList.toggle("bg-[#363E41]", can_go);
+        btn.disabled = !can_go;
+
+        btn.classList.toggle("bg-section-dark", can_go);
         btn.classList.toggle("cursor-pointer", can_go);
         btn.querySelector("svg")!.style.fill = can_go
           ? "white"
@@ -150,7 +153,7 @@ const Lab = () => {
               <>
                 <motion.button
                   {...getInitialTransition(2)}
-                  className="bg-[#363E41] p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out"
+                  className="bg-section-dark p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out not-disabled:hover:bg-section-dark-hover"
                   onClick={() => handleChangePage(-1)}
                   ref={(ref) => {
                     components_ref.current.buttons.prev = ref;
@@ -160,7 +163,7 @@ const Lab = () => {
                 </motion.button>
                 <motion.button
                   {...getInitialTransition(3)}
-                  className="bg-[#363E41] p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out"
+                  className="bg-section-dark p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out not-disabled:hover:bg-section-dark-hover"
                   onClick={() => handleChangePage(1)}
                   ref={(ref) => {
                     components_ref.current.buttons.next = ref;
@@ -175,27 +178,34 @@ const Lab = () => {
 
         <motion.div
           {...getInitialTransition(4)}
-          className="w-full grid gap-[inherit] overflow-hidden snap-x snap-mandatory [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--adder:0]"
+          className="w-full grid gap-[inherit] overflow-hidden snap-x snap-mandatory [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--add-for-span:0] not-pointer-coarse:[--hide-for-mobile:0]"
           ref={(ref) => {
             components_ref.current.slider = ref;
           }}
           style={
             {
-              gridTemplateColumns: `repeat(calc(${components.length} + var(--adder, ${components.reduce(
+              gridTemplateColumns: `repeat(calc(${components.length} + var(--add-for-span, ${components.reduce(
                 (prev, cur) => prev + ((cur.col_span ?? 1) - 1),
                 0,
-              )})), var(--col-w))`,
+              )}) - var(--hide-for-mobile, ${components.filter(({ on_mobile = true }) => !on_mobile).length})), var(--col-w))`,
             } as React.CSSProperties
           }
         >
           {components.map(
             (
-              { bg, component, inspiration, col_span = 1, padding = true },
+              {
+                bg,
+                component,
+                inspiration,
+                col_span = 1,
+                padding = true,
+                on_mobile = true,
+              },
               idx,
             ) => (
               <div
                 key={bg}
-                className={`relative shrink-0 snap-start w-full h-full bg-cover bg-center flex justify-center items-center rounded-lg overflow-hidden not-lg:col-span-1! ${padding && "p-2 sm:p-6"}`}
+                className={`relative shrink-0 snap-start w-full h-full bg-cover bg-center flex justify-center items-center rounded-lg overflow-hidden not-lg:col-span-1! ${padding && "p-2 sm:p-6"} ${!on_mobile && "pointer-coarse:hidden"}`}
                 style={{
                   background: bg,
                   gridColumn: `span ${col_span}`,

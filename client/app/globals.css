@@ -5,7 +5,9 @@
   --color-secondary: #303538;
   --color-accent: #8266ff;
   --color-section: #f1f1f1;
+  --color-section-hover: #e7e4e4;
   --color-section-dark: #363e41;
+  --color-section-dark-hover: #3f494d;
 
   --color-text-primary: #000;
   --color-text-secondary: #727272;
@@ -30,7 +32,7 @@
   @apply w-0;
 }
 
-body:has(.cursor-pointer:hover) [data-cursor] {
+body:has(.cursor-pointer:hover:not([disabled])) [data-cursor] {
   @apply scale-150 rotate-12;
 }
 
