@@ -32,6 +32,7 @@ import CouchIcon from "./icons/couch";
 import CookieIcon from "./illustrations/cookie";
 import FlaskIcon from "./icons/flask";
 import MenuIcon from "./icons/menu";
+import XIcon from "./icons/x";
 
 export default {
   LogoIcon,
@@ -68,4 +69,5 @@ export default {
   CookieIcon,
   FlaskIcon,
   MenuIcon,
+  XIcon,
 };

@@ -14,6 +14,7 @@ const Nav = () => {
 
   const name_ref = useRef<HTMLDivElement>(null);
   const nav_ref = useRef<HTMLDivElement>(null);
+  const toggle_nav_btn = useRef<HTMLButtonElement>(null);
 
   const links = useMemo(
     () => ["home", "projects", "lab", "education", "certificates"],
@@ -33,12 +34,17 @@ const Nav = () => {
 
   const toggleMobileNav = useCallback(
     (open?: boolean) => {
-      if (!nav_ref.current) return;
+      if (!nav_ref.current || !toggle_nav_btn.current) return;
 
       const should_open = open ?? !nav_ref.current.classList.contains("h-full");
 
       if (should_open) toggleName(false);
       else toggleName();
+
+      toggle_nav_btn.current.scrollBy(
+        0,
+        toggle_nav_btn.current.clientWidth * (should_open ? 1 : -1),
+      );
 
       for (const classname of ["h-full", "opened"])
         nav_ref.current?.classList.toggle(classname, should_open);
@@ -103,10 +109,12 @@ const Nav = () => {
           </ul>
 
           <button
-            className="cursor-pointer md:hidden"
+            className="w-6 aspect-square cursor-pointer flex flex-col justify-start items-start overflow-hidden md:hidden *:shrink-0 *:w-full *:aspect-square *:fill-text-primary *:transition *:duration-200 *:ease-out *:hover:fill-accent"
+            ref={toggle_nav_btn}
             onClick={() => toggleMobileNav()}
           >
-            <Icons.MenuIcon className="w-6 aspect-square fill-text-primary" />
+            <Icons.MenuIcon />
+            <Icons.XIcon />
           </button>
         </div>
 
