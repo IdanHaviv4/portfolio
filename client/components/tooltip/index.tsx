@@ -13,7 +13,7 @@ const Tooltip = ({
   return (
     <div
       {...props}
-      className={`group relative h-full aspect-square ${props.className ?? ""}`}
+      className={`group relative h-full aspect-square cursor-pointer ${props.className ?? ""}`}
     >
       {children}
 

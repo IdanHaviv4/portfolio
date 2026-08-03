@@ -1,6 +1,6 @@
 "use client";
 
-import { Icons } from "@/components";
+import { Icons, Tooltip } from "@/components";
 import Skills from "@/components/skills";
 import { projects } from "@/constants";
 import { getInitialTransition } from "@/lib/helpers";
@@ -58,13 +58,15 @@ const Project = ({ is_modal }: { is_modal?: true }) => {
 
           <div className="flex items-center gap-2">
             {project.github && (
-              <Link
-                href={project.github}
-                target="_blank"
-                className="flex h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 not-xs:h-16 not-xs:p-1.5"
-              >
-                <Icons.GithubIcon className="w-full h-full" />
-              </Link>
+              <Tooltip label="Repository">
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  className="flex h-24 aspect-square p-3 bg-section rounded-full cursor-pointer transition duration-200 ease-out group-hover:scale-90 not-xs:h-16 not-xs:p-1.5"
+                >
+                  <Icons.GithubIcon className="w-full h-full" />
+                </Link>
+              </Tooltip>
             )}
           </div>
         </div>
