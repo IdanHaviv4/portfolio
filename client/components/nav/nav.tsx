@@ -64,7 +64,10 @@ const Nav = () => {
       >
         <div className="w-full h-fit max-w-max-width mx-auto flex justify-between items-center">
           <motion.div {...getInitialTransition()}>
-            <Link href="/#home" className="flex items-center gap-3">
+            <Link
+              href="/#home"
+              className="cursor-pointer flex items-center gap-3"
+            >
               <Icons.LogoIcon className="w-8 aspect-square" />
 
               <div
@@ -84,8 +87,15 @@ const Nav = () => {
 
           <ul className="list-none flex items-center gap-9 not-md:hidden">
             {links.map((section, idx) => (
-              <motion.li {...getInitialTransition(idx + 1)} key={section}>
-                <Link href={`/#${section}`} className="capitalize text-[1rem]!">
+              <motion.li
+                {...getInitialTransition(idx + 1)}
+                className="cursor-pointer"
+                key={section}
+              >
+                <Link
+                  href={`/#${section}`}
+                  className="capitalize text-[1rem]! transition duration-200 ease-out hover:text-accent!"
+                >
                   {section}
                 </Link>
               </motion.li>
@@ -103,7 +113,7 @@ const Nav = () => {
         <nav className="w-full h-full flex justify-between items-start pb-8 md:hidden not-sm:justify-start not-sm:gap-10 not-sm:flex-col not-sm:items-end">
           <ul className="list-none flex flex-col items-start gap-6 not-sm:w-full">
             {links.map((section) => (
-              <li className="group" key={section}>
+              <li className="group cursor-pointer" key={section}>
                 <Link href={`/#${section}`} onClick={() => toggleMobileNav()}>
                   <h1 className="capitalize transition duration-200 ease-out text-[2.25rem]! leading-6! group-hover:text-accent!">
                     {section}
