@@ -88,7 +88,7 @@ const Component4 = () => {
               return (
                 <Icons.CouchIcon
                   key={col}
-                  className={`w-6 aspect-square ${is_booked ? "fill-[#c8d8df]" : is_selected ? "fill-[#ed407a] cursor-pointer" : "fill-[#5b889d] cursor-pointer"}`}
+                  className={`w-6 aspect-square transition duration-200 ease-out ${is_booked ? "fill-[#c8d8df]" : is_selected ? "fill-[#ed407a] cursor-pointer hover:fill-[#db4074]" : "fill-[#5b889d] cursor-pointer hover:fill-[#53788a]"}`}
                   onClick={() => {
                     if (is_booked) return;
 

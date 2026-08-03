@@ -4,7 +4,7 @@ const Component5 = () => {
   return (
     <div className="flex flex-col items-center gap-4 p-6 bg-[#ffffff] rounded-2xl shadow-[0_0_30px_#d9c8e5]">
       <div className="w-full flex justify-end">
-        <div className="w-8 aspect-square flex justify-center items-center rounded-full bg-[#f7f7fc] cursor-pointer">
+        <div className="w-8 aspect-square flex justify-center items-center rounded-full bg-[#f7f7fc] cursor-pointer transition duration-200 ease-out hover:bg-[#ededf7]">
           <span className="text-[#b8b7cc]!">&#10006;</span>
         </div>
       </div>

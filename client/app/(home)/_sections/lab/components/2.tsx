@@ -34,31 +34,25 @@ const Component2 = () => (
     <div className="flex flex-col gap-2">
       <span className="text-[1rem]!">Select payment method</span>
       <div className="w-full grid grid-cols-2 gap-[inherit]">
-        <div className="relative w-full py-2 flex justify-center items-center rounded-lg bg-section text-[0.8rem]! border-2! border-solid border-transparent cursor-pointer overflow-hidden transition duration-200 ease-out has-[&_input[type='radio']:checked]:border-[#090b2e]! has-[&_input[type='radio']:checked]:text-[#090b2e]! has-[&_input[type='radio']:not(:checked)]:text-[#525252]!">
-          <label className="absolute w-full h-full cursor-pointer opacity-0">
-            <input
-              type="radio"
-              name="payment-method"
-              className="cursor-pointer"
-            />
-          </label>
-          Credit card
-        </div>
-
-        <div className="relative w-full py-2 flex justify-center items-center rounded-lg bg-section text-[0.8rem]! border-2! border-solid border-transparent cursor-pointer overflow-hidden transition duration-200 ease-out has-[&_input[type='radio']:checked]:border-[#090b2e]! has-[&_input[type='radio']:checked]:text-[#090b2e]! has-[&_input[type='radio']:not(:checked)]:text-[#525252]!">
-          <label className="absolute w-full h-full cursor-pointer opacity-0">
-            <input
-              type="radio"
-              name="payment-method"
-              className="cursor-pointer"
-            />
-          </label>
-          Paypal
-        </div>
+        {[{ label: "Credit card" }, { label: "Paypal" }].map(({ label }) => (
+          <div
+            key={label}
+            className="relative w-full py-2 flex justify-center items-center rounded-lg bg-linear-120 from-section to-section text-[0.8rem]! cursor-pointer overflow-hidden transition duration-200 ease-out has-[input[type='radio']:checked]:text-[#090b2e]! has-[input[type='radio']:checked]:from-[#03dbfc] has-[input[type='radio']:checked]:to-[#03fcf4] has-[&_input[type='radio']:not(:checked)]:text-[#525252]! has-[&_input[type='radio']:not(:checked)]:hover:from-section-hover has-[&_input[type='radio']:not(:checked)]:hover:to-section-hover"
+          >
+            <label className="absolute w-full h-full cursor-pointer opacity-0">
+              <input
+                type="radio"
+                name="payment-method"
+                className="cursor-pointer"
+              />
+            </label>
+            {label}
+          </div>
+        ))}
       </div>
     </div>
 
-    <button className="w-full py-4 rounded-lg bg-[#090b2e] text-white! text-[0.8rem]! cursor-pointer">
+    <button className="w-full py-4 rounded-lg bg-[#090b2e] text-white! text-[0.8rem]! cursor-pointer transition duration-200 ease-out hover:bg-[#141742]!">
       Continue
     </button>
   </div>

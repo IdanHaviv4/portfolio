@@ -29,7 +29,7 @@ const Component1 = () => (
           type="email"
           placeholder="Your email address"
         />
-        <button className="text-[0.8rem]! w-full h-full flex justify-center items-center py-3 rounded-lg bg-[#f55951] text-white! font-medium shadow-[0_0_30px_hsl(338_83%_34%_/0.2)] cursor-pointer xs:text-[1rem]!">
+        <button className="text-[0.8rem]! w-full h-full flex justify-center items-center py-3 rounded-lg bg-[#f55951] text-white! font-medium shadow-[0_0_30px_hsl(338_83%_34%_/0.2)] cursor-pointer xs:text-[1rem]! transition duration-200 ease-out hover:bg-[#f26861]">
           Subscribe
         </button>
       </div>
