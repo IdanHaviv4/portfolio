@@ -27,11 +27,17 @@ import LinkedinIcon from "./brands/linkedin";
 
 import ArrowTopRightIcon from "./icons/arrow-tr";
 import ArrowTopIcon from "./icons/arrow-t";
+import CalendarIcon from "./icons/calendar";
 import ChevronIcon from "./icons/chevron";
+import CompassIcon from "./icons/compass";
 import CouchIcon from "./icons/couch";
 import CookieIcon from "./illustrations/cookie";
 import FlaskIcon from "./icons/flask";
+import HomeIcon from "./icons/home";
 import MenuIcon from "./icons/menu";
+import PlaneIcon from "./icons/plane";
+import ProfileIcon from "./icons/profile";
+import SearchIcon from "./icons/search";
 import XIcon from "./icons/x";
 
 export default {
@@ -64,10 +70,16 @@ export default {
 
   ArrowTopRightIcon,
   ArrowTopIcon,
+  CalendarIcon,
   ChevronIcon,
+  CompassIcon,
   CouchIcon,
   CookieIcon,
   FlaskIcon,
+  HomeIcon,
   MenuIcon,
+  PlaneIcon,
+  ProfileIcon,
+  SearchIcon,
   XIcon,
 };

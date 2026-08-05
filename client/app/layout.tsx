@@ -6,7 +6,7 @@ import { Nav } from "@/components/nav";
 import { Cursor } from "@/components/cursor";
 
 const poppins = Poppins({
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600"],
 });
 
 const edu = Edu_VIC_WA_NT_Hand({

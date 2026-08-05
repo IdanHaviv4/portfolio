@@ -9,15 +9,33 @@ import { motion } from "framer-motion";
 import { getInitialTransition } from "@/lib/helpers";
 
 const Lab = () => {
-  const components: {
+  const components: ({
     bg: string;
     component: React.ReactNode;
+    num_of_components?: 2;
     inspiration?: string;
-    col_span?: 2;
     padding?: false;
     on_mobile?: false;
-  }[] = useMemo(
+  } & (
+    | {
+        col_span: undefined;
+        shrink_on_small: undefined;
+      }
+    | {
+        col_span: 2;
+        shrink_on_small?: false;
+      }
+  ))[] = useMemo(
     () => [
+      {
+        bg: "#f0f9ff",
+        component: <Components.Component7 />,
+        inspiration:
+          "https://dribbble.com/shots/27549493-TripPilot-AI-Travel-Companion-Mobile-App-UI",
+        col_span: 2,
+        shrink_on_small: false,
+        num_of_components: 2,
+      },
       {
         bg: "#e9f2ef",
         component: <Components.Component4 />,
@@ -75,7 +93,7 @@ const Lab = () => {
     if (!components_ref.current.slider) return;
 
     components_ref.current.slider.scrollBy(
-      components_ref.current.slider.clientWidth * dir,
+      (components_ref.current.slider.clientWidth + 30) * dir,
       0,
     );
   }, []);
@@ -178,14 +196,19 @@ const Lab = () => {
 
         <motion.div
           {...getInitialTransition(4)}
-          className="w-full grid gap-[inherit] overflow-hidden snap-x snap-mandatory [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--add-for-span:0] not-pointer-coarse:[--hide-for-mobile:0]"
+          className="w-full grid gap-[inherit] rounded-lg overflow-hidden snap-x snap-mandatory [--col-w:100%] lg:[--col-w:calc(50%_-_1.5rem_/_2)] not-lg:[--add-for-span:0] not-pointer-coarse:[--hide-for-mobile:0]"
           ref={(ref) => {
             components_ref.current.slider = ref;
           }}
           style={
             {
-              gridTemplateColumns: `repeat(calc(${components.length} + var(--add-for-span, ${components.reduce(
-                (prev, cur) => prev + ((cur.col_span ?? 1) - 1),
+              gridTemplateColumns: `repeat(calc(${components.length + components.filter(({ col_span, shrink_on_small }) => col_span && shrink_on_small != undefined && !shrink_on_small).length} + var(--add-for-span, ${components.reduce(
+                (prev, cur) => {
+                  if (cur.shrink_on_small != undefined && !cur.shrink_on_small)
+                    return prev;
+
+                  return prev + ((cur.col_span ?? 1) - 1);
+                },
                 0,
               )}) - var(--hide-for-mobile, ${components.filter(({ on_mobile = true }) => !on_mobile).length})), var(--col-w))`,
             } as React.CSSProperties
@@ -198,17 +221,20 @@ const Lab = () => {
                 component,
                 inspiration,
                 col_span = 1,
+                num_of_components = 1,
                 padding = true,
                 on_mobile = true,
+                shrink_on_small = true,
               },
               idx,
             ) => (
               <div
                 key={bg}
-                className={`relative shrink-0 snap-start w-full h-full bg-cover bg-center flex justify-center items-center rounded-lg overflow-hidden not-lg:col-span-1! ${padding && "p-2 sm:p-6"} ${!on_mobile && "pointer-coarse:hidden"}`}
+                className={`relative shrink-0 snap-start snap-mandatory w-full h-full bg-cover bg-center grid place-items-center gap-10 rounded-lg overflow-hidden ${col_span && shrink_on_small && "not-lg:col-span-1!"} ${padding && "p-2 sm:p-6"} ${!on_mobile && "pointer-coarse:hidden"}`}
                 style={{
                   background: bg,
                   gridColumn: `span ${col_span}`,
+                  gridTemplateColumns: `repeat(${num_of_components}, 1fr)`,
                 }}
               >
                 {bg.startsWith("/") && (
