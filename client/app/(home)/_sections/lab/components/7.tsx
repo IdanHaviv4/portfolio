@@ -4,12 +4,12 @@ import Image from "next/image";
 const Component7 = () => {
   return (
     <>
-      <div className="w-full max-w-76 h-full grid grid-cols-1 bg-[#01c2c6] rounded-4xl overflow-hidden">
+      <div className="w-full max-w-76 h-full grid grid-cols-1 grid-rows-[1fr_min-content] bg-[#01c2c6] rounded-4xl overflow-hidden">
         <Image
           src="/assets/lab/components/7/bg.jpg"
           width={500}
           height={500}
-          className="w-full aspect-square"
+          className="h-full aspect-square"
           alt="component-7-bg"
         />
 
