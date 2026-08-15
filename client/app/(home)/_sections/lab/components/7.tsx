@@ -4,7 +4,7 @@ import Image from "next/image";
 const Component7 = () => {
   return (
     <>
-      <div className="w-full max-w-76 h-full grid grid-cols-1 grid-rows-[1fr_min-content] bg-[#01c2c6] rounded-4xl overflow-hidden">
+      <div className="w-full max-w-76 h-full grid grid-cols-1 grid-rows-[1fr_min-content] bg-[#01c2c6] rounded-4xl overflow-hidden not-xs:max-w-70">
         <Image
           src="/assets/lab/components/7/bg.jpg"
           width={500}
@@ -40,7 +40,7 @@ const Component7 = () => {
         </div>
       </div>
 
-      <div className="relative w-full max-w-76 h-full flex flex-col gap-4 bg-[#fefefe] rounded-4xl p-4 overflow-hidden">
+      <div className="relative w-full max-w-76 h-full flex flex-col gap-4 bg-[#fefefe] rounded-4xl p-4 overflow-hidden not-xs:max-w-70">
         <div className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/2 w-48 aspect-square rounded-full bg-[#4de4ff40] blur-3xl"></div>
 
         <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/2 w-28 aspect-square rounded-full bg-[#fa5eff40] blur-3xl"></div>
