@@ -36,6 +36,7 @@ import FlaskIcon from "./icons/flask";
 import HomeIcon from "./icons/home";
 import LocationIcon from "./icons/location";
 import MenuIcon from "./icons/menu";
+import MessageIcon from "./icons/message";
 import PlaneIcon from "./icons/plane";
 import ProfileIcon from "./icons/profile";
 import SearchIcon from "./icons/search";
@@ -81,6 +82,7 @@ export default {
   HomeIcon,
   LocationIcon,
   MenuIcon,
+  MessageIcon,
   PlaneIcon,
   ProfileIcon,
   SearchIcon,
