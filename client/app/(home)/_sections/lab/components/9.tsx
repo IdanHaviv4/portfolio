@@ -70,7 +70,7 @@ const Component9 = () => {
         })}
       </div>
 
-      <div className="grid grid-cols-[1fr_1fr_auto] gap-2">
+      <div className="grid grid-cols-[1fr_1fr_auto] gap-1">
         <button className="text-[0.8rem]! font-medium! text-white! px-3 py-2 rounded-lg bg-[#181818] border-2! border-solid border-[#181818] cursor-pointer">
           Join Call
         </button>

@@ -4,18 +4,18 @@ import Image from "next/image";
 const Component7 = () => {
   return (
     <>
-      <div className="w-full max-w-76 h-full grid grid-cols-1 grid-rows-[1fr_min-content] bg-[#01c2c6] rounded-4xl overflow-hidden not-xs:max-w-72">
+      <div className="w-fit h-full grid grid-cols-[min-content] grid-rows-[1fr_min-content] -space-y-30 bg-[#01c2c6] rounded-4xl overflow-hidden">
         <Image
           src="/assets/lab/components/7/bg.jpg"
           width={500}
           height={500}
-          className="h-full aspect-square"
+          className="h-full object-cover"
           alt="component-7-bg"
         />
 
-        <div className="relative w-full flex flex-col gap-6 p-4 pt-0 before:absolute before:bottom-full before:left-0 before:w-full before:h-1/2 before:bg-linear-180 before:from-transparent before:to-[#01c2c6] before:z-10">
-          <div className="flex flex-col gap-1">
-            <span className="text-[1.75rem]! text-white! leading-8! font-light! tracking-tight">
+        <div className="relative w-max flex flex-col gap-6 p-4 pt-0 before:absolute before:bottom-full before:left-0 before:w-full before:h-1/2 before:bg-linear-180 before:from-transparent before:to-[#01c2c6] before:z-10">
+          <div className="grid grid-cols-[max-content] gap-1">
+            <span className="text-[1.75rem]! text-white! leading-8! font-light! tracking-tight whitespace-nowrap">
               Smarter Travel
               <br />
               <span className="text-[1.75rem]! font-medium! text-white!">
@@ -24,8 +24,8 @@ const Component7 = () => {
             </span>
 
             <p className="text-[0.8rem]! text-[#ededed]!">
-              Plan better, travel smarter & create meaningful memories that last
-              a lifetime
+              Plan better, travel smarter & create <br /> meaningful memories
+              that last a lifetime
             </p>
           </div>
 
@@ -40,7 +40,7 @@ const Component7 = () => {
         </div>
       </div>
 
-      <div className="relative w-full max-w-76 h-full flex flex-col gap-4 bg-[#fefefe] rounded-4xl p-4 overflow-hidden not-xs:max-w-72">
+      <div className="relative w-full max-w-76 h-fit flex flex-col gap-4 bg-[#fefefe] rounded-4xl p-4 overflow-hidden not-xs:max-w-68">
         <div className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/2 w-48 aspect-square rounded-full bg-[#4de4ff40] blur-3xl"></div>
 
         <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/2 w-28 aspect-square rounded-full bg-[#fa5eff40] blur-3xl"></div>
@@ -126,20 +126,18 @@ const Component7 = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full flex justify-center items-center p-4">
-          <div className="w-fit rounded-full bg-white px-4 py-1 flex items-center gap-6 shadow-[0_5px_10px_#00000010]">
-            <Icons.HomeIcon className="w-5 aspect-square fill-[#898989]" />
-            <Icons.CalendarIcon className="w-5 aspect-square fill-[#898989]" />
-            <Image
-              src="/assets/lab/components/7/ai.png"
-              width={100}
-              height={100}
-              className="w-10 aspect-square opacity-75"
-              alt="ai-img"
-            />
-            <Icons.CompassIcon className="w-5 aspect-square fill-[#898989]" />
-            <Icons.ProfileIcon className="w-5 aspect-square fill-[#898989]" />
-          </div>
+        <div className="w-fit self-center rounded-full bg-white px-4 py-1 flex items-center gap-6 shadow-[0_5px_10px_#00000010]">
+          <Icons.HomeIcon className="w-5 aspect-square fill-[#898989]" />
+          <Icons.CalendarIcon className="w-5 aspect-square fill-[#898989]" />
+          <Image
+            src="/assets/lab/components/7/ai.png"
+            width={100}
+            height={100}
+            className="w-10 aspect-square opacity-75"
+            alt="ai-img"
+          />
+          <Icons.CompassIcon className="w-5 aspect-square fill-[#898989]" />
+          <Icons.ProfileIcon className="w-5 aspect-square fill-[#898989]" />
         </div>
       </div>
     </>
