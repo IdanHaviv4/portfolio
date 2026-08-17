@@ -30,10 +30,10 @@ const Component7 = () => {
           </div>
 
           <div className="flex flex-col gap-1">
-            <button className="w-full bg-white rounded-full py-3 text-[0.8rem]!">
+            <button className="w-full bg-white rounded-full py-3 text-[0.8rem]! cursor-pointer">
               Continue with Email
             </button>
-            <button className="w-full bg-black text-white! rounded-full py-3 text-[0.8rem]!">
+            <button className="w-full bg-black text-white! rounded-full py-3 text-[0.8rem]! cursor-pointer">
               Continue with Apple
             </button>
           </div>
@@ -127,17 +127,17 @@ const Component7 = () => {
         </div>
 
         <div className="w-fit self-center rounded-full bg-white px-4 py-1 flex items-center gap-6 shadow-[0_5px_10px_#00000010]">
-          <Icons.HomeIcon className="w-5 aspect-square fill-[#898989]" />
-          <Icons.CalendarIcon className="w-5 aspect-square fill-[#898989]" />
+          <Icons.HomeIcon className="w-5 aspect-square fill-[#898989] cursor-pointer" />
+          <Icons.CalendarIcon className="w-5 aspect-square fill-[#898989] cursor-pointer" />
           <Image
             src="/assets/lab/components/7/ai.png"
             width={100}
             height={100}
-            className="w-10 aspect-square opacity-75"
+            className="w-10 aspect-square opacity-75 cursor-pointer"
             alt="ai-img"
           />
-          <Icons.CompassIcon className="w-5 aspect-square fill-[#898989]" />
-          <Icons.ProfileIcon className="w-5 aspect-square fill-[#898989]" />
+          <Icons.CompassIcon className="w-5 aspect-square fill-[#898989] cursor-pointer" />
+          <Icons.ProfileIcon className="w-5 aspect-square fill-[#898989] cursor-pointer" />
         </div>
       </div>
     </>

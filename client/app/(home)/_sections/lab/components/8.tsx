@@ -3,15 +3,17 @@ import Image from "next/image";
 
 const Component8 = () => {
   return (
-    <div className="w-fit bg-white rounded-3xl p-2 grid grid-cols-[min-content] grid-rows-[auto_min-content]">
-      <Image
-        src="/assets/lab/components/8/preview.jpg"
-        className="rounded-2xl overflow-hidden"
-        loading="lazy"
-        width={500}
-        height={500}
-        alt="hotel-preview"
-      />
+    <div className="group w-fit bg-white rounded-3xl p-2 grid grid-cols-[min-content] grid-rows-[auto_min-content]">
+      <div className="w-full h-auto rounded-2xl overflow-hidden">
+        <Image
+          src="/assets/lab/components/8/preview.jpg"
+          className="w-full h-full object-cover transition duration-200 ease-in-out group-hover:scale-105"
+          loading="lazy"
+          width={500}
+          height={500}
+          alt="hotel-preview"
+        />
+      </div>
 
       <div className="p-2 flex flex-col">
         <div className="flex justify-between items-center gap-8 not-xs:gap-4">
