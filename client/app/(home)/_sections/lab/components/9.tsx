@@ -5,7 +5,7 @@ const Component9 = () => {
   return (
     <div className="bg-white rounded-xl p-4 flex flex-col gap-6 border-2! border-solid border-[#f2f2f2]">
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-24 not-xs:gap-6">
+        <div className="flex justify-between items-center gap-24 not-xs:gap-6">
           <div className="flex items-center gap-1">
             <div className="w-4 aspect-square flex justify-center items-center">
               <div className="w-2 aspect-square rounded-full bg-[#0db926]"></div>
@@ -71,13 +71,13 @@ const Component9 = () => {
       </div>
 
       <div className="grid grid-cols-[1fr_1fr_auto] gap-2">
-        <button className="text-[0.8rem]! font-medium! text-white! py-2 rounded-lg bg-[#181818] border-2! border-solid border-[#181818]">
+        <button className="text-[0.8rem]! font-medium! text-white! px-3 py-2 rounded-lg bg-[#181818] border-2! border-solid border-[#181818] cursor-pointer">
           Join Call
         </button>
-        <button className="text-[0.8rem]! font-medium! py-2 rounded-lg bg-transparent border-2! border-solid border-[#f2f2f2]">
+        <button className="text-[0.8rem]! font-medium! px-3 py-2 rounded-lg bg-transparent border-2! border-solid border-[#f2f2f2] cursor-pointer">
           Reschedule
         </button>
-        <button className="h-full aspect-square rounded-lg border-2! border-solid border-[#f2f2f2] p-2">
+        <button className="h-full aspect-square rounded-lg border-2! border-solid border-[#f2f2f2] p-2 cursor-pointer">
           <Icons.MessageIcon className="fill-[#181818]" />
         </button>
       </div>
