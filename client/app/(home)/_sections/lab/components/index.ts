@@ -5,6 +5,7 @@ import Component4 from "./4";
 import Component5 from "./5";
 import Component6 from "./6";
 import Component7 from "./7";
+import Component8 from "./8";
 
 export default {
   Component1,
@@ -14,4 +15,5 @@ export default {
   Component5,
   Component6,
   Component7,
+  Component8,
 };

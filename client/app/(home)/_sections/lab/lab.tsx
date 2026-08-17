@@ -37,6 +37,11 @@ const Lab = () => {
         num_of_components: 2,
       },
       {
+        bg: "#d5d9e1",
+        component: <Components.Component8 />,
+        inspiration: "https://ui.live/favorites/post/RDAI8R1Bx83AFnWQobbu",
+      },
+      {
         bg: "#e9f2ef",
         component: <Components.Component4 />,
         inspiration:

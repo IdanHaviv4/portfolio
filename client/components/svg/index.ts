@@ -34,10 +34,12 @@ import CouchIcon from "./icons/couch";
 import CookieIcon from "./illustrations/cookie";
 import FlaskIcon from "./icons/flask";
 import HomeIcon from "./icons/home";
+import LocationIcon from "./icons/location";
 import MenuIcon from "./icons/menu";
 import PlaneIcon from "./icons/plane";
 import ProfileIcon from "./icons/profile";
 import SearchIcon from "./icons/search";
+import StarIcon from "./icons/star";
 import XIcon from "./icons/x";
 
 export default {
@@ -77,9 +79,11 @@ export default {
   CookieIcon,
   FlaskIcon,
   HomeIcon,
+  LocationIcon,
   MenuIcon,
   PlaneIcon,
   ProfileIcon,
   SearchIcon,
+  StarIcon,
   XIcon,
 };
