@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Component8 = () => {
   return (
-    <div className="group w-fit bg-white rounded-3xl p-2 grid grid-cols-[min-content] grid-rows-[auto_min-content]">
+    <div className="group w-fit bg-white rounded-3xl p-2 grid grid-cols-[min-content] grid-rows-[auto_min-content] cursor-pointer">
       <div className="w-full h-auto rounded-2xl overflow-hidden">
         <Image
           src="/assets/lab/components/8/preview.jpg"
