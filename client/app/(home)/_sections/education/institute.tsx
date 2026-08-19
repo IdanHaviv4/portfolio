@@ -53,8 +53,8 @@ const Institute = ({
           <div className="flex items-center gap-3">
             <Skills skills={skills} className="not-sm:h-7 not-sm:w-4.5" />
 
-            <div className="shrink-0 p-1 aspect-square bg-section rounded-full flex justify-center items-center transition duration-200 ease-out group-hover/summary:bg-section-hover!">
-              <Chevron className="w-7 aspect-square fill-text-secondary transition duration-200 ease-out rotate-180 group-open:rotate-0 not-sm:w-5" />
+            <div className="shrink-0 p-2 aspect-square bg-section rounded-full flex justify-center items-center transition duration-200 ease-out group-hover/summary:bg-section-hover!">
+              <Chevron className="w-5 aspect-square fill-text-secondary transition duration-200 ease-out rotate-180 group-open:rotate-0 not-sm:w-4" />
             </div>
           </div>
         </summary>
