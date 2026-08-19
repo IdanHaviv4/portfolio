@@ -4,7 +4,7 @@ const Component3 = () => (
   <div className="relative bg-white/40 px-8 py-6 rounded-[2rem] flex flex-col items-start border-2! border-solid! border-white/60 my-10 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:scale-x-95 before:translate-y-[5%] before:bg-white/40 before:rounded-[inherit] not-sm:gap-6">
     <div className="relative flex items-center gap-2 sm:gap-4">
       <Image
-        src="/assets/lab/components/3/pfp.webp"
+        src="/assets/lab/components/3/pfp.jpg"
         width={100}
         height={100}
         loading="lazy"

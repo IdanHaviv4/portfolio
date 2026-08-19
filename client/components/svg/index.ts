@@ -39,6 +39,7 @@ import MenuIcon from "./icons/menu";
 import MessageIcon from "./icons/message";
 import PlaneIcon from "./icons/plane";
 import ProfileIcon from "./icons/profile";
+import QuoteIcon from "./icons/quote";
 import SearchIcon from "./icons/search";
 import StarIcon from "./icons/star";
 import XIcon from "./icons/x";
@@ -85,6 +86,7 @@ export default {
   MessageIcon,
   PlaneIcon,
   ProfileIcon,
+  QuoteIcon,
   SearchIcon,
   StarIcon,
   XIcon,

@@ -37,6 +37,13 @@ const Lab = () => {
         num_of_components: 2,
       },
       {
+        bg: "#ffffff",
+        component: <Components.Component10 />,
+        col_span: 2,
+        padding: false,
+        inspiration: "https://ui.live/favorites/post/h70wtsSuSve7NvcB0r4e",
+      },
+      {
         bg: "#e9f2ef",
         component: <Components.Component4 />,
         inspiration:
@@ -181,23 +188,23 @@ const Lab = () => {
               <>
                 <motion.button
                   {...getInitialTransition(2)}
-                  className="bg-section-dark p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out not-disabled:hover:bg-section-dark-hover"
+                  className="bg-section-dark p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out not-disabled:hover:bg-section-dark-hover md:p-6"
                   onClick={() => handleChangePage(-1)}
                   ref={(ref) => {
                     components_ref.current.buttons.prev = ref;
                   }}
                 >
-                  <Icons.ChevronIcon className="w-10 aspect-square fill-white -rotate-90" />
+                  <Icons.ChevronIcon className="w-8 aspect-square fill-white -rotate-90" />
                 </motion.button>
                 <motion.button
                   {...getInitialTransition(3)}
-                  className="bg-section-dark p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out not-disabled:hover:bg-section-dark-hover"
+                  className="bg-section-dark p-4 rounded-full cursor-pointer transition-[background] duration-200 ease-out not-disabled:hover:bg-section-dark-hover md:p-6"
                   onClick={() => handleChangePage(1)}
                   ref={(ref) => {
                     components_ref.current.buttons.next = ref;
                   }}
                 >
-                  <Icons.ChevronIcon className="w-10 aspect-square fill-white rotate-90" />
+                  <Icons.ChevronIcon className="w-8 aspect-square fill-white rotate-90" />
                 </motion.button>
               </>
             )}

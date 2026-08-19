@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Edu_VIC_WA_NT_Hand, Poppins } from "next/font/google";
+import { Edu_VIC_WA_NT_Hand, Fredoka, Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
@@ -11,6 +11,10 @@ const poppins = Poppins({
 
 const edu = Edu_VIC_WA_NT_Hand({
   weight: ["400", "500", "600"],
+});
+
+const fredoka = Fredoka({
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +33,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${poppins.className} ${edu.className} h-full antialiased`}
+      className={`${poppins.className} ${edu.className} ${fredoka.className} h-full antialiased`}
     >
       <body>
         <Nav />
