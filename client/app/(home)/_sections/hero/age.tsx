@@ -6,7 +6,7 @@ const Age = ({ transition_order }: { transition_order: number }) => {
   return (
     <motion.div
       {...getInitialTransition(transition_order)}
-      className="w-full h-full bg-section/50 backdrop-blur-2xl rounded-lg flex flex-col gap-2 justify-center items-center md:py-8"
+      className="w-full h-full bg-section backdrop-blur-2xl rounded-lg flex flex-col gap-2 justify-center items-center md:py-8"
     >
       <h2>
         {moment()

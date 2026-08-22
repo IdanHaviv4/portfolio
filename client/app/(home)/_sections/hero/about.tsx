@@ -12,7 +12,7 @@ const About = ({
   return (
     <motion.div
       {...getInitialTransition(transition_order)}
-      className={`w-full bg-section/50 backdrop-blur-2xl rounded-lg px-5 py-4 ${className}`}
+      className={`w-full bg-section backdrop-blur-2xl rounded-lg px-5 py-4 ${className}`}
     >
       <p className="w-full not-xs:text-[1rem]!">
         A (mostly) self-taught, curious and fast learner who has been devoted to
