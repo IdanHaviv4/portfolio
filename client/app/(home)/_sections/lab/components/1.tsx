@@ -25,11 +25,11 @@ const Component1 = () => (
 
       <div className="flex flex-col gap-1">
         <input
-          className="w-full text-[0.8rem]! px-6 py-3 rounded-lg border-2! border-solid! border-[#f0d9d4] xs:text-[1rem]!"
+          className="w-full text-[0.8rem]! px-6 py-3 rounded-lg border-2! border-solid! text-center border-[#f0d9d4]"
           type="email"
           placeholder="Your email address"
         />
-        <button className="text-[0.8rem]! w-full h-full flex justify-center items-center py-3 rounded-lg bg-[#f55951] text-white! font-medium shadow-[0_0_30px_hsl(338_83%_34%_/0.2)] cursor-pointer xs:text-[1rem]! transition duration-200 ease-out hover:bg-[#f26861]">
+        <button className="text-[0.8rem]! w-full h-full flex justify-center items-center py-3 rounded-lg bg-[#f55951] text-white! font-medium shadow-[0_0_30px_hsl(338_83%_34%_/0.2)] cursor-pointer transition duration-200 ease-out hover:bg-[#f26861]">
           Subscribe
         </button>
       </div>
